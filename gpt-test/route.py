@@ -193,7 +193,17 @@ CONCEPTUAL_FACETS = ("knowledge", "regulation", "howto")
 #   market  — 지수 수준·수급·시장 뉴스. market/index 엔티티가 있을 때만 (아래 게이트).
 #   finance_legal — 제도의 결과를 묻는 것이므로 데이터가 아니라 가이드.
 JUDGMENT_BUNDLE = {
-    ("issuer", "forward"): ("get_company_evaluation", "get_financial_data"),
+    # forward 에 get_stock_news 를 넣은 것은 sealed 58행 검증을 통과한 변경이다
+    # (2026-09-02). 이전에는 themed issuer→news channel 규칙이 종목 뉴스를
+    # 대신 붙였는데, 그 규칙은 테마 엔티티가 있을 때만 발화해서 "전망" 질의의
+    # 절반을 놓쳤다. 뉴스를 판단 묶음 쪽으로 옮기고 그 규칙은 폐기했다.
+    ("issuer", "forward"): (
+        "get_company_evaluation",
+        "get_financial_data",
+        "get_stock_news",
+    ),
+    # current 를 ("get_stock_news",) 로 바꾸는 안도 적합셋에서 +0.0076 을 냈으나
+    # sealed 에서 기여가 정확히 0이었다. 근거가 4행뿐이었다 — 기각.
     ("issuer", "current"): ("get_company_evaluation", "get_financial_data"),
     ("issuer", "past"): ("get_stock_news",),
     ("market", "forward"): (
@@ -517,7 +527,22 @@ LEXICON_RULES: list[Rule] = [
 
 
 # 2·3층 전체. 순서가 의미를 갖는다 — replace=True 규칙이 앞선 결과를 지운다.
-ALL_RULES: list[Rule] = EXPANSIONS + LEXICON_RULES
+# sealed 58행 검증에서 제거가 확인된 규칙 (2026-09-02).
+# 코드는 남겨 둔다 — 왜 뺐는지가 다음 라운드에 필요하고, 골든이 더 늘면
+# 되살릴 여지도 있다.
+#
+#   comparative assessment
+#       "업종 평균 대비" 류에 멀티플 두 개를 붙였다. 발화 12회 중 대부분이
+#       오호출이었다. 단독 제거만으로 sealed +0.018.
+#   themed issuer→news channel
+#       테마 엔티티가 붙은 발행사 goal 에 get_news + get_stock_news 를 얹었다.
+#       발화 54회. 종목 뉴스는 판단 묶음(issuer/forward)으로 옮겼고, 시장
+#       뉴스는 theme→sector 와 겹쳐 정밀도만 깎고 있었다.
+RETIRED = {"comparative assessment", "themed issuer→news channel"}
+
+ALL_RULES: list[Rule] = [
+    r for r in EXPANSIONS + LEXICON_RULES if r.name not in RETIRED
+]
 
 
 # 기간 파라미터를 받는 함수: period 제약이 없으면 기본값 결정이 필요하다
