@@ -1,0 +1,20 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,삼성전자 최근 5년 배당금이랑 배당수익률 추이 보여줘,2,I6-5;I7-2,"I6-5 company=삼성전자
+I6-5 metric=배당금
+I6-5 metric=배당수익률
+I7-2 company=삼성전자
+I7-2 metric=배당수익률","I6-5 period=최근 5년
+I7-2 period=최근 5년",삼성전자 배당금 및 배당수익률 추이,"{""intents"": [""I6-5"", ""I7-2""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-5"", ""type"": ""metric"", ""value"": ""배당금""}, {""intent_id"": ""I6-5"", ""type"": ""metric"", ""value"": ""배당수익률""}, {""intent_id"": ""I7-2"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""배당수익률""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""period"", ""value"": ""최근 5년""}, {""intent_id"": ""I7-2"", ""type"": ""period"", ""value"": ""최근 5년""}], ""subject"": ""삼성전자 배당금 및 배당수익률 추이""}",2694,477,
+1,KT&G 배당기준일이랑 배당락일 언제야?,1,I6-5,"I6-5 company=KT&G
+I6-5 corporate_event=배당기준일
+I6-5 corporate_event=배당락일",,KT&G 배당기준일 및 배당락일,"{""intents"": [""I6-5""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""company"", ""value"": ""KT&G""}, {""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""배당기준일""}, {""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""배당락일""}], ""constraints"": [], ""subject"": ""KT&G 배당기준일 및 배당락일""}",2689,339,
+2,코스피에서 배당수익률 높은 종목 10개 뽑아줘,1,I6-5,"I6-5 market=코스피
+I6-5 metric=배당수익률","I6-5 scope=코스피
+I6-5 count=10
+I6-5 ranking=상위",코스피 배당수익률 높은 종목,"{""intents"": [""I6-5""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""market"", ""value"": ""코스피""}, {""intent_id"": ""I6-5"", ""type"": ""metric"", ""value"": ""배당수익률""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""scope"", ""value"": ""코스피""}, {""intent_id"": ""I6-5"", ""type"": ""count"", ""value"": ""10""}, {""intent_id"": ""I6-5"", ""type"": ""ranking"", ""value"": ""상위""}], ""subject"": ""코스피 배당수익률 높은 종목""}",2693,431,
+3,고배당주 투자할 때 유의할 점 알려줘,1,I2-3,I2-3 theme=고배당주,I2-3 condition=고배당주,고배당주 투자,"{""intents"": [""I2-3""], ""entities"": [{""intent_id"": ""I2-3"", ""type"": ""theme"", ""value"": ""고배당주""}], ""constraints"": [{""intent_id"": ""I2-3"", ""type"": ""condition"", ""value"": ""고배당주""}], ""subject"": ""고배당주 투자""}",2686,315,
+4,현대차 배당성향이 업종 평균 대비 높은 편이야?,2,I6-5;I5-2,"I6-5 company=현대차
+I6-5 metric=배당성향",I6-5 scope=업종 평균,현대차 배당성향,"{""intents"": [""I6-5"", ""I5-2""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""company"", ""value"": ""현대차""}, {""intent_id"": ""I6-5"", ""type"": ""metric"", ""value"": ""배당성향""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""scope"", ""value"": ""업종 평균""}], ""subject"": ""현대차 배당성향""}",2690,399,
+5,올해 배당 확대 발표한 기업들 뉴스 정리해줘,2,I6-3;I6-5,"I6-3 corporate_event=배당 확대 발표
+I6-5 corporate_event=배당 확대 발표","I6-3 period=올해
+I6-5 period=올해",올해 배당 확대 발표 기업 뉴스,"{""intents"": [""I6-3"", ""I6-5""], ""entities"": [{""intent_id"": ""I6-3"", ""type"": ""corporate_event"", ""value"": ""배당 확대 발표""}, {""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""배당 확대 발표""}], ""constraints"": [{""intent_id"": ""I6-3"", ""type"": ""period"", ""value"": ""올해""}, {""intent_id"": ""I6-5"", ""type"": ""period"", ""value"": ""올해""}], ""subject"": ""올해 배당 확대 발표 기업 뉴스""}",2687,478,

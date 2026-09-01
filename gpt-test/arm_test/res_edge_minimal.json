@@ -1,0 +1,410 @@
+{
+  "summaries": [
+    {
+      "arm": "A",
+      "n": 6,
+      "api_errors": 0,
+      "intent_acc": 0.8333333333333334,
+      "result_acc": 0.8333333333333334,
+      "lat_mean": 2.9263634333377317,
+      "lat_p50": 1.8342093999963254,
+      "lat_p95": 7.7648320000153035,
+      "in_tok": 1361.6666666666667,
+      "out_tok": 53.166666666666664
+    },
+    {
+      "arm": "B",
+      "n": 6,
+      "api_errors": 1,
+      "intent_acc": 0.8333333333333334,
+      "result_acc": 0.5,
+      "lat_mean": 1.5571209399960935,
+      "lat_p50": 1.344678199995542,
+      "lat_p95": 2.2842018000083044,
+      "in_tok": 2770.6,
+      "out_tok": 40.2
+    }
+  ],
+  "records": [
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 말고 그냥 3, 5, 8 이 세 개 평균만",
+      "gold_intent": "mean",
+      "pred_intent": "mean",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.9503134000115097,
+      "api_s": 1.9502496999921277,
+      "input_tokens": 1367,
+      "output_tokens": 55,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 5.3333,
+      "pred_result": 5.3333,
+      "detail": {
+        "slots": {
+          "numbers": [
+            3,
+            5,
+            8
+          ]
+        },
+        "trace": [
+          "mean_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 말고 그냥 3, 5, 8 이 세 개 평균만",
+      "gold_intent": "mean",
+      "pred_intent": "mean",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.6986335999972653,
+      "api_s": 1.6986029999970924,
+      "input_tokens": 2777,
+      "output_tokens": 46,
+      "api_error": "result_json 파싱 실패: Extra data: line 1 column 2 (char 1)",
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 5.3333,
+      "pred_result": null,
+      "detail": {
+        "raw": "3, 5, 8의 평균 = 5.3333"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 10항까지 순서대로 보여줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 2.948545199993532,
+      "api_s": 2.9485235000029206,
+      "input_tokens": 1360,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "detail": {
+        "slots": {
+          "n": 10
+        },
+        "trace": [
+          "fibonacci"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 10항까지 순서대로 보여줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 2.2842018000083044,
+      "api_s": 2.2841937000048347,
+      "input_tokens": 2770,
+      "output_tokens": 65,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "detail": {
+        "raw": "[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "5! 이랑 피보나치 5번째 중에 뭐가 더 커?",
+      "gold_intent": "unsupported",
+      "pred_intent": "unsupported",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 7.7648320000153035,
+      "api_s": 7.764815700007603,
+      "input_tokens": 1365,
+      "output_tokens": 51,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": null,
+      "detail": {
+        "slots": {},
+        "trace": []
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "5! 이랑 피보나치 5번째 중에 뭐가 더 커?",
+      "gold_intent": "unsupported",
+      "pred_intent": "unsupported",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.2873013999778777,
+      "api_s": 1.287295099988114,
+      "input_tokens": 2775,
+      "output_tokens": 32,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": null,
+      "detail": {
+        "raw": "null"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "50 이하 소수 중 마지막 게 뭐야",
+      "gold_intent": "primes_last_k",
+      "pred_intent": "primes_last_k",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.8342093999963254,
+      "api_s": 1.834159499994712,
+      "input_tokens": 1356,
+      "output_tokens": 54,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        47
+      ],
+      "pred_result": [
+        47
+      ],
+      "detail": {
+        "slots": {
+          "n": 50,
+          "k": 1
+        },
+        "trace": [
+          "primes_upto",
+          "last_k"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "50 이하 소수 중 마지막 게 뭐야",
+      "gold_intent": "primes_last_k",
+      "pred_intent": "primes_last_k",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.531900100002531,
+      "api_s": 1.5318922000005841,
+      "input_tokens": 2766,
+      "output_tokens": 37,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        47
+      ],
+      "pred_result": [
+        47
+      ],
+      "detail": {
+        "raw": "[47]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 12항까지에서 항이 몇 개나 되지",
+      "gold_intent": "unsupported",
+      "pred_intent": "fib_last_k",
+      "intent_ok": false,
+      "result_ok": false,
+      "latency_s": 1.584847499994794,
+      "api_s": 1.5848237999889534,
+      "input_tokens": 1363,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": [
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144
+      ],
+      "detail": {
+        "slots": {
+          "n": 12,
+          "k": 12
+        },
+        "trace": [
+          "fibonacci",
+          "last_k"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 12항까지에서 항이 몇 개나 되지",
+      "gold_intent": "unsupported",
+      "pred_intent": "count",
+      "intent_ok": false,
+      "result_ok": false,
+      "latency_s": 1.344678199995542,
+      "api_s": 1.3446656999876723,
+      "input_tokens": 2773,
+      "output_tokens": 32,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": 13,
+      "detail": {
+        "raw": "13"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "36의 약수 개수 말고 약수들의 합",
+      "gold_intent": "divisors_sum",
+      "pred_intent": "divisors_sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.475433100014925,
+      "api_s": 1.4754094000090845,
+      "input_tokens": 1359,
+      "output_tokens": 54,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 91,
+      "pred_result": 91,
+      "detail": {
+        "slots": {
+          "n": 36
+        },
+        "trace": [
+          "divisors",
+          "sum_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "36의 약수 개수 말고 약수들의 합",
+      "gold_intent": "divisors_sum",
+      "pred_intent": "divisors_sum",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.3375231999962125,
+      "api_s": 1.3375158999988344,
+      "input_tokens": 2769,
+      "output_tokens": 35,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 91,
+      "pred_result": 55,
+      "detail": {
+        "raw": "55"
+      }
+    }
+  ]
+}

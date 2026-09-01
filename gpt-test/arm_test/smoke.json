@@ -1,0 +1,314 @@
+{
+  "summaries": [
+    {
+      "arm": "A",
+      "n": 3,
+      "api_errors": 0,
+      "intent_acc": 1.0,
+      "result_acc": 1.0,
+      "lat_mean": 1.727759166669178,
+      "lat_p50": 1.6587911999959033,
+      "lat_p95": 1.9907250000105705,
+      "in_tok": 539.6666666666666,
+      "out_tok": 94.66666666666667
+    },
+    {
+      "arm": "B",
+      "n": 3,
+      "api_errors": 0,
+      "intent_acc": 1.0,
+      "result_acc": 0.6666666666666666,
+      "lat_mean": 3.116478100011591,
+      "lat_p50": 3.145188499998767,
+      "lat_p95": 3.575058300019009,
+      "in_tok": 1669.6666666666667,
+      "out_tok": 236
+    }
+  ],
+  "records": [
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 10번째까지 구해줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5337613000010606,
+      "api_s": 1.5337215999898035,
+      "input_tokens": 540,
+      "output_tokens": 99,
+      "api_error": null,
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "detail": {
+        "slots": {
+          "n": 10
+        },
+        "trace": [
+          "fibonacci"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 10번째까지 구해줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 3.145188499998767,
+      "api_s": 3.1451717000163626,
+      "input_tokens": 1670,
+      "output_tokens": 204,
+      "api_error": null,
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "detail": {
+        "raw": "[0,1,1,2,3,5,8,13,21,34,55]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "fib 15개 뽑아줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.9907250000105705,
+      "api_s": 1.9906866000092123,
+      "input_tokens": 538,
+      "output_tokens": 90,
+      "api_error": null,
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144,
+        233,
+        377,
+        610
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144,
+        233,
+        377,
+        610
+      ],
+      "detail": {
+        "slots": {
+          "n": 15
+        },
+        "trace": [
+          "fibonacci"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "fib 15개 뽑아줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 3.575058300019009,
+      "api_s": 3.5750402999983635,
+      "input_tokens": 1668,
+      "output_tokens": 324,
+      "api_error": null,
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144,
+        233,
+        377,
+        610
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144,
+        233,
+        377
+      ],
+      "detail": {
+        "raw": "[0,1,1,2,3,5,8,13,21,34,55,89,144,233,377]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 수열 8항까지 보여줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.6587911999959033,
+      "api_s": 1.6587524999922607,
+      "input_tokens": 541,
+      "output_tokens": 95,
+      "api_error": null,
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21
+      ],
+      "detail": {
+        "slots": {
+          "n": 8
+        },
+        "trace": [
+          "fibonacci"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 수열 8항까지 보여줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 2.6291875000169966,
+      "api_s": 2.629171700013103,
+      "input_tokens": 1671,
+      "output_tokens": 180,
+      "api_error": null,
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21
+      ],
+      "detail": {
+        "raw": "[0,1,1,2,3,5,8,13,21]"
+      }
+    }
+  ]
+}

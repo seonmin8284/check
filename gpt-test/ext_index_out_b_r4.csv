@@ -1,0 +1,30 @@
+﻿idx,input,n_goals,goals,intents,entities,constraints,dependencies,missing_information,json,in_tok,out_tok,error
+0,코스피 지수 오늘 종가랑 거래대금 알려줘,2,"g1 [market/query/price/current] 코스피 지수 종가
+g2 [market/query/price/current] 코스피 지수 거래대금","g1 I7-1
+g2 I7-1","g1 index=코스피
+g2 index=코스피","g1 period=오늘
+g2 period=오늘",,,"{""goals"": [{""id"": ""g1"", ""target"": ""코스피 지수 종가"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""price"", ""intent"": ""I7-1"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""코스피 지수 거래대금"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""price"", ""intent"": ""I7-1"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""index"", ""value"": ""코스피""}, {""goal_id"": ""g2"", ""type"": ""index"", ""value"": ""코스피""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""오늘""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""오늘""}], ""dependencies"": [], ""missing_information"": []}",6939,438,
+1,코스닥 이번 달 외국인 수급 동향 알려줘,1,g1 [market/query/flow/current] 코스닥 외국인 수급 동향,g1 I5-2,"g1 market=코스닥
+g1 investor_group=외국인",g1 period=이번 달,,,"{""goals"": [{""id"": ""g1"", ""target"": ""코스닥 외국인 수급 동향"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""flow"", ""intent"": ""I5-2"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""market"", ""value"": ""코스닥""}, {""goal_id"": ""g1"", ""type"": ""investor_group"", ""value"": ""외국인""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""이번 달""}], ""dependencies"": [], ""missing_information"": []}",6939,354,
+2,코스피 지수 향후 전망 어떻게 봐?,1,g1 [market/assessment/none/forward] 코스피 지수 향후 전망,g1 I5-1,g1 index=코스피 지수,,,,"{""goals"": [{""id"": ""g1"", ""target"": ""코스피 지수 향후 전망"", ""domain"": ""market"", ""type"": ""assessment"", ""facet"": ""none"", ""intent"": ""I5-1"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""index"", ""value"": ""코스피 지수""}], ""constraints"": [], ""dependencies"": [], ""missing_information"": []}",6937,208,
+3,코스피 PER이 과거 대비 저평가 구간인지 알려줘,2,"g1 [market/query/valuation/current] 코스피 PER (현재/과거 비교를 위한 수치)
+g2 [market/assessment/none/current] 코스피 PER이 과거 대비 저평가 구간인지 여부 판단","g1 I8-1
+g2 I5-1","g1 index=코스피
+g1 metric=PER
+g2 index=코스피
+g2 metric=PER",,g1->g2 (metric),,"{""goals"": [{""id"": ""g1"", ""target"": ""코스피 PER (현재/과거 비교를 위한 수치)"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""valuation"", ""intent"": ""I8-1"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""코스피 PER이 과거 대비 저평가 구간인지 여부 판단"", ""domain"": ""market"", ""type"": ""assessment"", ""facet"": ""none"", ""intent"": ""I5-1"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""index"", ""value"": ""코스피""}, {""goal_id"": ""g1"", ""type"": ""metric"", ""value"": ""PER""}, {""goal_id"": ""g2"", ""type"": ""index"", ""value"": ""코스피""}, {""goal_id"": ""g2"", ""type"": ""metric"", ""value"": ""PER""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""metric""}], ""missing_information"": []}",6941,589,
+4,최근 한 달 수익률 상위 업종 5개랑 그 배경 알려줘,2,"g1 [market/query/screening/past] 최근 한 달 수익률 상위 업종 5개
+g2 [market/assessment/none/current] 상위 업종들의 배경 설명","g1 I5-2
+g2 I5-2",,"g1 period=최근 한 달
+g1 count=5
+g1 ranking=상위
+g1 scope=업종",g1->g2 (sector),,"{""goals"": [{""id"": ""g1"", ""target"": ""최근 한 달 수익률 상위 업종 5개"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""screening"", ""intent"": ""I5-2"", ""horizon"": ""past""}, {""id"": ""g2"", ""target"": ""상위 업종들의 배경 설명"", ""domain"": ""market"", ""type"": ""assessment"", ""facet"": ""none"", ""intent"": ""I5-2"", ""horizon"": ""current""}], ""entities"": [], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""최근 한 달""}, {""goal_id"": ""g1"", ""type"": ""count"", ""value"": ""5""}, {""goal_id"": ""g1"", ""type"": ""ranking"", ""value"": ""상위""}, {""goal_id"": ""g1"", ""type"": ""scope"", ""value"": ""업종""}], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""sector""}], ""missing_information"": []}",6944,667,
+5,코스닥 공매도 비중이 지금 높은 편인지 확인해줘,2,"g1 [market/query/short/current] 코스닥 공매도 비중
+g2 [market/assessment/none/current] 코스닥 공매도 비중이 높은지 여부","g1 I5-1
+g2 I5-1","g1 market=코스닥
+g2 market=코스닥","g1 period=지금
+g2 period=지금",g1->g2 (context),,"{""goals"": [{""id"": ""g1"", ""target"": ""코스닥 공매도 비중"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""short"", ""intent"": ""I5-1"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""코스닥 공매도 비중이 높은지 여부"", ""domain"": ""market"", ""type"": ""assessment"", ""facet"": ""none"", ""intent"": ""I5-1"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""market"", ""value"": ""코스닥""}, {""goal_id"": ""g2"", ""type"": ""market"", ""value"": ""코스닥""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""지금""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""지금""}], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""context""}], ""missing_information"": []}",6941,666,
+6,미국 금리 인하가 국내 증시에 미치는 영향 알려줘,2,"g1 [market/query/news/current] 미국 금리 인하(사건·전망)
+g2 [market/assessment/none/forward] 미국 금리 인하가 국내 증시에 미치는 영향","g1 I5-1
+g2 I5-1","g1 market_event=미국 금리 인하
+g2 market=국내 증시",,g1->g2 (market_event),인하 폭(예: 0.25%) 및 인하 시기(언제 시행되는지),"{""goals"": [{""id"": ""g1"", ""target"": ""미국 금리 인하(사건·전망)"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""news"", ""intent"": ""I5-1"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""미국 금리 인하가 국내 증시에 미치는 영향"", ""domain"": ""market"", ""type"": ""assessment"", ""facet"": ""none"", ""intent"": ""I5-1"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""market_event"", ""value"": ""미국 금리 인하""}, {""goal_id"": ""g2"", ""type"": ""market"", ""value"": ""국내 증시""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""market_event""}], ""missing_information"": [""인하 폭(예: 0.25%) 및 인하 시기(언제 시행되는지)""]}",6940,828,

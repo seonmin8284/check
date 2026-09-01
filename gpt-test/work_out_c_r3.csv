@@ -1,0 +1,26 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,개설된 자녀계좌 확인하는 방법 알려줘.,1,I3-2,I3-2 account=자녀계좌,,자녀계좌 개설 확인 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""자녀계좌""}], ""constraints"": [], ""subject"": ""자녀계좌 개설 확인 방법""}",2686,237,
+1,유안타증권 비대면 자녀계좌 등록 및 개설 절차,1,I3-2,"I3-2 company=유안타증권
+I3-2 account=자녀계좌
+I3-2 procedure=등록 및 개설",I3-2 channel=비대면,비대면 자녀계좌 등록 및 개설 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""company"", ""value"": ""유안타증권""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""자녀계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""등록 및 개설""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""비대면 자녀계좌 등록 및 개설 절차""}",2691,507,
+2,자녀계좌 온라인 개설 후 잔고 확인은 어떻게 하나요?,2,I3-2;I3-1,"I3-2 account=자녀계좌
+I3-2 procedure=개설
+I3-1 account=자녀계좌",I3-2 channel=온라인,자녀계좌 잔고 확인,"{""intents"": [""I3-2"", ""I3-1""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""자녀계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""개설""}, {""intent_id"": ""I3-1"", ""type"": ""account"", ""value"": ""자녀계좌""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""온라인""}], ""subject"": ""자녀계좌 잔고 확인""}",2690,410,
+3,일반 비대면 주식계좌 개설 절차 안내,1,I3-2,I3-2 account=일반 비대면 주식계좌,I3-2 channel=비대면,주식계좌 개설 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""일반 비대면 주식계좌""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""주식계좌 개설 절차""}",2687,351,
+4,해외주식 전용 계좌개설은 어디서 해야 하나요?,1,I3-2,I3-2 account=해외주식 전용 계좌,,해외주식 전용 계좌개설,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""해외주식 전용 계좌""}], ""constraints"": [], ""subject"": ""해외주식 전용 계좌개설""}",2690,214,
+5,기존 국내 주식 계좌가 있는데 해외주식용을 별도로 개설해야 하나요?,1,I3-2,"I3-2 account=국내 주식 계좌
+I3-2 account=해외주식용",,해외주식 계좌 개설 여부,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""국내 주식 계좌""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""해외주식용""}], ""constraints"": [], ""subject"": ""해외주식 계좌 개설 여부""}",2695,285,
+6,미성년자 계좌개설 시 필수 제출 서류 목록,1,I3-2,"I3-2 procedure=계좌개설
+I3-2 account=미성년자 계좌개설
+I3-2 document=필수 제출 서류",,미성년자 계좌 개설,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""계좌개설""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""미성년자 계좌개설""}, {""intent_id"": ""I3-2"", ""type"": ""document"", ""value"": ""필수 제출 서류""}], ""constraints"": [], ""subject"": ""미성년자 계좌 개설""}",2688,495,
+7,연금저축계좌 비대면 개설 방법,1,I3-2,"I3-2 product=연금저축
+I3-2 account=연금저축계좌",I3-2 channel=비대면,연금저축계좌 개설,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""연금저축""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""연금저축계좌""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""연금저축계좌 개설""}",2685,465,
+8,퇴직연금(IRP) 계좌개설 완료 후 다음 단계는?,1,I3-2,"I3-2 product=IRP
+I3-2 procedure=계좌개설",,퇴직연금(IRP) 계좌개설 후 다음 단계,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""IRP""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""계좌개설""}], ""constraints"": [], ""subject"": ""퇴직연금(IRP) 계좌개설 후 다음 단계""}",2690,451,
+9,계좌 해지 방법과 필요 서류,1,I3-2,"I3-2 account=계좌
+I3-2 procedure=해지
+I3-2 document=필요 서류",,계좌 해지,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""해지""}, {""intent_id"": ""I3-2"", ""type"": ""document"", ""value"": ""필요 서류""}], ""constraints"": [], ""subject"": ""계좌 해지""}",2682,383,
+10,휴면계좌의 거래 재개 및 활성화 방법,1,I3-2,I3-2 account=휴면계좌,,휴면계좌 활성화 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""휴면계좌""}], ""constraints"": [], ""subject"": ""휴면계좌 활성화 방법""}",2685,235,
+11,비대면계좌 개설 후 한도제한계좌 해제 방법,1,I3-2,"I3-2 account=비대면계좌
+I3-2 account=한도제한계좌",I3-2 channel=비대면,한도제한계좌 해제,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""비대면계좌""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""한도제한계좌""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""한도제한계좌 해제""}",2690,500,
+12,계좌 비밀번호 5회 오류 시 재등록 방법,1,I3-2,I3-2 account=계좌 비밀번호,I3-2 count=5,계좌 비밀번호 재등록 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""계좌 비밀번호""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""count"", ""value"": ""5""}], ""subject"": ""계좌 비밀번호 재등록 방법""}",2685,239,

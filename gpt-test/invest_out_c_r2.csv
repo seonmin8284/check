@@ -1,0 +1,57 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,삼성전자 HBM 납품 실적 영향도 전망,3,I6-7;I6-8;I5-2,"I6-7 company=삼성전자
+I6-7 theme=HBM
+I6-7 metric=납품 실적
+I6-8 company=삼성전자
+I6-8 theme=HBM
+I5-2 theme=HBM",,삼성전자 HBM 납품 실적 영향도 전망,"{""intents"": [""I6-7"", ""I6-8"", ""I5-2""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-7"", ""type"": ""theme"", ""value"": ""HBM""}, {""intent_id"": ""I6-7"", ""type"": ""metric"", ""value"": ""납품 실적""}, {""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""HBM""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""HBM""}], ""constraints"": [], ""subject"": ""삼성전자 HBM 납품 실적 영향도 전망""}",2686,650,
+1,SK하이닉스 최근분기 HBM 수요 증가에 따른 예상 영업이익 추정치,2,I8-2;I5-2,"I8-2 company=SK하이닉스
+I5-2 theme=HBM 수요 증가","I8-2 period=최근분기
+I5-2 period=최근분기",SK하이닉스 영업이익 추정치,"{""intents"": [""I8-2"", ""I5-2""], ""entities"": [{""intent_id"": ""I8-2"", ""type"": ""company"", ""value"": ""SK하이닉스""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""HBM 수요 증가""}], ""constraints"": [{""intent_id"": ""I8-2"", ""type"": ""period"", ""value"": ""최근분기""}, {""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""최근분기""}], ""subject"": ""SK하이닉스 영업이익 추정치""}",2696,704,
+2,현대차 피지컬 AI 및 로봇 사업 진출에 따른 향후 주가 전망,2,I6-2;I6-8,"I6-2 company=현대차
+I6-2 theme=피지컬 AI
+I6-2 theme=로봇
+I6-2 corporate_event=사업 진출
+I6-8 company=현대차
+I6-8 theme=피지컬 AI
+I6-8 theme=로봇
+I6-8 corporate_event=사업 진출",,현대차의 피지컬 AI 및 로봇 사업 진출에 따른 향후 주가 전망,"{""intents"": [""I6-2"", ""I6-8""], ""entities"": [{""intent_id"": ""I6-2"", ""type"": ""company"", ""value"": ""현대차""}, {""intent_id"": ""I6-2"", ""type"": ""theme"", ""value"": ""피지컬 AI""}, {""intent_id"": ""I6-2"", ""type"": ""theme"", ""value"": ""로봇""}, {""intent_id"": ""I6-2"", ""type"": ""corporate_event"", ""value"": ""사업 진출""}, {""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""현대차""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""피지컬 AI""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""로봇""}, {""intent_id"": ""I6-8"", ""type"": ""corporate_event"", ""value"": ""사업 진출""}], ""constraints"": [], ""subject"": ""현대차의 피지컬 AI 및 로봇 사업 진출에 따른 향후 주가 전망""}",2694,698,
+3,한화에어로스페이스 방산 수주 확대에 따른 2026년 실적 전망,3,I6-8;I6-3;I6-6,"I6-8 company=한화에어로스페이스
+I6-8 sector=방산
+I6-3 corporate_event=수주 확대","I6-8 period=2026년
+I6-6 period=2026년",한화에어로스페이스 2026년 실적 전망,"{""intents"": [""I6-8"", ""I6-3"", ""I6-6""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""한화에어로스페이스""}, {""intent_id"": ""I6-8"", ""type"": ""sector"", ""value"": ""방산""}, {""intent_id"": ""I6-3"", ""type"": ""corporate_event"", ""value"": ""수주 확대""}], ""constraints"": [{""intent_id"": ""I6-8"", ""type"": ""period"", ""value"": ""2026년""}, {""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""2026년""}], ""subject"": ""한화에어로스페이스 2026년 실적 전망""}",2695,584,
+4,네이버(NAVER) 최근 외국인 대량 매도 및 주가 하락 배경 분석,3,I6-7;I6-3;I7-1,"I6-7 company=네이버(NAVER)
+I6-7 investor_group=외국인
+I7-1 company=네이버(NAVER)
+I7-1 investor_group=외국인
+I6-3 company=네이버(NAVER)
+I6-3 market_event=주가 하락
+I6-3 market_event=대량 매도","I6-7 period=최근
+I6-3 period=최근
+I7-1 period=최근",네이버 외국인 대량 매도 및 주가 하락 배경,"{""intents"": [""I6-7"", ""I6-3"", ""I7-1""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""네이버(NAVER)""}, {""intent_id"": ""I6-7"", ""type"": ""investor_group"", ""value"": ""외국인""}, {""intent_id"": ""I7-1"", ""type"": ""company"", ""value"": ""네이버(NAVER)""}, {""intent_id"": ""I7-1"", ""type"": ""investor_group"", ""value"": ""외국인""}, {""intent_id"": ""I6-3"", ""type"": ""company"", ""value"": ""네이버(NAVER)""}, {""intent_id"": ""I6-3"", ""type"": ""market_event"", ""value"": ""주가 하락""}, {""intent_id"": ""I6-3"", ""type"": ""market_event"", ""value"": ""대량 매도""}], ""constraints"": [{""intent_id"": ""I6-7"", ""type"": ""period"", ""value"": ""최근""}, {""intent_id"": ""I6-3"", ""type"": ""period"", ""value"": ""최근""}, {""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""최근""}], ""subject"": ""네이버 외국인 대량 매도 및 주가 하락 배경""}",2694,509,
+5,LG에너지솔루션 전기차 수요 둔화 관련 목표 주가 하향 가능성,3,I6-8;I8-2;I5-2,"I6-8 company=LG에너지솔루션
+I5-2 theme=전기차 수요 둔화",,LG에너지솔루션 목표 주가 하향 가능성,"{""intents"": [""I6-8"", ""I8-2"", ""I5-2""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""LG에너지솔루션""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""전기차 수요 둔화""}], ""constraints"": [], ""subject"": ""LG에너지솔루션 목표 주가 하향 가능성""}",2695,406,
+6,크래프톤 신작 모멘텀 부재 상황에서 현재 주가 바닥 확인 지표,4,I7-2;I6-7;I6-8;I8-1,"I7-2 company=크래프톤
+I7-2 market_event=신작 모멘텀 부재 상황",I7-2 condition=신작 모멘텀 부재,크래프톤 주가 바닥 확인 지표,"{""intents"": [""I7-2"", ""I6-7"", ""I6-8"", ""I8-1""], ""entities"": [{""intent_id"": ""I7-2"", ""type"": ""company"", ""value"": ""크래프톤""}, {""intent_id"": ""I7-2"", ""type"": ""market_event"", ""value"": ""신작 모멘텀 부재 상황""}], ""constraints"": [{""intent_id"": ""I7-2"", ""type"": ""condition"", ""value"": ""신작 모멘텀 부재""}], ""subject"": ""크래프톤 주가 바닥 확인 지표""}",2695,574,
+7,하이브 자사주 매입 발표가 단기 주가 상승에 미치는 효과,2,I6-4;I5-1,"I6-4 company=하이브
+I6-4 corporate_event=자사주 매입
+I5-1 company=하이브
+I5-1 corporate_event=자사주 매입",I5-1 period=단기,하이브 자사주 매입 발표의 단기 주가 영향,"{""intents"": [""I6-4"", ""I5-1""], ""entities"": [{""intent_id"": ""I6-4"", ""type"": ""company"", ""value"": ""하이브""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""자사주 매입""}, {""intent_id"": ""I5-1"", ""type"": ""company"", ""value"": ""하이브""}, {""intent_id"": ""I5-1"", ""type"": ""corporate_event"", ""value"": ""자사주 매입""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""period"", ""value"": ""단기""}], ""subject"": ""하이브 자사주 매입 발표의 단기 주가 영향""}",2692,446,
+8,에스피지 K-소비재 수출 급증에 따른 3분기 매출 증가 예상치,2,I8-2;I5-2,"I8-2 company=에스피지
+I8-2 metric=3분기 매출 증가 예상치
+I5-2 theme=K-소비재 수출 급증",I8-2 period=3분기,에스피지 3분기 매출 증가 예상치,"{""intents"": [""I8-2"", ""I5-2""], ""entities"": [{""intent_id"": ""I8-2"", ""type"": ""company"", ""value"": ""에스피지""}, {""intent_id"": ""I8-2"", ""type"": ""metric"", ""value"": ""3분기 매출 증가 예상치""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""K-소비재 수출 급증""}], ""constraints"": [{""intent_id"": ""I8-2"", ""type"": ""period"", ""value"": ""3분기""}], ""subject"": ""에스피지 3분기 매출 증가 예상치""}",2697,682,
+9,일진전기 전력 인프라 수요 증가 수혜에 따른 향후 실적 전망,2,I6-8;I5-2,"I6-8 company=일진전기
+I5-2 theme=전력 인프라 수요 증가",,일진전기 향후 실적 전망,"{""intents"": [""I6-8"", ""I5-2""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""일진전기""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""전력 인프라 수요 증가""}], ""constraints"": [], ""subject"": ""일진전기 향후 실적 전망""}",2694,398,
+10,가온전선 글로벌 시장 확장에 따른 2026년 예상 매출 성장률,2,I6-6;I6-8,"I6-6 company=가온전선
+I6-6 metric=매출 성장률
+I6-8 company=가온전선
+I6-8 theme=글로벌 시장 확장","I6-6 period=2026년
+I6-8 period=2026년",가온전선 2026년 매출 성장률,"{""intents"": [""I6-6"", ""I6-8""], ""entities"": [{""intent_id"": ""I6-6"", ""type"": ""company"", ""value"": ""가온전선""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""매출 성장률""}, {""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""가온전선""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""글로벌 시장 확장""}], ""constraints"": [{""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""2026년""}, {""intent_id"": ""I6-8"", ""type"": ""period"", ""value"": ""2026년""}], ""subject"": ""가온전선 2026년 매출 성장률""}",2692,499,
+11,팬오션 1분기 실적 발표 이후 운임지수 반영 주가 전망,3,I6-8;I6-7;I6-6,"I6-8 company=팬오션
+I6-6 corporate_event=1분기 실적 발표
+I6-7 index=운임지수","I6-6 period=1분기
+I6-8 condition=운임지수 반영",팬오션 주가 전망,"{""intents"": [""I6-8"", ""I6-7"", ""I6-6""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""팬오션""}, {""intent_id"": ""I6-6"", ""type"": ""corporate_event"", ""value"": ""1분기 실적 발표""}, {""intent_id"": ""I6-7"", ""type"": ""index"", ""value"": ""운임지수""}], ""constraints"": [{""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""1분기""}, {""intent_id"": ""I6-8"", ""type"": ""condition"", ""value"": ""운임지수 반영""}], ""subject"": ""팬오션 주가 전망""}",2693,705,
+12,한화솔루션 유상증자 결정 공시 후 단기 주가 변동성 분석,2,I7-2;I6-4,"I7-2 company=한화솔루션
+I7-2 metric=단기 주가 변동성
+I6-4 company=한화솔루션
+I6-4 corporate_event=유상증자",I7-2 period=단기,한화솔루션 유상증자 공시 후 단기 주가 변동성,"{""intents"": [""I7-2"", ""I6-4""], ""entities"": [{""intent_id"": ""I7-2"", ""type"": ""company"", ""value"": ""한화솔루션""}, {""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""단기 주가 변동성""}, {""intent_id"": ""I6-4"", ""type"": ""company"", ""value"": ""한화솔루션""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""유상증자""}], ""constraints"": [{""intent_id"": ""I7-2"", ""type"": ""period"", ""value"": ""단기""}], ""subject"": ""한화솔루션 유상증자 공시 후 단기 주가 변동성""}",2694,630,

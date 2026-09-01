@@ -1,0 +1,25 @@
+﻿intent_id,대분류,소분류,설명,대표_함수
+I1-1,기본적인 금융 지식,금융 개념 및 용어,"주식/투자 일반 용어, 지표의 의미 설명",get_basic_financial_knowledge
+I1-2,기본적인 금융 지식,금융 상품 설명,"연금저축/IRP/ETF/신용대주 등 상품 자체의 구조·특징 설명",get_basic_financial_knowledge
+I2-1,규정 및 지침,세금 관련 정보,"양도세/배당소득세/세액공제 등 과세 규정",get_guide_and_policy / get_news(시행여부 등 정책 이슈)
+I2-2,규정 및 지침,법적 문제 및 규제,"금융실명제/AML 한도제한/미성년자 서류 요건 등 법규·규제",get_guide_and_policy
+I2-3,규정 및 지침,투자 가이드,"투자 시 유의사항, 권장 절차, 부가 안내",get_guide
+I3-1,사용 매뉴얼,티레이더M 사용법,"앱 화면·메뉴 경로, 조회/설정 방법",get_work_manual
+I3-2,사용 매뉴얼,투자 절차 안내,"계좌 개설/해지/재등록 등 업무 처리 절차",get_work_manual
+I4-1,기업 상장 및 IPO 관련 정보,IPO 기본 정보,"공모가/공모주식수/상장일 등 신규상장 제원",get_initial_listing
+I4-2,기업 상장 및 IPO 관련 정보,IPO 일정 및 절차,"청약·배정 일정 및 신청 방법",get_ipo_subscription_allocation / search_top_stocks_by_event(metric='IPO')
+I5-1,시장 동향 및 분석,시장 전망,"지수·시장 전반의 방향성 및 수급 흐름",get_news / get_index_price / get_index_investor_trading / get_index_shorting_period / search_top_sector_theme
+I5-2,시장 동향 및 분석,산업 동향 분석,"업종·테마(HBM, 방산, 전력인프라 등) 수요/업황 분석",get_news / get_sector / search_top_sector_theme / get_index_multiple_period
+I6-1,기업정보,기본 정보,"사명/CEO/업종/발행주식수/상장일 등",get_basis_data
+I6-2,기업정보,기업 개요,"사업 구조, 매출 구성 요약",get_basis_data
+I6-3,기업정보,뉴스,"종목 관련 뉴스·이슈(종목 특정: get_stock_news / 시장·테마 전반: get_news)",get_stock_news / get_news
+I6-4,기업정보,공시 및 주요 일정,"유상증자/자사주매입/실적발표 등 공시",get_announcement
+I6-5,기업정보,배당 정보,"배당금/배당수익률",get_financial_data
+I6-6,기업정보,재무 정보,"매출/영업이익/재무비율 등 실적 데이터",get_financial_data
+I6-7,기업정보,기업 분석,"실적 원인 분석, 사업 영향도 해석",get_financial_data / get_stock_news / get_company_evaluation
+I6-8,기업정보,기업 평가 및 전망,"향후 실적·주가 전망, 평가 점수",get_company_evaluation / get_financial_data
+I7-1,시세 정보,주가 및 거래내역,"현재가/거래량/수급(개인·외국인·기관)/공매도",get_stock_price / get_stock_investor_trading / get_stock_shorting_period
+I7-2,시세 정보,과거 시세 분석,"기간 주가 추이, 52주 고저, 변동성",get_stock_price / search_top_stock / search_top_stocks_by_event
+I8-1,평가 및 밸류에이션,멀티플 정보,"PER/PBR/ROE/배당수익률 밸류에이션",get_stock_multiple_period / get_index_multiple_period
+I8-2,평가 및 밸류에이션,컨센서스,"증권가 추정치, 목표주가",get_financial_data / get_company_evaluation
+I9-1,기타,기타 질의,"위 분류에 속하지 않는 질의(환율, 금리 등 매크로)",get_exchange / get_news

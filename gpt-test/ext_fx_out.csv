@@ -1,0 +1,17 @@
+﻿idx,input,n_goals,goals,entities,constraints,dependencies,missing_information,json,in_tok,out_tok,error
+0,지금 원달러 환율 얼마야?,1,g1 [market/query/fx/current] 원달러 환율,g1 metric=원달러 환율,,,,"{""goals"": [{""id"": ""g1"", ""target"": ""원달러 환율"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""fx"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""metric"", ""value"": ""원달러 환율""}], ""constraints"": [], ""dependencies"": [], ""missing_information"": []}",4373,309,
+1,엔화 환율 오늘 등락률 알려줘,1,g1 [market/query/fx/current] 엔화 환율,g1 metric=엔화 환율,g1 period=오늘,,,"{""goals"": [{""id"": ""g1"", ""target"": ""엔화 환율"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""fx"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""metric"", ""value"": ""엔화 환율""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""오늘""}], ""dependencies"": [], ""missing_information"": []}",4373,313,
+2,원달러 환율이 오르면 수출주에 어떤 영향이 있어?,1,g1 [market/assessment/none/forward] 원달러 환율 상승에 따른 수출주 영향,"g1 index=원달러 환율
+g1 theme=수출주",,,,"{""goals"": [{""id"": ""g1"", ""target"": ""원달러 환율 상승에 따른 수출주 영향"", ""domain"": ""market"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""index"", ""value"": ""원달러 환율""}, {""goal_id"": ""g1"", ""type"": ""theme"", ""value"": ""수출주""}], ""constraints"": [], ""dependencies"": [], ""missing_information"": []}",4380,292,
+3,환율 급등 상황에서 유리한 업종 상위 5개 알려줘,1,g1 [market/analysis/screening/forward] 환율 급등에 유리한 업종,g1 metric=환율,"g1 count=5
+g1 direction=급등
+g1 ranking=상위",,,"{""goals"": [{""id"": ""g1"", ""target"": ""환율 급등에 유리한 업종"", ""domain"": ""market"", ""type"": ""analysis"", ""facet"": ""screening"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""metric"", ""value"": ""환율""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""count"", ""value"": ""5""}, {""goal_id"": ""g1"", ""type"": ""direction"", ""value"": ""급등""}, {""goal_id"": ""g1"", ""type"": ""ranking"", ""value"": ""상위""}], ""dependencies"": [], ""missing_information"": []}",4381,784,
+4,최근 환율 흐름이 코스피에 미치는 영향 분석해줘,3,"g1 [market/analysis/fx/current] 환율 흐름
+g2 [market/analysis/price/current] 코스피 주가 흐름
+g3 [market/assessment/none/current] 환율 흐름이 코스피에 미치는 영향","g1 index=환율
+g2 index=코스피
+g3 index=환율
+g3 index=코스피","g1 period=최근
+g2 period=최근
+g3 period=최근","g1->g3 (index)
+g2->g3 (index)",,"{""goals"": [{""id"": ""g1"", ""target"": ""환율 흐름"", ""domain"": ""market"", ""type"": ""analysis"", ""facet"": ""fx"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""코스피 주가 흐름"", ""domain"": ""market"", ""type"": ""analysis"", ""facet"": ""price"", ""horizon"": ""current""}, {""id"": ""g3"", ""target"": ""환율 흐름이 코스피에 미치는 영향"", ""domain"": ""market"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""index"", ""value"": ""환율""}, {""goal_id"": ""g2"", ""type"": ""index"", ""value"": ""코스피""}, {""goal_id"": ""g3"", ""type"": ""index"", ""value"": ""환율""}, {""goal_id"": ""g3"", ""type"": ""index"", ""value"": ""코스피""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""최근""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""최근""}, {""goal_id"": ""g3"", ""type"": ""period"", ""value"": ""최근""}], ""dependencies"": [{""from"": ""g1"", ""to"": ""g3"", ""binds"": ""index""}, {""from"": ""g2"", ""to"": ""g3"", ""binds"": ""index""}], ""missing_information"": []}",4379,692,

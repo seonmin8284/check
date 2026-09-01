@@ -1,0 +1,30 @@
+﻿idx,input,n_goals,goals,intents,entities,constraints,dependencies,missing_information,json,in_tok,out_tok,error
+0,삼성전자 최근 5년 배당금이랑 배당수익률 추이 보여줘,2,"g1 [issuer/query/fundamentals/past] 삼성전자 최근 5년 배당금
+g2 [issuer/query/valuation/past] 삼성전자 최근 5년 배당수익률 추이","g1 I6-5
+g2 I6-5","g1 company=삼성전자
+g2 company=삼성전자","g1 period=최근 5년
+g2 period=최근 5년",,,"{""goals"": [{""id"": ""g1"", ""target"": ""삼성전자 최근 5년 배당금"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""fundamentals"", ""intent"": ""I6-5"", ""horizon"": ""past""}, {""id"": ""g2"", ""target"": ""삼성전자 최근 5년 배당수익률 추이"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""valuation"", ""intent"": ""I6-5"", ""horizon"": ""past""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""삼성전자""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""삼성전자""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""최근 5년""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""최근 5년""}], ""dependencies"": [], ""missing_information"": []}",6946,744,
+1,KT&G 배당기준일이랑 배당락일 언제야?,2,"g1 [issuer/query/disclosure/current] KT&G 배당기준일
+g2 [issuer/query/disclosure/current] KT&G 배당락일","g1 I6-4
+g2 I6-4","g1 company=KT&G
+g1 corporate_event=배당기준일
+g2 company=KT&G
+g2 corporate_event=배당락일",,,,"{""goals"": [{""id"": ""g1"", ""target"": ""KT&G 배당기준일"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""disclosure"", ""intent"": ""I6-4"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""KT&G 배당락일"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""disclosure"", ""intent"": ""I6-4"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""KT&G""}, {""goal_id"": ""g1"", ""type"": ""corporate_event"", ""value"": ""배당기준일""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""KT&G""}, {""goal_id"": ""g2"", ""type"": ""corporate_event"", ""value"": ""배당락일""}], ""constraints"": [], ""dependencies"": [], ""missing_information"": []}",6941,605,
+2,코스피에서 배당수익률 높은 종목 10개 뽑아줘,1,g1 [market/query/screening/current] 코스피 배당수익률 상위 10종목,g1 I5-1,"g1 market=코스피
+g1 metric=배당수익률","g1 count=10
+g1 ranking=상위",,,"{""goals"": [{""id"": ""g1"", ""target"": ""코스피 배당수익률 상위 10종목"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""screening"", ""intent"": ""I5-1"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""market"", ""value"": ""코스피""}, {""goal_id"": ""g1"", ""type"": ""metric"", ""value"": ""배당수익률""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""count"", ""value"": ""10""}, {""goal_id"": ""g1"", ""type"": ""ranking"", ""value"": ""상위""}], ""dependencies"": [], ""missing_information"": []}",6945,632,
+3,고배당주 투자할 때 유의할 점 알려줘,1,g1 [finance_legal/recommendation/howto/current] 고배당주 투자 시 유의점,g1 I2-3,,,,,"{""goals"": [{""id"": ""g1"", ""target"": ""고배당주 투자 시 유의점"", ""domain"": ""finance_legal"", ""type"": ""recommendation"", ""facet"": ""howto"", ""intent"": ""I2-3"", ""horizon"": ""current""}], ""entities"": [], ""constraints"": [], ""dependencies"": [], ""missing_information"": []}",6938,419,
+4,현대차 배당성향이 업종 평균 대비 높은 편이야?,3,"g1 [issuer/query/fundamentals/current] 현대차 배당성향
+g2 [issuer/assessment/none/current] 현대차 배당성향의 업종 평균 대비 수준 판단
+g3 [market/query/fundamentals/current] 업종 평균 배당성향","g1 I6-5
+g2 I6-8
+g3 I5-2","g1 company=현대차
+g2 company=현대차
+g3 sector=업종 평균",,"g1->g2 (metric)
+g3->g2 (metric)",,"{""goals"": [{""id"": ""g1"", ""target"": ""현대차 배당성향"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""fundamentals"", ""intent"": ""I6-5"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""현대차 배당성향의 업종 평균 대비 수준 판단"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""intent"": ""I6-8"", ""horizon"": ""current""}, {""id"": ""g3"", ""target"": ""업종 평균 배당성향"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""fundamentals"", ""intent"": ""I5-2"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""현대차""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""현대차""}, {""goal_id"": ""g3"", ""type"": ""sector"", ""value"": ""업종 평균""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""metric""}, {""from"": ""g3"", ""to"": ""g2"", ""binds"": ""metric""}], ""missing_information"": []}",6942,1092,
+5,올해 배당 확대 발표한 기업들 뉴스 정리해줘,2,"g1 [market/query/screening/current] 배당 확대 발표한 기업 목록
+g2 [market/analysis/news/current] 해당 기업들 뉴스 정리","g1 I5-2
+g2 I5-2",,"g1 period=올해
+g1 condition=배당 확대 발표한 기업들
+g2 period=올해
+g2 condition=배당 확대 발표한 기업들",g1->g2 (context),,"{""goals"": [{""id"": ""g1"", ""target"": ""배당 확대 발표한 기업 목록"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""screening"", ""intent"": ""I5-2"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""해당 기업들 뉴스 정리"", ""domain"": ""market"", ""type"": ""analysis"", ""facet"": ""news"", ""intent"": ""I5-2"", ""horizon"": ""current""}], ""entities"": [], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""올해""}, {""goal_id"": ""g1"", ""type"": ""condition"", ""value"": ""배당 확대 발표한 기업들""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""올해""}, {""goal_id"": ""g2"", ""type"": ""condition"", ""value"": ""배당 확대 발표한 기업들""}], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""context""}], ""missing_information"": []}",6939,623,

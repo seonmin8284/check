@@ -1,0 +1,89 @@
+﻿idx,input,n_goals,goals,entities,constraints,dependencies,missing_information,json,in_tok,out_tok,error
+0,삼성전자 HBM 납품 실적 영향도 전망,2,"g1 [issuer/query/fundamentals/current] HBM 납품 실적
+g2 [issuer/assessment/none/forward] 삼성전자 HBM 납품에 따른 실적 영향도","g1 company=삼성전자
+g1 metric=HBM 납품 실적
+g2 company=삼성전자
+g2 metric=HBM 납품 실적",,g1->g2 (metric),,"{""goals"": [{""id"": ""g1"", ""target"": ""HBM 납품 실적"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""fundamentals"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""삼성전자 HBM 납품에 따른 실적 영향도"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""삼성전자""}, {""goal_id"": ""g1"", ""type"": ""metric"", ""value"": ""HBM 납품 실적""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""삼성전자""}, {""goal_id"": ""g2"", ""type"": ""metric"", ""value"": ""HBM 납품 실적""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""metric""}], ""missing_information"": []}",4376,785,
+1,SK하이닉스 최근분기 HBM 수요 증가에 따른 예상 영업이익 추정치,2,"g1 [market/analysis/news/current] HBM 수요 증가 현황
+g2 [issuer/assessment/estimate/forward] SK하이닉스 예상 영업이익 추정치","g1 theme=HBM
+g2 company=SK하이닉스
+g2 metric=영업이익
+g2 theme=HBM","g1 period=최근분기
+g2 period=최근분기",g1->g2 (theme),,"{""goals"": [{""id"": ""g1"", ""target"": ""HBM 수요 증가 현황"", ""domain"": ""market"", ""type"": ""analysis"", ""facet"": ""news"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""SK하이닉스 예상 영업이익 추정치"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""estimate"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""theme"", ""value"": ""HBM""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""SK하이닉스""}, {""goal_id"": ""g2"", ""type"": ""metric"", ""value"": ""영업이익""}, {""goal_id"": ""g2"", ""type"": ""theme"", ""value"": ""HBM""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""최근분기""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""최근분기""}], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""theme""}], ""missing_information"": []}",4386,805,
+2,현대차 피지컬 AI 및 로봇 사업 진출에 따른 향후 주가 전망,2,"g1 [issuer/query/news/current] 현대차 피지컬 AI 및 로봇 사업 진출 현황
+g2 [issuer/assessment/none/forward] 향후 주가 전망","g1 company=현대차
+g1 theme=피지컬 AI
+g1 theme=로봇 사업
+g2 company=현대차",,g1->g2 (context),,"{""goals"": [{""id"": ""g1"", ""target"": ""현대차 피지컬 AI 및 로봇 사업 진출 현황"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""news"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""향후 주가 전망"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""현대차""}, {""goal_id"": ""g1"", ""type"": ""theme"", ""value"": ""피지컬 AI""}, {""goal_id"": ""g1"", ""type"": ""theme"", ""value"": ""로봇 사업""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""현대차""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""context""}], ""missing_information"": []}",4384,541,
+3,한화에어로스페이스 방산 수주 확대에 따른 2026년 실적 전망,3,"g1 [issuer/assessment/none/forward] 한화에어로스페이스 2026년 실적 전망
+g2 [issuer/query/estimate/forward] 한화에어로스페이스 2026년 실적 추정치(컨센서스)
+g3 [issuer/query/news/current] 한화에어로스페이스 방산 수주 현황","g1 company=한화에어로스페이스
+g2 company=한화에어로스페이스
+g3 company=한화에어로스페이스
+g3 corporate_event=방산 수주 확대","g1 period=2026년
+g1 condition=방산 수주 확대에 따른
+g2 period=2026년","g2->g1 (estimate)
+g3->g1 (corporate_event)",,"{""goals"": [{""id"": ""g1"", ""target"": ""한화에어로스페이스 2026년 실적 전망"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}, {""id"": ""g2"", ""target"": ""한화에어로스페이스 2026년 실적 추정치(컨센서스)"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""estimate"", ""horizon"": ""forward""}, {""id"": ""g3"", ""target"": ""한화에어로스페이스 방산 수주 현황"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""news"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""한화에어로스페이스""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""한화에어로스페이스""}, {""goal_id"": ""g3"", ""type"": ""company"", ""value"": ""한화에어로스페이스""}, {""goal_id"": ""g3"", ""type"": ""corporate_event"", ""value"": ""방산 수주 확대""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""2026년""}, {""goal_id"": ""g1"", ""type"": ""condition"", ""value"": ""방산 수주 확대에 따른""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""2026년""}], ""dependencies"": [{""from"": ""g2"", ""to"": ""g1"", ""binds"": ""estimate""}, {""from"": ""g3"", ""to"": ""g1"", ""binds"": ""corporate_event""}], ""missing_information"": []}",4385,991,
+4,네이버(NAVER) 최근 외국인 대량 매도 및 주가 하락 배경 분석,3,"g1 [issuer/analysis/flow/past] 네이버 외국인 매도 동향
+g2 [issuer/analysis/price/past] 네이버 주가 하락 추이
+g3 [issuer/assessment/none/past] 외국인 대량 매도 및 주가 하락 배경","g1 company=네이버(NAVER)
+g1 investor_group=외국인
+g2 company=네이버(NAVER)
+g3 company=네이버(NAVER)","g1 period=최근
+g2 period=최근
+g3 period=최근","g1->g3 (flow)
+g2->g3 (price)",,"{""goals"": [{""id"": ""g1"", ""target"": ""네이버 외국인 매도 동향"", ""domain"": ""issuer"", ""type"": ""analysis"", ""facet"": ""flow"", ""horizon"": ""past""}, {""id"": ""g2"", ""target"": ""네이버 주가 하락 추이"", ""domain"": ""issuer"", ""type"": ""analysis"", ""facet"": ""price"", ""horizon"": ""past""}, {""id"": ""g3"", ""target"": ""외국인 대량 매도 및 주가 하락 배경"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""past""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""네이버(NAVER)""}, {""goal_id"": ""g1"", ""type"": ""investor_group"", ""value"": ""외국인""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""네이버(NAVER)""}, {""goal_id"": ""g3"", ""type"": ""company"", ""value"": ""네이버(NAVER)""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""최근""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""최근""}, {""goal_id"": ""g3"", ""type"": ""period"", ""value"": ""최근""}], ""dependencies"": [{""from"": ""g1"", ""to"": ""g3"", ""binds"": ""flow""}, {""from"": ""g2"", ""to"": ""g3"", ""binds"": ""price""}], ""missing_information"": []}",4384,587,
+5,LG에너지솔루션 전기차 수요 둔화 관련 목표 주가 하향 가능성,3,"g1 [market/query/news/current] 전기차 수요 둔화 현황
+g2 [issuer/query/target_price/current] LG에너지솔루션 현재 목표주가·리서치 동향
+g3 [issuer/assessment/none/forward] 전기차 수요 둔화에 따른 목표주가 하향 가능성","g1 market_event=전기차 수요 둔화
+g2 company=LG에너지솔루션
+g3 company=LG에너지솔루션",,"g1->g3 (context)
+g2->g3 (target_price)",,"{""goals"": [{""id"": ""g1"", ""target"": ""전기차 수요 둔화 현황"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""news"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""LG에너지솔루션 현재 목표주가·리서치 동향"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""target_price"", ""horizon"": ""current""}, {""id"": ""g3"", ""target"": ""전기차 수요 둔화에 따른 목표주가 하향 가능성"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""market_event"", ""value"": ""전기차 수요 둔화""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""LG에너지솔루션""}, {""goal_id"": ""g3"", ""type"": ""company"", ""value"": ""LG에너지솔루션""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g3"", ""binds"": ""context""}, {""from"": ""g2"", ""to"": ""g3"", ""binds"": ""target_price""}], ""missing_information"": []}",4385,563,
+6,크래프톤 신작 모멘텀 부재 상황에서 현재 주가 바닥 확인 지표,1,g1 [issuer/recommendation/none/current] 크래프톤 주가 바닥 확인 지표,"g1 company=크래프톤
+g1 theme=신작 모멘텀 부재 상황","g1 period=현재
+g1 condition=신작 모멘텀 부재 상황",,,"{""goals"": [{""id"": ""g1"", ""target"": ""크래프톤 주가 바닥 확인 지표"", ""domain"": ""issuer"", ""type"": ""recommendation"", ""facet"": ""none"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""크래프톤""}, {""goal_id"": ""g1"", ""type"": ""theme"", ""value"": ""신작 모멘텀 부재 상황""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""현재""}, {""goal_id"": ""g1"", ""type"": ""condition"", ""value"": ""신작 모멘텀 부재 상황""}], ""dependencies"": [], ""missing_information"": []}",4385,548,
+7,하이브 자사주 매입 발표가 단기 주가 상승에 미치는 효과,3,"g1 [issuer/query/disclosure/current] 하이브 자사주 매입 발표 내용
+g2 [issuer/analysis/price/current] 하이브 단기 주가 흐름
+g3 [issuer/assessment/none/forward] 자사주 매입 발표가 단기 주가 상승에 미치는 효과","g1 company=하이브
+g1 corporate_event=자사주 매입 발표
+g2 company=하이브
+g3 company=하이브
+g3 corporate_event=자사주 매입 발표",,"g1->g3 (disclosure)
+g2->g3 (price)",,"{""goals"": [{""id"": ""g1"", ""target"": ""하이브 자사주 매입 발표 내용"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""disclosure"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""하이브 단기 주가 흐름"", ""domain"": ""issuer"", ""type"": ""analysis"", ""facet"": ""price"", ""horizon"": ""current""}, {""id"": ""g3"", ""target"": ""자사주 매입 발표가 단기 주가 상승에 미치는 효과"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""하이브""}, {""goal_id"": ""g1"", ""type"": ""corporate_event"", ""value"": ""자사주 매입 발표""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""하이브""}, {""goal_id"": ""g3"", ""type"": ""company"", ""value"": ""하이브""}, {""goal_id"": ""g3"", ""type"": ""corporate_event"", ""value"": ""자사주 매입 발표""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g3"", ""binds"": ""disclosure""}, {""from"": ""g2"", ""to"": ""g3"", ""binds"": ""price""}], ""missing_information"": []}",4382,728,
+8,에스피지 K-소비재 수출 급증에 따른 3분기 매출 증가 예상치,3,"g1 [issuer/explanation/estimate/forward] 에스피지 3분기 매출 추정치
+g2 [market/query/news/current] K-소비재 수출 급증 동향
+g3 [issuer/assessment/none/forward] 에스피지의 수출 급증에 따른 3분기 매출 증가 여부 및 규모","g1 company=에스피지
+g1 metric=매출
+g1 procedure=3분기
+g2 theme=K-소비재
+g2 market_event=수출 급증
+g3 company=에스피지
+g3 metric=매출
+g3 procedure=3분기","g1 period=3분기
+g3 period=3분기
+g2 direction=급증","g1->g3 (company)
+g2->g3 (context)",,"{""goals"": [{""id"": ""g1"", ""target"": ""에스피지 3분기 매출 추정치"", ""domain"": ""issuer"", ""type"": ""explanation"", ""facet"": ""estimate"", ""horizon"": ""forward""}, {""id"": ""g2"", ""target"": ""K-소비재 수출 급증 동향"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""news"", ""horizon"": ""current""}, {""id"": ""g3"", ""target"": ""에스피지의 수출 급증에 따른 3분기 매출 증가 여부 및 규모"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""에스피지""}, {""goal_id"": ""g1"", ""type"": ""metric"", ""value"": ""매출""}, {""goal_id"": ""g1"", ""type"": ""procedure"", ""value"": ""3분기""}, {""goal_id"": ""g2"", ""type"": ""theme"", ""value"": ""K-소비재""}, {""goal_id"": ""g2"", ""type"": ""market_event"", ""value"": ""수출 급증""}, {""goal_id"": ""g3"", ""type"": ""company"", ""value"": ""에스피지""}, {""goal_id"": ""g3"", ""type"": ""metric"", ""value"": ""매출""}, {""goal_id"": ""g3"", ""type"": ""procedure"", ""value"": ""3분기""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""3분기""}, {""goal_id"": ""g3"", ""type"": ""period"", ""value"": ""3분기""}, {""goal_id"": ""g2"", ""type"": ""direction"", ""value"": ""급증""}], ""dependencies"": [{""from"": ""g1"", ""to"": ""g3"", ""binds"": ""company""}, {""from"": ""g2"", ""to"": ""g3"", ""binds"": ""context""}], ""missing_information"": []}",4387,842,
+9,일진전기 전력 인프라 수요 증가 수혜에 따른 향후 실적 전망,3,"g1 [market/analysis/news/current] 전력 인프라 수요 증가 동향
+g2 [issuer/analysis/fundamentals/current] 일진전기 현재 실적 및 재무 상태
+g3 [issuer/assessment/none/forward] 일진전기 향후 실적 전망","g2 company=일진전기
+g1 theme=전력 인프라 수요 증가",,"g1->g3 (theme)
+g2->g3 (company)",,"{""goals"": [{""id"": ""g1"", ""target"": ""전력 인프라 수요 증가 동향"", ""domain"": ""market"", ""type"": ""analysis"", ""facet"": ""news"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""일진전기 현재 실적 및 재무 상태"", ""domain"": ""issuer"", ""type"": ""analysis"", ""facet"": ""fundamentals"", ""horizon"": ""current""}, {""id"": ""g3"", ""target"": ""일진전기 향후 실적 전망"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""일진전기""}, {""goal_id"": ""g1"", ""type"": ""theme"", ""value"": ""전력 인프라 수요 증가""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g3"", ""binds"": ""theme""}, {""from"": ""g2"", ""to"": ""g3"", ""binds"": ""company""}], ""missing_information"": []}",4384,636,
+10,가온전선 글로벌 시장 확장에 따른 2026년 예상 매출 성장률,3,"g1 [issuer/query/news/current] 가온전선 글로벌 시장 확장 내용
+g2 [issuer/assessment/none/forward] 2026년 매출 성장률(가온전선)
+g3 [issuer/query/estimate/forward] 가온전선 2026년 매출 컨센서스·예상치","g1 company=가온전선
+g1 corporate_event=글로벌 시장 확장
+g2 company=가온전선
+g3 company=가온전선","g2 period=2026년
+g3 period=2026년","g1->g2 (context)
+g3->g2 (estimate)",,"{""goals"": [{""id"": ""g1"", ""target"": ""가온전선 글로벌 시장 확장 내용"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""news"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""2026년 매출 성장률(가온전선)"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}, {""id"": ""g3"", ""target"": ""가온전선 2026년 매출 컨센서스·예상치"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""estimate"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""가온전선""}, {""goal_id"": ""g1"", ""type"": ""corporate_event"", ""value"": ""글로벌 시장 확장""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""가온전선""}, {""goal_id"": ""g3"", ""type"": ""company"", ""value"": ""가온전선""}], ""constraints"": [{""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""2026년""}, {""goal_id"": ""g3"", ""type"": ""period"", ""value"": ""2026년""}], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""context""}, {""from"": ""g3"", ""to"": ""g2"", ""binds"": ""estimate""}], ""missing_information"": []}",4382,1023,
+11,팬오션 1분기 실적 발표 이후 운임지수 반영 주가 전망,3,"g1 [issuer/query/fundamentals/past] 팬오션 1분기 실적
+g2 [market/analysis/price/current] 운임지수 동향
+g3 [issuer/assessment/none/forward] 운임지수 반영한 팬오션 주가 전망","g1 company=팬오션
+g2 index=운임지수
+g3 company=팬오션
+g3 index=운임지수",,"g1->g3 (fundamentals)
+g2->g3 (index)",,"{""goals"": [{""id"": ""g1"", ""target"": ""팬오션 1분기 실적"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""fundamentals"", ""horizon"": ""past""}, {""id"": ""g2"", ""target"": ""운임지수 동향"", ""domain"": ""market"", ""type"": ""analysis"", ""facet"": ""price"", ""horizon"": ""current""}, {""id"": ""g3"", ""target"": ""운임지수 반영한 팬오션 주가 전망"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""horizon"": ""forward""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""팬오션""}, {""goal_id"": ""g2"", ""type"": ""index"", ""value"": ""운임지수""}, {""goal_id"": ""g3"", ""type"": ""company"", ""value"": ""팬오션""}, {""goal_id"": ""g3"", ""type"": ""index"", ""value"": ""운임지수""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g3"", ""binds"": ""fundamentals""}, {""from"": ""g2"", ""to"": ""g3"", ""binds"": ""index""}], ""missing_information"": []}",4383,595,
+12,한화솔루션 유상증자 결정 공시 후 단기 주가 변동성 분석,2,"g1 [issuer/analysis/price/past] 한화솔루션 주가
+g2 [issuer/query/disclosure/past] 유상증자 결정 공시","g1 company=한화솔루션
+g2 company=한화솔루션
+g2 corporate_event=유상증자 결정 공시",g1 period=단기,g2->g1 (corporate_event),"단기 기간의 정의(예: 며칠, 몇 주)","{""goals"": [{""id"": ""g1"", ""target"": ""한화솔루션 주가"", ""domain"": ""issuer"", ""type"": ""analysis"", ""facet"": ""price"", ""horizon"": ""past""}, {""id"": ""g2"", ""target"": ""유상증자 결정 공시"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""disclosure"", ""horizon"": ""past""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""한화솔루션""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""한화솔루션""}, {""goal_id"": ""g2"", ""type"": ""corporate_event"", ""value"": ""유상증자 결정 공시""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""단기""}], ""dependencies"": [{""from"": ""g2"", ""to"": ""g1"", ""binds"": ""corporate_event""}], ""missing_information"": [""단기 기간의 정의(예: 며칠, 몇 주)""]}",4384,720,

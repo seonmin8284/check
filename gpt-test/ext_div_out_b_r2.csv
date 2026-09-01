@@ -1,0 +1,24 @@
+﻿idx,input,n_goals,goals,intents,entities,constraints,dependencies,missing_information,json,in_tok,out_tok,error
+0,삼성전자 최근 5년 배당금이랑 배당수익률 추이 보여줘,2,"g1 [issuer/analysis/fundamentals/past] 삼성전자 배당금 추이 (최근 5년)
+g2 [issuer/analysis/valuation/past] 삼성전자 배당수익률 추이 (최근 5년)","g1 I6-5
+g2 I6-5","g1 company=삼성전자
+g2 company=삼성전자","g1 period=최근 5년
+g2 period=최근 5년",,,"{""goals"": [{""id"": ""g1"", ""target"": ""삼성전자 배당금 추이 (최근 5년)"", ""domain"": ""issuer"", ""type"": ""analysis"", ""facet"": ""fundamentals"", ""intent"": ""I6-5"", ""horizon"": ""past""}, {""id"": ""g2"", ""target"": ""삼성전자 배당수익률 추이 (최근 5년)"", ""domain"": ""issuer"", ""type"": ""analysis"", ""facet"": ""valuation"", ""intent"": ""I6-5"", ""horizon"": ""past""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""삼성전자""}, {""goal_id"": ""g2"", ""type"": ""company"", ""value"": ""삼성전자""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""최근 5년""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""최근 5년""}], ""dependencies"": [], ""missing_information"": []}",6946,814,
+1,KT&G 배당기준일이랑 배당락일 언제야?,1,g1 [issuer/query/disclosure/current] KT&G 배당기준일 및 배당락일,g1 I6-4,g1 company=KT&G,,,,"{""goals"": [{""id"": ""g1"", ""target"": ""KT&G 배당기준일 및 배당락일"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""disclosure"", ""intent"": ""I6-4"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""KT&G""}], ""constraints"": [], ""dependencies"": [], ""missing_information"": []}",6941,328,
+2,코스피에서 배당수익률 높은 종목 10개 뽑아줘,1,g1 [market/analysis/screening/current] 코스피에서 배당수익률 높은 종목 10개,g1 I9-1,g1 market=코스피,"g1 scope=코스피
+g1 count=10
+g1 ranking=상위",,,"{""goals"": [{""id"": ""g1"", ""target"": ""코스피에서 배당수익률 높은 종목 10개"", ""domain"": ""market"", ""type"": ""analysis"", ""facet"": ""screening"", ""intent"": ""I9-1"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""market"", ""value"": ""코스피""}], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""scope"", ""value"": ""코스피""}, {""goal_id"": ""g1"", ""type"": ""count"", ""value"": ""10""}, {""goal_id"": ""g1"", ""type"": ""ranking"", ""value"": ""상위""}], ""dependencies"": [], ""missing_information"": []}",6945,533,
+3,고배당주 투자할 때 유의할 점 알려줘,1,g1 [finance_legal/recommendation/none/current] 고배당주 투자 시 유의사항,g1 I2-3,,,,,"{""goals"": [{""id"": ""g1"", ""target"": ""고배당주 투자 시 유의사항"", ""domain"": ""finance_legal"", ""type"": ""recommendation"", ""facet"": ""none"", ""intent"": ""I2-3"", ""horizon"": ""current""}], ""entities"": [], ""constraints"": [], ""dependencies"": [], ""missing_information"": []}",6938,482,
+4,현대차 배당성향이 업종 평균 대비 높은 편이야?,3,"g1 [issuer/query/fundamentals/current] 현대차 배당성향
+g2 [market/query/fundamentals/current] 업종 평균 배당성향
+g3 [issuer/assessment/none/current] 현대차 배당성향이 업종 평균 대비 높은지 여부","g1 I6-5
+g2 I5-2
+g3 I6-8","g1 company=현대차
+g1 metric=배당성향
+g2 sector=업종
+g2 metric=배당성향",,"g1->g3 (metric)
+g2->g3 (metric)",,"{""goals"": [{""id"": ""g1"", ""target"": ""현대차 배당성향"", ""domain"": ""issuer"", ""type"": ""query"", ""facet"": ""fundamentals"", ""intent"": ""I6-5"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""업종 평균 배당성향"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""fundamentals"", ""intent"": ""I5-2"", ""horizon"": ""current""}, {""id"": ""g3"", ""target"": ""현대차 배당성향이 업종 평균 대비 높은지 여부"", ""domain"": ""issuer"", ""type"": ""assessment"", ""facet"": ""none"", ""intent"": ""I6-8"", ""horizon"": ""current""}], ""entities"": [{""goal_id"": ""g1"", ""type"": ""company"", ""value"": ""현대차""}, {""goal_id"": ""g1"", ""type"": ""metric"", ""value"": ""배당성향""}, {""goal_id"": ""g2"", ""type"": ""sector"", ""value"": ""업종""}, {""goal_id"": ""g2"", ""type"": ""metric"", ""value"": ""배당성향""}], ""constraints"": [], ""dependencies"": [{""from"": ""g1"", ""to"": ""g3"", ""binds"": ""metric""}, {""from"": ""g2"", ""to"": ""g3"", ""binds"": ""metric""}], ""missing_information"": []}",6942,1207,
+5,올해 배당 확대 발표한 기업들 뉴스 정리해줘,2,"g1 [market/query/screening/current] 올해 배당 확대 발표한 기업들
+g2 [market/analysis/news/current] 해당 기업들 관련 뉴스 요약","g1 I5-2
+g2 I5-2",,"g1 period=올해
+g2 period=올해",g1->g2 (company),,"{""goals"": [{""id"": ""g1"", ""target"": ""올해 배당 확대 발표한 기업들"", ""domain"": ""market"", ""type"": ""query"", ""facet"": ""screening"", ""intent"": ""I5-2"", ""horizon"": ""current""}, {""id"": ""g2"", ""target"": ""해당 기업들 관련 뉴스 요약"", ""domain"": ""market"", ""type"": ""analysis"", ""facet"": ""news"", ""intent"": ""I5-2"", ""horizon"": ""current""}], ""entities"": [], ""constraints"": [{""goal_id"": ""g1"", ""type"": ""period"", ""value"": ""올해""}, {""goal_id"": ""g2"", ""type"": ""period"", ""value"": ""올해""}], ""dependencies"": [{""from"": ""g1"", ""to"": ""g2"", ""binds"": ""company""}], ""missing_information"": []}",6939,874,

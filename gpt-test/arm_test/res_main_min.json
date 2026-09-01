@@ -1,0 +1,4158 @@
+{
+  "summaries": [
+    {
+      "arm": "A",
+      "n": 53,
+      "api_errors": 0,
+      "intent_acc": 1.0,
+      "result_acc": 0.9811320754716981,
+      "lat_mean": 2.356569028300791,
+      "lat_p50": 1.5608920000086073,
+      "lat_p95": 8.493054400023539,
+      "in_tok": 1360.4150943396226,
+      "out_tok": 54.56603773584906
+    },
+    {
+      "arm": "B",
+      "n": 53,
+      "api_errors": 3,
+      "intent_acc": 0.9811320754716981,
+      "result_acc": 0.5283018867924528,
+      "lat_mean": 2.239050762000261,
+      "lat_p50": 1.4949224000156391,
+      "lat_p95": 6.603441800019937,
+      "in_tok": 2770.4,
+      "out_tok": 51.84
+    }
+  ],
+  "records": [
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "4, 8, 15, 16, 23, 42 평균 알려줘",
+      "gold_intent": "mean",
+      "pred_intent": "mean",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5167438999924343,
+      "api_s": 1.5166432999831159,
+      "input_tokens": 1366,
+      "output_tokens": 61,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 18,
+      "pred_result": 18,
+      "detail": {
+        "slots": {
+          "numbers": [
+            4,
+            8,
+            15,
+            16,
+            23,
+            42
+          ]
+        },
+        "trace": [
+          "mean_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "4, 8, 15, 16, 23, 42 평균 알려줘",
+      "gold_intent": "mean",
+      "pred_intent": "mean",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.324302599998191,
+      "api_s": 1.3242934000154492,
+      "input_tokens": 2776,
+      "output_tokens": 35,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 18,
+      "pred_result": 14.6667,
+      "detail": {
+        "raw": "14.6667"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "4, 8, 15, 16, 23, 42 다 더하면?",
+      "gold_intent": "sum",
+      "pred_intent": "sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5608920000086073,
+      "api_s": 1.5608508000150323,
+      "input_tokens": 1367,
+      "output_tokens": 61,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 108,
+      "pred_result": 108,
+      "detail": {
+        "slots": {
+          "numbers": [
+            4,
+            8,
+            15,
+            16,
+            23,
+            42
+          ]
+        },
+        "trace": [
+          "sum_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "4, 8, 15, 16, 23, 42 다 더하면?",
+      "gold_intent": "sum",
+      "pred_intent": "sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.498717000009492,
+      "api_s": 1.498700900003314,
+      "input_tokens": 2777,
+      "output_tokens": 32,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 108,
+      "pred_result": 108,
+      "detail": {
+        "raw": "108"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "4, 8, 15, 16, 23, 42 의 중앙값",
+      "gold_intent": "median",
+      "pred_intent": "median",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.7802097999956459,
+      "api_s": 1.7801628000161145,
+      "input_tokens": 1366,
+      "output_tokens": 61,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 15.5,
+      "pred_result": 15.5,
+      "detail": {
+        "slots": {
+          "numbers": [
+            4,
+            8,
+            15,
+            16,
+            23,
+            42
+          ]
+        },
+        "trace": [
+          "median_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "4, 8, 15, 16, 23, 42 의 중앙값",
+      "gold_intent": "median",
+      "pred_intent": "median",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.241855600004783,
+      "api_s": 1.2418415000138339,
+      "input_tokens": 2776,
+      "output_tokens": 34,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 15.5,
+      "pred_result": 14.5,
+      "detail": {
+        "raw": "14.5"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "4, 8, 15, 16, 23, 42 중 제일 큰 수",
+      "gold_intent": "max",
+      "pred_intent": "max",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 8.493054400023539,
+      "api_s": 8.493011700018542,
+      "input_tokens": 1368,
+      "output_tokens": 61,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 42,
+      "pred_result": 42,
+      "detail": {
+        "slots": {
+          "numbers": [
+            4,
+            8,
+            15,
+            16,
+            23,
+            42
+          ]
+        },
+        "trace": [
+          "max_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "4, 8, 15, 16, 23, 42 중 제일 큰 수",
+      "gold_intent": "max",
+      "pred_intent": "max",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.2245501999859698,
+      "api_s": 1.224535699991975,
+      "input_tokens": 2778,
+      "output_tokens": 32,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 42,
+      "pred_result": 42,
+      "detail": {
+        "raw": "42"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "4, 8, 15, 16, 23, 42 중 제일 작은 수",
+      "gold_intent": "min",
+      "pred_intent": "min",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5830468999920413,
+      "api_s": 1.583006699976977,
+      "input_tokens": 1368,
+      "output_tokens": 61,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 4,
+      "pred_result": 4,
+      "detail": {
+        "slots": {
+          "numbers": [
+            4,
+            8,
+            15,
+            16,
+            23,
+            42
+          ]
+        },
+        "trace": [
+          "min_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "4, 8, 15, 16, 23, 42 중 제일 작은 수",
+      "gold_intent": "min",
+      "pred_intent": "min",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 8.172617200005334,
+      "api_s": 8.172601900005247,
+      "input_tokens": 2778,
+      "output_tokens": 32,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 4,
+      "pred_result": 4,
+      "detail": {
+        "raw": "4"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "4, 8, 15, 16, 23, 42 몇 개야?",
+      "gold_intent": "count",
+      "pred_intent": "count",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.7284301999898162,
+      "api_s": 1.7284067000146024,
+      "input_tokens": 1367,
+      "output_tokens": 61,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 6,
+      "pred_result": 6,
+      "detail": {
+        "slots": {
+          "numbers": [
+            4,
+            8,
+            15,
+            16,
+            23,
+            42
+          ]
+        },
+        "trace": [
+          "count_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "4, 8, 15, 16, 23, 42 몇 개야?",
+      "gold_intent": "count",
+      "pred_intent": "count",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.2658685000205878,
+      "api_s": 1.2658576000249013,
+      "input_tokens": 2777,
+      "output_tokens": 32,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 6,
+      "pred_result": 6,
+      "detail": {
+        "raw": "6"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "4, 8, 15, 16, 23, 42 표준편차랑 분산",
+      "gold_intent": "spread",
+      "pred_intent": "spread",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.522239800018724,
+      "api_s": 1.522066100005759,
+      "input_tokens": 1370,
+      "output_tokens": 61,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": {
+        "range": 38,
+        "stdev": 13.4907,
+        "variance": 182
+      },
+      "pred_result": {
+        "range": 38,
+        "stdev": 13.4907,
+        "variance": 182
+      },
+      "detail": {
+        "slots": {
+          "numbers": [
+            4,
+            8,
+            15,
+            16,
+            23,
+            42
+          ]
+        },
+        "trace": [
+          "spread_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "4, 8, 15, 16, 23, 42 표준편차랑 분산",
+      "gold_intent": "spread",
+      "pred_intent": "spread",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.495320099988021,
+      "api_s": 1.4952996999782044,
+      "input_tokens": 2780,
+      "output_tokens": 51,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": {
+        "range": 38,
+        "stdev": 13.4907,
+        "variance": 182
+      },
+      "pred_result": {
+        "range": 29,
+        "stdev": 16.7766,
+        "variance": 281.4667
+      },
+      "detail": {
+        "raw": "{\"range\":29,\"variance\":281.4667,\"stdev\":16.7766}"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "3, 7, 3, 2, 7, 9 에서 중복 빼줘",
+      "gold_intent": "unique",
+      "pred_intent": "unique",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5897356000205036,
+      "api_s": 1.589693999994779,
+      "input_tokens": 1370,
+      "output_tokens": 61,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        3,
+        7,
+        2,
+        9
+      ],
+      "pred_result": [
+        3,
+        7,
+        2,
+        9
+      ],
+      "detail": {
+        "slots": {
+          "numbers": [
+            3,
+            7,
+            3,
+            2,
+            7,
+            9
+          ]
+        },
+        "trace": [
+          "unique_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "3, 7, 3, 2, 7, 9 에서 중복 빼줘",
+      "gold_intent": "unique",
+      "pred_intent": "unique",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.4740011999965645,
+      "api_s": 1.473986099998001,
+      "input_tokens": 2780,
+      "output_tokens": 40,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        3,
+        7,
+        2,
+        9
+      ],
+      "pred_result": [
+        2,
+        3,
+        7,
+        9
+      ],
+      "detail": {
+        "raw": "[2,3,7,9]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "11, 4, 7, 20, 3 중에 짝수만",
+      "gold_intent": "evens",
+      "pred_intent": "evens",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.9090703999972902,
+      "api_s": 1.9090280999953393,
+      "input_tokens": 1366,
+      "output_tokens": 60,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        4,
+        20
+      ],
+      "pred_result": [
+        4,
+        20
+      ],
+      "detail": {
+        "slots": {
+          "numbers": [
+            11,
+            4,
+            7,
+            20,
+            3
+          ]
+        },
+        "trace": [
+          "evens_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "11, 4, 7, 20, 3 중에 짝수만",
+      "gold_intent": "evens",
+      "pred_intent": "evens",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 11.087226899981033,
+      "api_s": 11.087212699989323,
+      "input_tokens": 2776,
+      "output_tokens": 38,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        4,
+        20
+      ],
+      "pred_result": [
+        4,
+        20
+      ],
+      "detail": {
+        "raw": "[4, 20]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "11, 4, 7, 20, 3 중에 홀수만",
+      "gold_intent": "odds",
+      "pred_intent": "odds",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.6183531999995466,
+      "api_s": 1.618313200015109,
+      "input_tokens": 1365,
+      "output_tokens": 60,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        11,
+        7,
+        3
+      ],
+      "pred_result": [
+        11,
+        7,
+        3
+      ],
+      "detail": {
+        "slots": {
+          "numbers": [
+            11,
+            4,
+            7,
+            20,
+            3
+          ]
+        },
+        "trace": [
+          "odds_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "11, 4, 7, 20, 3 중에 홀수만",
+      "gold_intent": "odds",
+      "pred_intent": "odds",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 3.0203472999855876,
+      "api_s": 3.020331999985501,
+      "input_tokens": 2775,
+      "output_tokens": 41,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        11,
+        7,
+        3
+      ],
+      "pred_result": [
+        11,
+        7,
+        3
+      ],
+      "detail": {
+        "raw": "[11, 7, 3]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "2, 5, 1, 4 누적합 구해줘",
+      "gold_intent": "cumsum",
+      "pred_intent": "cumsum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3491007999982685,
+      "api_s": 1.3490593000024091,
+      "input_tokens": 1363,
+      "output_tokens": 58,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        7,
+        8,
+        12
+      ],
+      "pred_result": [
+        2,
+        7,
+        8,
+        12
+      ],
+      "detail": {
+        "slots": {
+          "numbers": [
+            2,
+            5,
+            1,
+            4
+          ]
+        },
+        "trace": [
+          "cumsum_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "2, 5, 1, 4 누적합 구해줘",
+      "gold_intent": "cumsum",
+      "pred_intent": "cumsum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.8081269999966025,
+      "api_s": 1.8081119999988005,
+      "input_tokens": 2773,
+      "output_tokens": 44,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        7,
+        8,
+        12
+      ],
+      "pred_result": [
+        2,
+        7,
+        8,
+        12
+      ],
+      "detail": {
+        "raw": "[2, 7, 8, 12]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "9, 2, 7, 5 작은 것부터 정렬",
+      "gold_intent": "sort",
+      "pred_intent": "sort",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 10.132820500002708,
+      "api_s": 10.132777000020724,
+      "input_tokens": 1362,
+      "output_tokens": 57,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        5,
+        7,
+        9
+      ],
+      "pred_result": [
+        2,
+        5,
+        7,
+        9
+      ],
+      "detail": {
+        "slots": {
+          "numbers": [
+            9,
+            2,
+            7,
+            5
+          ],
+          "desc": false
+        },
+        "trace": [
+          "sort_numbers"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "9, 2, 7, 5 작은 것부터 정렬",
+      "gold_intent": "sort",
+      "pred_intent": "sort",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 2.081125199998496,
+      "api_s": 2.0811063000001013,
+      "input_tokens": 2772,
+      "output_tokens": 66,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        5,
+        7,
+        9
+      ],
+      "pred_result": {
+        "desc": false,
+        "numbers": [
+          9,
+          2,
+          7,
+          5
+        ],
+        "result": [
+          2,
+          5,
+          7,
+          9
+        ]
+      },
+      "detail": {
+        "raw": "{\"numbers\": [9, 2, 7, 5], \"desc\": false, \"result\": [2, 5, 7, 9]}"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "9, 2, 7, 5 큰 것부터 정렬",
+      "gold_intent": "sort",
+      "pred_intent": "sort",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5405906999949366,
+      "api_s": 1.5405446000222582,
+      "input_tokens": 1362,
+      "output_tokens": 57,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        9,
+        7,
+        5,
+        2
+      ],
+      "pred_result": [
+        9,
+        7,
+        5,
+        2
+      ],
+      "detail": {
+        "slots": {
+          "numbers": [
+            9,
+            2,
+            7,
+            5
+          ],
+          "desc": true
+        },
+        "trace": [
+          "sort_numbers"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "9, 2, 7, 5 큰 것부터 정렬",
+      "gold_intent": "sort",
+      "pred_intent": "sort",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.638143799995305,
+      "api_s": 1.6381290999997873,
+      "input_tokens": 2772,
+      "output_tokens": 40,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        9,
+        7,
+        5,
+        2
+      ],
+      "pred_result": [
+        9,
+        7,
+        5,
+        2
+      ],
+      "detail": {
+        "raw": "[9,7,5,2]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "7, 3, 9, 1, 6 에서 마지막 두 개만",
+      "gold_intent": "last_k",
+      "pred_intent": "last_k",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4910592999949586,
+      "api_s": 1.4910183000029065,
+      "input_tokens": 1366,
+      "output_tokens": 60,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1,
+        6
+      ],
+      "pred_result": [
+        1,
+        6
+      ],
+      "detail": {
+        "slots": {
+          "k": 2,
+          "numbers": [
+            7,
+            3,
+            9,
+            1,
+            6
+          ]
+        },
+        "trace": [
+          "last_k"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "7, 3, 9, 1, 6 에서 마지막 두 개만",
+      "gold_intent": "last_k",
+      "pred_intent": "last_k",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.7329143999959342,
+      "api_s": 1.7328997000004165,
+      "input_tokens": 2776,
+      "output_tokens": 38,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1,
+        6
+      ],
+      "pred_result": [
+        6,
+        1
+      ],
+      "detail": {
+        "raw": "[6, 1]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 15항까지의 평균",
+      "gold_intent": "fib_mean",
+      "pred_intent": "fib_mean",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3753681000089273,
+      "api_s": 1.3752616999845486,
+      "input_tokens": 1357,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 99.75,
+      "pred_result": 99.75,
+      "detail": {
+        "slots": {
+          "n": 15
+        },
+        "trace": [
+          "fibonacci",
+          "mean_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 15항까지의 평균",
+      "gold_intent": "fib_mean",
+      "pred_intent": "fib_mean",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 2.1416124000097625,
+      "api_s": 2.1415734000038356,
+      "input_tokens": 2767,
+      "output_tokens": 87,
+      "api_error": "result_json 파싱 실패: Extra data: line 1 column 2 (char 1)",
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 99.75,
+      "pred_result": null,
+      "detail": {
+        "raw": "3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181 -> 평균값을 구함"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 15항까지 전부 더하면",
+      "gold_intent": "fib_sum",
+      "pred_intent": "fib_sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5216949999739882,
+      "api_s": 1.5216480999952182,
+      "input_tokens": 1359,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 1596,
+      "pred_result": 1596,
+      "detail": {
+        "slots": {
+          "n": 15
+        },
+        "trace": [
+          "fibonacci",
+          "sum_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 15항까지 전부 더하면",
+      "gold_intent": "fib_sum",
+      "pred_intent": "fib_sum",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.2977593000105117,
+      "api_s": 1.2977457999950275,
+      "input_tokens": 2769,
+      "output_tokens": 33,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 1596,
+      "pred_result": 610,
+      "detail": {
+        "raw": "610"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 15항까지의 중앙값",
+      "gold_intent": "fib_median",
+      "pred_intent": "fib_median",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.461130099982256,
+      "api_s": 1.461075900006108,
+      "input_tokens": 1358,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 17,
+      "pred_result": 17,
+      "detail": {
+        "slots": {
+          "n": 15
+        },
+        "trace": [
+          "fibonacci",
+          "median_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 15항까지의 중앙값",
+      "gold_intent": "fib_median",
+      "pred_intent": "fib_median",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.4238927999977022,
+      "api_s": 1.423878599976888,
+      "input_tokens": 2768,
+      "output_tokens": 36,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 17,
+      "pred_result": 3.5,
+      "detail": {
+        "raw": "3.5"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 15항까지 중 최댓값",
+      "gold_intent": "fib_max",
+      "pred_intent": "fib_max",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.500387599982787,
+      "api_s": 1.5003411999787204,
+      "input_tokens": 1359,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 610,
+      "pred_result": 610,
+      "detail": {
+        "slots": {
+          "n": 15
+        },
+        "trace": [
+          "fibonacci",
+          "max_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 15항까지 중 최댓값",
+      "gold_intent": "fib_max",
+      "pred_intent": "fib_max",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.2241022000089288,
+      "api_s": 1.2240872000111267,
+      "input_tokens": 2769,
+      "output_tokens": 33,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 610,
+      "pred_result": 610,
+      "detail": {
+        "raw": "610"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 20항까지 중 소수인 것",
+      "gold_intent": "fib_primes",
+      "pred_intent": "fib_primes",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 5.232511600013822,
+      "api_s": 5.23242789998767,
+      "input_tokens": 1360,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        3,
+        5,
+        13,
+        89,
+        233,
+        1597
+      ],
+      "pred_result": [
+        2,
+        3,
+        5,
+        13,
+        89,
+        233,
+        1597
+      ],
+      "detail": {
+        "slots": {
+          "n": 20
+        },
+        "trace": [
+          "fibonacci",
+          "filter_primes"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 20항까지 중 소수인 것",
+      "gold_intent": "fib_primes",
+      "pred_intent": "fib_primes",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.3653925999824423,
+      "api_s": 1.365375599998515,
+      "input_tokens": 2770,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        3,
+        5,
+        13,
+        89,
+        233,
+        1597
+      ],
+      "pred_result": [
+        2,
+        3,
+        5,
+        13,
+        89,
+        233,
+        1597,
+        28657
+      ],
+      "detail": {
+        "raw": "[2,3,5,13,89,233,1597,28657]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 14항까지 중 짝수만",
+      "gold_intent": "fib_evens",
+      "pred_intent": "fib_evens",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.6035509999783244,
+      "api_s": 1.60350379999727,
+      "input_tokens": 1360,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        2,
+        8,
+        34,
+        144
+      ],
+      "pred_result": [
+        0,
+        2,
+        8,
+        34,
+        144
+      ],
+      "detail": {
+        "slots": {
+          "n": 14
+        },
+        "trace": [
+          "fibonacci",
+          "evens_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 14항까지 중 짝수만",
+      "gold_intent": "fib_evens",
+      "pred_intent": "fib_evens",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.3416830000060145,
+      "api_s": 1.3416680000082124,
+      "input_tokens": 2770,
+      "output_tokens": 42,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        2,
+        8,
+        34,
+        144
+      ],
+      "pred_result": [
+        0,
+        2,
+        8
+      ],
+      "detail": {
+        "raw": "[0, 2, 8]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 12항까지 누적합",
+      "gold_intent": "fib_cumsum",
+      "pred_intent": "fib_cumsum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.8953194999776315,
+      "api_s": 1.8952723999973387,
+      "input_tokens": 1358,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        2,
+        4,
+        7,
+        12,
+        20,
+        33,
+        54,
+        88,
+        143,
+        232,
+        376
+      ],
+      "pred_result": [
+        0,
+        1,
+        2,
+        4,
+        7,
+        12,
+        20,
+        33,
+        54,
+        88,
+        143,
+        232,
+        376
+      ],
+      "detail": {
+        "slots": {
+          "n": 12
+        },
+        "trace": [
+          "fibonacci",
+          "cumsum_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 12항까지 누적합",
+      "gold_intent": "fib_cumsum",
+      "pred_intent": "fib_cumsum",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.7096563999948557,
+      "api_s": 1.7096233000047505,
+      "input_tokens": 2768,
+      "output_tokens": 70,
+      "api_error": "result_json 파싱 실패: Extra data: line 1 column 2 (char 1)",
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        2,
+        4,
+        7,
+        12,
+        20,
+        33,
+        54,
+        88,
+        143,
+        232,
+        376
+      ],
+      "pred_result": null,
+      "detail": {
+        "raw": "0, 1, 2, 4, 7, 12, 20, 33, 54, 88, 143, 232, 376"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 16항까지에서 짝수만 골라 그 합",
+      "gold_intent": "fib_evens_sum",
+      "pred_intent": "fib_evens_sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5418864999955986,
+      "api_s": 1.5418342999764718,
+      "input_tokens": 1364,
+      "output_tokens": 54,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 798,
+      "pred_result": 798,
+      "detail": {
+        "slots": {
+          "n": 16
+        },
+        "trace": [
+          "fibonacci",
+          "evens_of",
+          "sum_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 16항까지에서 짝수만 골라 그 합",
+      "gold_intent": "fib_evens_sum",
+      "pred_intent": "fib_evens_sum",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 5.631358399987221,
+      "api_s": 5.631344800000079,
+      "input_tokens": 2774,
+      "output_tokens": 36,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 798,
+      "pred_result": 2742,
+      "detail": {
+        "raw": "2742"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "50 이하 소수들의 평균",
+      "gold_intent": "primes_mean",
+      "pred_intent": "primes_mean",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.7666430000099353,
+      "api_s": 1.7665362000116147,
+      "input_tokens": 1353,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 21.8667,
+      "pred_result": 21.8667,
+      "detail": {
+        "slots": {
+          "n": 50
+        },
+        "trace": [
+          "primes_upto",
+          "mean_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "50 이하 소수들의 평균",
+      "gold_intent": "primes_mean",
+      "pred_intent": "primes_mean",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.2833089999912772,
+      "api_s": 1.2832940999942366,
+      "input_tokens": 2763,
+      "output_tokens": 37,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 21.8667,
+      "pred_result": 16.4,
+      "detail": {
+        "raw": "16.4000"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "50 이하 소수 전부 더하면",
+      "gold_intent": "primes_sum",
+      "pred_intent": "primes_sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.905636699986644,
+      "api_s": 1.9055772000283469,
+      "input_tokens": 1355,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 328,
+      "pred_result": 328,
+      "detail": {
+        "slots": {
+          "n": 50
+        },
+        "trace": [
+          "primes_upto",
+          "sum_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "50 이하 소수 전부 더하면",
+      "gold_intent": "primes_sum",
+      "pred_intent": "primes_sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 3.467617500020424,
+      "api_s": 3.4676023999927565,
+      "input_tokens": 2765,
+      "output_tokens": 34,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 328,
+      "pred_result": 328,
+      "detail": {
+        "raw": "328"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "50 이하 소수가 몇 개야",
+      "gold_intent": "primes_count",
+      "pred_intent": "primes_count",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4526398000016343,
+      "api_s": 1.4525950999814086,
+      "input_tokens": 1354,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 15,
+      "pred_result": 15,
+      "detail": {
+        "slots": {
+          "n": 50
+        },
+        "trace": [
+          "primes_upto",
+          "count_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "50 이하 소수가 몇 개야",
+      "gold_intent": "primes_count",
+      "pred_intent": "primes_count",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 6.603441800019937,
+      "api_s": 6.603435199998785,
+      "input_tokens": 2764,
+      "output_tokens": 34,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 15,
+      "pred_result": 15,
+      "detail": {
+        "raw": "15"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "50 이하 소수들의 분산이랑 표준편차",
+      "gold_intent": "primes_spread",
+      "pred_intent": "primes_spread",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.6373468000092544,
+      "api_s": 1.637196199997561,
+      "input_tokens": 1360,
+      "output_tokens": 54,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": {
+        "range": 45,
+        "stdev": 15.3384,
+        "variance": 235.2667
+      },
+      "pred_result": {
+        "range": 45,
+        "stdev": 15.3384,
+        "variance": 235.2667
+      },
+      "detail": {
+        "slots": {
+          "n": 50
+        },
+        "trace": [
+          "primes_upto",
+          "spread_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "50 이하 소수들의 분산이랑 표준편차",
+      "gold_intent": "primes_spread",
+      "pred_intent": "primes_spread",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.6841913999815006,
+      "api_s": 1.684182700002566,
+      "input_tokens": 2770,
+      "output_tokens": 54,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": {
+        "range": 45,
+        "stdev": 15.3384,
+        "variance": 235.2667
+      },
+      "pred_result": {
+        "range": 41,
+        "stdev": 14.1504,
+        "variance": 200.2143
+      },
+      "detail": {
+        "raw": "{\"range\":41,\"variance\":200.2143,\"stdev\":14.1504}"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "27부터 시작하는 콜라츠 수열 보여줘",
+      "gold_intent": "collatz",
+      "pred_intent": "collatz",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4953283999930136,
+      "api_s": 1.4952762000029907,
+      "input_tokens": 1359,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        27,
+        82,
+        41,
+        124,
+        62,
+        31,
+        94,
+        47,
+        142,
+        71,
+        214,
+        107,
+        322,
+        161,
+        484,
+        242,
+        121,
+        364,
+        182,
+        91,
+        274,
+        137,
+        412,
+        206,
+        103,
+        310,
+        155,
+        466,
+        233,
+        700,
+        350,
+        175,
+        526,
+        263,
+        790,
+        395,
+        1186,
+        593,
+        1780,
+        890,
+        445,
+        1336,
+        668,
+        334,
+        167,
+        502,
+        251,
+        754,
+        377,
+        1132,
+        566,
+        283,
+        850,
+        425,
+        1276,
+        638,
+        319,
+        958,
+        479,
+        1438,
+        719,
+        2158,
+        1079,
+        3238,
+        1619,
+        4858,
+        2429,
+        7288,
+        3644,
+        1822,
+        911,
+        2734,
+        1367,
+        4102,
+        2051,
+        6154,
+        3077,
+        9232,
+        4616,
+        2308,
+        1154,
+        577,
+        1732,
+        866,
+        433,
+        1300,
+        650,
+        325,
+        976,
+        488,
+        244,
+        122,
+        61,
+        184,
+        92,
+        46,
+        23,
+        70,
+        35,
+        106,
+        53,
+        160,
+        80,
+        40,
+        20,
+        10,
+        5,
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "pred_result": [
+        27,
+        82,
+        41,
+        124,
+        62,
+        31,
+        94,
+        47,
+        142,
+        71,
+        214,
+        107,
+        322,
+        161,
+        484,
+        242,
+        121,
+        364,
+        182,
+        91,
+        274,
+        137,
+        412,
+        206,
+        103,
+        310,
+        155,
+        466,
+        233,
+        700,
+        350,
+        175,
+        526,
+        263,
+        790,
+        395,
+        1186,
+        593,
+        1780,
+        890,
+        445,
+        1336,
+        668,
+        334,
+        167,
+        502,
+        251,
+        754,
+        377,
+        1132,
+        566,
+        283,
+        850,
+        425,
+        1276,
+        638,
+        319,
+        958,
+        479,
+        1438,
+        719,
+        2158,
+        1079,
+        3238,
+        1619,
+        4858,
+        2429,
+        7288,
+        3644,
+        1822,
+        911,
+        2734,
+        1367,
+        4102,
+        2051,
+        6154,
+        3077,
+        9232,
+        4616,
+        2308,
+        1154,
+        577,
+        1732,
+        866,
+        433,
+        1300,
+        650,
+        325,
+        976,
+        488,
+        244,
+        122,
+        61,
+        184,
+        92,
+        46,
+        23,
+        70,
+        35,
+        106,
+        53,
+        160,
+        80,
+        40,
+        20,
+        10,
+        5,
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "detail": {
+        "slots": {
+          "n": 27
+        },
+        "trace": [
+          "collatz"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "27부터 시작하는 콜라츠 수열 보여줘",
+      "gold_intent": "collatz",
+      "pred_intent": "collatz",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 5.552060799993342,
+      "api_s": 5.55203910000273,
+      "input_tokens": 2769,
+      "output_tokens": 395,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        27,
+        82,
+        41,
+        124,
+        62,
+        31,
+        94,
+        47,
+        142,
+        71,
+        214,
+        107,
+        322,
+        161,
+        484,
+        242,
+        121,
+        364,
+        182,
+        91,
+        274,
+        137,
+        412,
+        206,
+        103,
+        310,
+        155,
+        466,
+        233,
+        700,
+        350,
+        175,
+        526,
+        263,
+        790,
+        395,
+        1186,
+        593,
+        1780,
+        890,
+        445,
+        1336,
+        668,
+        334,
+        167,
+        502,
+        251,
+        754,
+        377,
+        1132,
+        566,
+        283,
+        850,
+        425,
+        1276,
+        638,
+        319,
+        958,
+        479,
+        1438,
+        719,
+        2158,
+        1079,
+        3238,
+        1619,
+        4858,
+        2429,
+        7288,
+        3644,
+        1822,
+        911,
+        2734,
+        1367,
+        4102,
+        2051,
+        6154,
+        3077,
+        9232,
+        4616,
+        2308,
+        1154,
+        577,
+        1732,
+        866,
+        433,
+        1300,
+        650,
+        325,
+        976,
+        488,
+        244,
+        122,
+        61,
+        184,
+        92,
+        46,
+        23,
+        70,
+        35,
+        106,
+        53,
+        160,
+        80,
+        40,
+        20,
+        10,
+        5,
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "pred_result": [
+        27,
+        82,
+        41,
+        124,
+        62,
+        31,
+        94,
+        47,
+        142,
+        71,
+        214,
+        107,
+        322,
+        161,
+        484,
+        242,
+        121,
+        364,
+        182,
+        91,
+        274,
+        137,
+        412,
+        206,
+        103,
+        310,
+        155,
+        466,
+        233,
+        700,
+        350,
+        175,
+        526,
+        263,
+        790,
+        395,
+        1186,
+        593,
+        1780,
+        890,
+        445,
+        1336,
+        668,
+        334,
+        167,
+        502,
+        251,
+        754,
+        377,
+        1132,
+        566,
+        283,
+        850,
+        425,
+        1276,
+        638,
+        319,
+        958,
+        479,
+        1438,
+        719,
+        2158,
+        1079,
+        3238,
+        1619,
+        4858,
+        2429,
+        7288,
+        3644,
+        1822,
+        911,
+        2734,
+        1367,
+        4102,
+        2051,
+        6154,
+        3077,
+        9232,
+        4616,
+        2308,
+        1154,
+        577,
+        1732,
+        866,
+        433,
+        1300,
+        650,
+        325,
+        976,
+        488,
+        244,
+        122,
+        61,
+        184,
+        92,
+        46,
+        23,
+        70,
+        35,
+        106,
+        53,
+        160,
+        80,
+        40,
+        20,
+        10,
+        5,
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "detail": {
+        "raw": "[27, 82, 41, 124, 62, 31, 94, 47, 142, 71, 214, 107, 322, 161, 484, 242, 121, 364, 182, 91, 274, 137, 412, 206, 103, 310, 155, 466, 233, 700, 350, 175, 526, 263, 790, 395, 1186, 593, 1780, 890, 445, 1"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "27 콜라츠 몇 단계나 걸려?",
+      "gold_intent": "collatz_len",
+      "pred_intent": "collatz_len",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.7225605999992695,
+      "api_s": 1.722507799975574,
+      "input_tokens": 1358,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 112,
+      "pred_result": 112,
+      "detail": {
+        "slots": {
+          "n": 27
+        },
+        "trace": [
+          "collatz",
+          "count_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "27 콜라츠 몇 단계나 걸려?",
+      "gold_intent": "collatz_len",
+      "pred_intent": "collatz_len",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.2527775000198744,
+      "api_s": 1.2527702000224963,
+      "input_tokens": 2768,
+      "output_tokens": 34,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 112,
+      "pred_result": 18,
+      "detail": {
+        "raw": "18"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "27 콜라츠에서 제일 높이 올라가는 값",
+      "gold_intent": "collatz_max",
+      "pred_intent": "collatz_max",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 2.0138639000069816,
+      "api_s": 2.0138192999875173,
+      "input_tokens": 1360,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 9232,
+      "pred_result": 9232,
+      "detail": {
+        "slots": {
+          "n": 27
+        },
+        "trace": [
+          "collatz",
+          "max_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "27 콜라츠에서 제일 높이 올라가는 값",
+      "gold_intent": "collatz_max",
+      "pred_intent": "collatz_max",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3542255999927875,
+      "api_s": 1.3542154000024311,
+      "input_tokens": 2770,
+      "output_tokens": 35,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 9232,
+      "pred_result": 9232,
+      "detail": {
+        "raw": "9232"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "36의 약수 다 알려줘",
+      "gold_intent": "divisors",
+      "pred_intent": "divisors",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5052053999970667,
+      "api_s": 1.5051679000025615,
+      "input_tokens": 1354,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        12,
+        18,
+        36
+      ],
+      "pred_result": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        12,
+        18,
+        36
+      ],
+      "detail": {
+        "slots": {
+          "n": 36
+        },
+        "trace": [
+          "divisors"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "36의 약수 다 알려줘",
+      "gold_intent": "divisors",
+      "pred_intent": "divisors",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 2.4847804000019096,
+      "api_s": 2.4847736000083387,
+      "input_tokens": 2764,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        12,
+        18,
+        36
+      ],
+      "pred_result": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        12,
+        18,
+        36
+      ],
+      "detail": {
+        "raw": "[1,2,3,4,6,9,12,18,36]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "36의 약수를 전부 더하면",
+      "gold_intent": "divisors_sum",
+      "pred_intent": "divisors_sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 7.926069400011329,
+      "api_s": 7.926046200009296,
+      "input_tokens": 1355,
+      "output_tokens": 54,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 91,
+      "pred_result": 91,
+      "detail": {
+        "slots": {
+          "n": 36
+        },
+        "trace": [
+          "divisors",
+          "sum_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "36의 약수를 전부 더하면",
+      "gold_intent": "divisors_sum",
+      "pred_intent": "divisors_sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.406454300013138,
+      "api_s": 1.40644260001136,
+      "input_tokens": 2765,
+      "output_tokens": 35,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 91,
+      "pred_result": 91,
+      "detail": {
+        "raw": "91"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "360을 소인수분해 해줘",
+      "gold_intent": "prime_factors",
+      "pred_intent": "prime_factors",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.6145494000229519,
+      "api_s": 1.6145110000215936,
+      "input_tokens": 1356,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        5
+      ],
+      "pred_result": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        5
+      ],
+      "detail": {
+        "slots": {
+          "n": 360
+        },
+        "trace": [
+          "prime_factors"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "360을 소인수분해 해줘",
+      "gold_intent": "prime_factors",
+      "pred_intent": "prime_factors",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.6114809999999125,
+      "api_s": 1.6114669000089634,
+      "input_tokens": 2766,
+      "output_tokens": 51,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        5
+      ],
+      "pred_result": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        5
+      ],
+      "detail": {
+        "raw": "[2, 2, 2, 3, 3, 5]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "1부터 9까지 제곱수",
+      "gold_intent": "squares",
+      "pred_intent": "squares",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5224738999968395,
+      "api_s": 1.5224472999980208,
+      "input_tokens": 1356,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1,
+        4,
+        9,
+        16,
+        25,
+        36,
+        49,
+        64,
+        81
+      ],
+      "pred_result": [
+        1,
+        4,
+        9,
+        16,
+        25,
+        36,
+        49,
+        64,
+        81
+      ],
+      "detail": {
+        "slots": {
+          "n": 9
+        },
+        "trace": [
+          "squares"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "1부터 9까지 제곱수",
+      "gold_intent": "squares",
+      "pred_intent": "squares",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.460580300015863,
+      "api_s": 1.4605657999927644,
+      "input_tokens": 2766,
+      "output_tokens": 51,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1,
+        4,
+        9,
+        16,
+        25,
+        36,
+        49,
+        64,
+        81
+      ],
+      "pred_result": [
+        1,
+        4,
+        9,
+        16,
+        25,
+        36,
+        49,
+        64,
+        81
+      ],
+      "detail": {
+        "raw": "[1,4,9,16,25,36,49,64,81]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "삼각수 8개만 뽑아줘",
+      "gold_intent": "triangular",
+      "pred_intent": "triangular",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5815457999997307,
+      "api_s": 1.581517700018594,
+      "input_tokens": 1359,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1,
+        3,
+        6,
+        10,
+        15,
+        21,
+        28,
+        36
+      ],
+      "pred_result": [
+        1,
+        3,
+        6,
+        10,
+        15,
+        21,
+        28,
+        36
+      ],
+      "detail": {
+        "slots": {
+          "n": 8
+        },
+        "trace": [
+          "triangular"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "삼각수 8개만 뽑아줘",
+      "gold_intent": "triangular",
+      "pred_intent": "triangular",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5267341999860946,
+      "api_s": 1.526726799987955,
+      "input_tokens": 2769,
+      "output_tokens": 56,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1,
+        3,
+        6,
+        10,
+        15,
+        21,
+        28,
+        36
+      ],
+      "pred_result": [
+        1,
+        3,
+        6,
+        10,
+        15,
+        21,
+        28,
+        36
+      ],
+      "detail": {
+        "raw": "[1, 3, 6, 10, 15, 21, 28, 36]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "9 팩토리얼",
+      "gold_intent": "factorial",
+      "pred_intent": "factorial",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3460493999882601,
+      "api_s": 1.3460159999958705,
+      "input_tokens": 1353,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 362880,
+      "pred_result": 362880,
+      "detail": {
+        "slots": {
+          "n": 9
+        },
+        "trace": [
+          "factorial"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "9 팩토리얼",
+      "gold_intent": "factorial",
+      "pred_intent": "factorial",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3622122000087984,
+      "api_s": 1.3622029999969527,
+      "input_tokens": 2763,
+      "output_tokens": 34,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 362880,
+      "pred_result": 362880,
+      "detail": {
+        "raw": "362880"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "48과 18의 최대공약수",
+      "gold_intent": "gcd",
+      "pred_intent": "gcd",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.588981499982765,
+      "api_s": 1.5889598999929149,
+      "input_tokens": 1356,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 6,
+      "pred_result": 6,
+      "detail": {
+        "slots": {
+          "a": 48,
+          "b": 18
+        },
+        "trace": [
+          "gcd"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "48과 18의 최대공약수",
+      "gold_intent": "gcd",
+      "pred_intent": "gcd",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.7186588000040501,
+      "api_s": 1.718651699979091,
+      "input_tokens": 2766,
+      "output_tokens": 33,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 6,
+      "pred_result": 6,
+      "detail": {
+        "raw": "6"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "4와 6의 최소공배수",
+      "gold_intent": "lcm",
+      "pred_intent": "lcm",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4567339000059292,
+      "api_s": 1.4567061999987345,
+      "input_tokens": 1356,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 12,
+      "pred_result": 12,
+      "detail": {
+        "slots": {
+          "a": 4,
+          "b": 6
+        },
+        "trace": [
+          "lcm"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "4와 6의 최소공배수",
+      "gold_intent": "lcm",
+      "pred_intent": "lcm",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3921161000034772,
+      "api_s": 1.392102799989516,
+      "input_tokens": 2766,
+      "output_tokens": 33,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 12,
+      "pred_result": 12,
+      "detail": {
+        "raw": "12"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "2의 6제곱 이하의 소수 목록",
+      "gold_intent": "primes",
+      "pred_intent": "primes",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3830619000073057,
+      "api_s": 1.3830292999919038,
+      "input_tokens": 1359,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61
+      ],
+      "pred_result": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61
+      ],
+      "detail": {
+        "slots": {
+          "n": 64
+        },
+        "trace": [
+          "primes_upto"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "2의 6제곱 이하의 소수 목록",
+      "gold_intent": "primes",
+      "pred_intent": "primes",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 3.463942500005942,
+      "api_s": 3.4639289000188,
+      "input_tokens": 2769,
+      "output_tokens": 223,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61
+      ],
+      "pred_result": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97,
+        101,
+        103,
+        107,
+        109,
+        113,
+        127,
+        131,
+        137,
+        139,
+        149,
+        151,
+        157,
+        163,
+        167,
+        173,
+        179,
+        181,
+        191,
+        193,
+        197,
+        199,
+        211,
+        223,
+        227,
+        229,
+        233,
+        239,
+        241,
+        251,
+        257,
+        263,
+        269,
+        271,
+        277,
+        281,
+        283,
+        293,
+        307,
+        311,
+        313,
+        317,
+        331,
+        337,
+        347,
+        349,
+        353,
+        359,
+        367,
+        373,
+        379,
+        383,
+        389,
+        397,
+        401,
+        409,
+        419,
+        421,
+        431,
+        433,
+        439,
+        443,
+        449,
+        457,
+        461,
+        463,
+        467,
+        479,
+        487,
+        491,
+        499
+      ],
+      "detail": {
+        "raw": "[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "100의 절반 이하 소수가 몇 개지",
+      "gold_intent": "primes_count",
+      "pred_intent": "primes_count",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 9.089861499989638,
+      "api_s": 9.089800699992338,
+      "input_tokens": 1357,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 15,
+      "pred_result": 15,
+      "detail": {
+        "slots": {
+          "n": 50
+        },
+        "trace": [
+          "primes_upto",
+          "count_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "100의 절반 이하 소수가 몇 개지",
+      "gold_intent": "primes_count",
+      "pred_intent": "primes_count",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.340546199993696,
+      "api_s": 1.3405391999986023,
+      "input_tokens": 2767,
+      "output_tokens": 34,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 15,
+      "pred_result": 25,
+      "detail": {
+        "raw": "25"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "5의 세제곱의 약수 개수",
+      "gold_intent": "divisors_count",
+      "pred_intent": "divisors_count",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.7868419000005815,
+      "api_s": 1.7868000000016764,
+      "input_tokens": 1358,
+      "output_tokens": 54,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 4,
+      "pred_result": 4,
+      "detail": {
+        "slots": {
+          "n": 125
+        },
+        "trace": [
+          "divisors",
+          "count_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "5의 세제곱의 약수 개수",
+      "gold_intent": "divisors_count",
+      "pred_intent": "divisors_count",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3791625000012573,
+      "api_s": 1.379153000016231,
+      "input_tokens": 2768,
+      "output_tokens": 35,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 4,
+      "pred_result": 4,
+      "detail": {
+        "raw": "4"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "열두 항까지 피보나치 보여줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.877371700014919,
+      "api_s": 1.8773520000104327,
+      "input_tokens": 1357,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144
+      ],
+      "detail": {
+        "slots": {
+          "n": 12
+        },
+        "trace": [
+          "fibonacci"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "열두 항까지 피보나치 보여줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 2.0754263999988325,
+      "api_s": 2.07540489998064,
+      "input_tokens": 2767,
+      "output_tokens": 68,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89
+      ],
+      "detail": {
+        "raw": "[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "6 곱하기 6 의 약수를 다 더해줘",
+      "gold_intent": "divisors_sum",
+      "pred_intent": "divisors_sum",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4404556000081357,
+      "api_s": 1.4404244000033941,
+      "input_tokens": 1360,
+      "output_tokens": 54,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 91,
+      "pred_result": 91,
+      "detail": {
+        "slots": {
+          "n": 36
+        },
+        "trace": [
+          "divisors",
+          "sum_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "6 곱하기 6 의 약수를 다 더해줘",
+      "gold_intent": "divisors_sum",
+      "pred_intent": "divisors_sum",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.4949224000156391,
+      "api_s": 1.4949092000024393,
+      "input_tokens": 2770,
+      "output_tokens": 35,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 91,
+      "pred_result": 28,
+      "detail": {
+        "raw": "28"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "10 더하기 8 로 콜라츠 돌려줘",
+      "gold_intent": "collatz",
+      "pred_intent": "collatz",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3864369999791961,
+      "api_s": 1.3863991999824066,
+      "input_tokens": 1360,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        18,
+        9,
+        28,
+        14,
+        7,
+        22,
+        11,
+        34,
+        17,
+        52,
+        26,
+        13,
+        40,
+        20,
+        10,
+        5,
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "pred_result": [
+        18,
+        9,
+        28,
+        14,
+        7,
+        22,
+        11,
+        34,
+        17,
+        52,
+        26,
+        13,
+        40,
+        20,
+        10,
+        5,
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "detail": {
+        "slots": {
+          "n": 18
+        },
+        "trace": [
+          "collatz"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "10 더하기 8 로 콜라츠 돌려줘",
+      "gold_intent": "collatz",
+      "pred_intent": "collatz",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.4557050000003073,
+      "api_s": 1.4556905000063125,
+      "input_tokens": 2770,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        18,
+        9,
+        28,
+        14,
+        7,
+        22,
+        11,
+        34,
+        17,
+        52,
+        26,
+        13,
+        40,
+        20,
+        10,
+        5,
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "pred_result": [
+        10,
+        5,
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "detail": {
+        "raw": "[10, 5, 16, 8, 4, 2, 1]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 20항까지 중에 마지막 4개",
+      "gold_intent": "fib_last_k",
+      "pred_intent": "fib_last_k",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4864581000001635,
+      "api_s": 1.4864352000004146,
+      "input_tokens": 1361,
+      "output_tokens": 53,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1597,
+        2584,
+        4181,
+        6765
+      ],
+      "pred_result": [
+        1597,
+        2584,
+        4181,
+        6765
+      ],
+      "detail": {
+        "slots": {
+          "n": 20,
+          "k": 4
+        },
+        "trace": [
+          "fibonacci",
+          "last_k"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 20항까지 중에 마지막 4개",
+      "gold_intent": "fib_last_k",
+      "pred_intent": "fib_last_k",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.444906999997329,
+      "api_s": 1.4448916999972425,
+      "input_tokens": 2771,
+      "output_tokens": 42,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        1597,
+        2584,
+        4181,
+        6765
+      ],
+      "pred_result": {
+        "k": 4,
+        "n": 20
+      },
+      "detail": {
+        "raw": "{\"n\":20,\"k\":4}"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "50 이하 소수 중에서 뒤에서 3개",
+      "gold_intent": "primes_last_k",
+      "pred_intent": "primes_last_k",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 9.6382442000031,
+      "api_s": 9.638193399994634,
+      "input_tokens": 1358,
+      "output_tokens": 54,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        41,
+        43,
+        47
+      ],
+      "pred_result": [
+        41,
+        43,
+        47
+      ],
+      "detail": {
+        "slots": {
+          "n": 50,
+          "k": 3
+        },
+        "trace": [
+          "primes_upto",
+          "last_k"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "50 이하 소수 중에서 뒤에서 3개",
+      "gold_intent": "primes_last_k",
+      "pred_intent": "primes_last_k",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 2.6702989999903366,
+      "api_s": 2.6702910999883898,
+      "input_tokens": 2768,
+      "output_tokens": 43,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        41,
+        43,
+        47
+      ],
+      "pred_result": [
+        41,
+        43,
+        47
+      ],
+      "detail": {
+        "raw": "[41, 43, 47]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 10항까지를 큰 수부터 정렬해줘",
+      "gold_intent": "fib_sorted",
+      "pred_intent": "fib_sorted",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.449545199982822,
+      "api_s": 1.4495204999984708,
+      "input_tokens": 1363,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        55,
+        34,
+        21,
+        13,
+        8,
+        5,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      "pred_result": [
+        55,
+        34,
+        21,
+        13,
+        8,
+        5,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      "detail": {
+        "slots": {
+          "n": 10,
+          "desc": true
+        },
+        "trace": [
+          "fibonacci",
+          "sort_numbers"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 10항까지를 큰 수부터 정렬해줘",
+      "gold_intent": "fib_sorted",
+      "pred_intent": "fib_sorted",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.6896249999990687,
+      "api_s": 1.6896095999982208,
+      "input_tokens": 2773,
+      "output_tokens": 65,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        55,
+        34,
+        21,
+        13,
+        8,
+        5,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      "pred_result": [
+        55,
+        34,
+        21,
+        13,
+        8,
+        5,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      "detail": {
+        "raw": "[55, 34, 21, 13, 8, 5, 3, 2, 1, 1, 0]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 12항까지를 작은 순서로 정렬",
+      "gold_intent": "fib_sorted",
+      "pred_intent": "fib_sorted",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.6428017000143882,
+      "api_s": 1.6427625000069384,
+      "input_tokens": 1362,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144
+      ],
+      "pred_result": [
+        144,
+        89,
+        55,
+        34,
+        21,
+        13,
+        8,
+        5,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      "detail": {
+        "slots": {
+          "n": 12,
+          "desc": true
+        },
+        "trace": [
+          "fibonacci",
+          "sort_numbers"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 12항까지를 작은 순서로 정렬",
+      "gold_intent": "fib_sorted",
+      "pred_intent": "fib_sorted",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.4348843999905512,
+      "api_s": 1.4348704000003636,
+      "input_tokens": 2772,
+      "output_tokens": 41,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144
+      ],
+      "pred_result": {
+        "desc": false,
+        "n": 12
+      },
+      "detail": {
+        "raw": "{\"n\":12,\"desc\":false}"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 말고 그냥 3, 5, 8 이 세 개 평균만",
+      "gold_intent": "mean",
+      "pred_intent": "mean",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4981458999973256,
+      "api_s": 1.4980509000015445,
+      "input_tokens": 1367,
+      "output_tokens": 55,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 5.3333,
+      "pred_result": 5.3333,
+      "detail": {
+        "slots": {
+          "numbers": [
+            3,
+            5,
+            8
+          ]
+        },
+        "trace": [
+          "mean_of"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 말고 그냥 3, 5, 8 이 세 개 평균만",
+      "gold_intent": "mean",
+      "pred_intent": "mean",
+      "intent_ok": true,
+      "result_ok": false,
+      "latency_s": 1.484109899989562,
+      "api_s": 1.4833955999929458,
+      "input_tokens": 2777,
+      "output_tokens": 55,
+      "api_error": "result_json 파싱 실패: Expecting value: line 1 column 1 (char 0)",
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": 5.3333,
+      "pred_result": null,
+      "detail": {
+        "raw": "(3 + 5 + 8) / 3 = 16 / 3 = 5.3333"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "피보나치 10항까지 순서대로 보여줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.5141595000168309,
+      "api_s": 1.514124700013781,
+      "input_tokens": 1360,
+      "output_tokens": 52,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "detail": {
+        "slots": {
+          "n": 10
+        },
+        "trace": [
+          "fibonacci"
+        ]
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "피보나치 10항까지 순서대로 보여줘",
+      "gold_intent": "fibonacci",
+      "pred_intent": "fibonacci",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.6704352000087965,
+      "api_s": 1.6704275000083726,
+      "input_tokens": 2770,
+      "output_tokens": 65,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "pred_result": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55
+      ],
+      "detail": {
+        "raw": "[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "5! 이랑 피보나치 5번째 중에 뭐가 더 커?",
+      "gold_intent": "unsupported",
+      "pred_intent": "unsupported",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4656638999877032,
+      "api_s": 1.4656419999955688,
+      "input_tokens": 1365,
+      "output_tokens": 51,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": null,
+      "detail": {
+        "slots": {
+          "n": 5
+        },
+        "trace": []
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "5! 이랑 피보나치 5번째 중에 뭐가 더 커?",
+      "gold_intent": "unsupported",
+      "pred_intent": "unsupported",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.3416285999992397,
+      "api_s": 1.3416203999950085,
+      "input_tokens": 2775,
+      "output_tokens": 32,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": null,
+      "detail": {
+        "raw": "null"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "36의 약수 중에 소수인 건 뭐야?",
+      "gold_intent": "unsupported",
+      "pred_intent": "unsupported",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4715781999984756,
+      "api_s": 1.471554899995681,
+      "input_tokens": 1360,
+      "output_tokens": 51,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": null,
+      "detail": {
+        "slots": {},
+        "trace": []
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "36의 약수 중에 소수인 건 뭐야?",
+      "gold_intent": "unsupported",
+      "pred_intent": "primes",
+      "intent_ok": false,
+      "result_ok": false,
+      "latency_s": 1.4437228000024334,
+      "api_s": 1.4437078000046313,
+      "input_tokens": 2770,
+      "output_tokens": 37,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": [
+        2,
+        3
+      ],
+      "detail": {
+        "raw": "[2,3]"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "오늘 서울 날씨 어때?",
+      "gold_intent": "unsupported",
+      "pred_intent": "unsupported",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.4633976999903098,
+      "api_s": 1.4633758999989368,
+      "input_tokens": 1354,
+      "output_tokens": 51,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": null,
+      "detail": {
+        "slots": {},
+        "trace": []
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "오늘 서울 날씨 어때?",
+      "gold_intent": "unsupported",
+      "pred_intent": "unsupported",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.7795452999998815,
+      "api_s": 1.7795387000078335,
+      "input_tokens": 2764,
+      "output_tokens": 32,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": null,
+      "detail": {
+        "raw": "null"
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "A",
+      "utterance": "이 문장 영어로 번역해줘",
+      "gold_intent": "unsupported",
+      "pred_intent": "unsupported",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.821309699997073,
+      "api_s": 1.8212971000175457,
+      "input_tokens": 1356,
+      "output_tokens": 51,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": null,
+      "detail": {
+        "slots": {},
+        "trace": []
+      }
+    },
+    {
+      "rep": 0,
+      "arm": "B",
+      "utterance": "이 문장 영어로 번역해줘",
+      "gold_intent": "unsupported",
+      "pred_intent": "unsupported",
+      "intent_ok": true,
+      "result_ok": true,
+      "latency_s": 1.757839600002626,
+      "api_s": 1.7578271999955177,
+      "input_tokens": 2766,
+      "output_tokens": 32,
+      "api_error": null,
+      "compose_s": 0.0,
+      "answer": null,
+      "reasoning_tokens": 0,
+      "effort": "minimal",
+      "gold_result": null,
+      "pred_result": null,
+      "detail": {
+        "raw": "null"
+      }
+    }
+  ]
+}

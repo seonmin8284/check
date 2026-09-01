@@ -1,0 +1,14 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,해외주식 양도소득세 신고 기준이랑 세율 알려줘,1,I2-1,"I2-1 regulation=양도소득세
+I2-1 market=해외주식",,해외주식 양도소득세,"{""intents"": [""I2-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""양도소득세""}, {""intent_id"": ""I2-1"", ""type"": ""market"", ""value"": ""해외주식""}], ""constraints"": [], ""subject"": ""해외주식 양도소득세""}",2690,323,
+1,배당소득세 원천징수 세율이 얼마야?,1,I2-1,"I2-1 regulation=배당소득세
+I2-1 metric=원천징수 세율",,배당소득세 원천징수 세율,"{""intents"": [""I2-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""배당소득세""}, {""intent_id"": ""I2-1"", ""type"": ""metric"", ""value"": ""원천징수 세율""}], ""constraints"": [], ""subject"": ""배당소득세 원천징수 세율""}",2688,424,
+2,금융소득종합과세 대상이 되면 뭐가 달라져?,1,I2-1,I2-1 regulation=금융소득종합과세,,금융소득종합과세 대상 여부,"{""intents"": [""I2-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""금융소득종합과세""}], ""constraints"": [], ""subject"": ""금융소득종합과세 대상 여부""}",2691,197,
+3,연금저축 세액공제 한도랑 중도해지하면 불이익 있어?,2,I2-1;I2-3,"I2-1 product=연금저축
+I2-1 metric=세액공제 한도
+I2-3 procedure=중도해지",,연금저축 세액공제 한도 및 중도해지 불이익,"{""intents"": [""I2-1"", ""I2-3""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""product"", ""value"": ""연금저축""}, {""intent_id"": ""I2-1"", ""type"": ""metric"", ""value"": ""세액공제 한도""}, {""intent_id"": ""I2-3"", ""type"": ""procedure"", ""value"": ""중도해지""}], ""constraints"": [], ""subject"": ""연금저축 세액공제 한도 및 중도해지 불이익""}",2694,433,
+4,금융투자소득세 시행되는 거 맞아? 적용 대상이 누구야?,1,I2-1,I2-1 regulation=금융투자소득세,,금융투자소득세 시행 여부 및 적용 대상,"{""intents"": [""I2-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""금융투자소득세""}], ""constraints"": [], ""subject"": ""금융투자소득세 시행 여부 및 적용 대상""}",2692,235,
+5,ISA 계좌 비과세 한도랑 만기 후 연금계좌 이전하면 세제 혜택 있어?,2,I2-1;I1-2,"I1-2 product=ISA
+I2-1 metric=비과세 한도
+I2-1 product=연금계좌
+I2-1 procedure=이전",,ISA 계좌 비과세 한도 및 만기 후 연금계좌 이전 시 세제 혜택,"{""intents"": [""I2-1"", ""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""ISA""}, {""intent_id"": ""I2-1"", ""type"": ""metric"", ""value"": ""비과세 한도""}, {""intent_id"": ""I2-1"", ""type"": ""product"", ""value"": ""연금계좌""}, {""intent_id"": ""I2-1"", ""type"": ""procedure"", ""value"": ""이전""}], ""constraints"": [], ""subject"": ""ISA 계좌 비과세 한도 및 만기 후 연금계좌 이전 시 세제 혜택""}",2698,658,

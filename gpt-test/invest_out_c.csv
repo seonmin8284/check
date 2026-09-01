@@ -1,0 +1,388 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,삼성전자 HBM 납품 실적 영향도 전망,2,I6-7;I6-8,"I6-7 company=삼성전자
+I6-7 theme=HBM
+I6-8 company=삼성전자
+I6-8 theme=HBM",,삼성전자 HBM 납품의 실적 영향도 전망,"{""intents"": [""I6-7"", ""I6-8""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-7"", ""type"": ""theme"", ""value"": ""HBM""}, {""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""HBM""}], ""constraints"": [], ""subject"": ""삼성전자 HBM 납품의 실적 영향도 전망""}",2686,411,
+1,SK하이닉스 최근분기 HBM 수요 증가에 따른 예상 영업이익 추정치,3,I6-6;I6-7;I8-2,"I6-6 company=SK하이닉스
+I6-7 theme=HBM
+I6-6 metric=영업이익","I6-6 period=최근분기
+I6-7 direction=상승",SK하이닉스 영업이익 추정치,"{""intents"": [""I6-6"", ""I6-7"", ""I8-2""], ""entities"": [{""intent_id"": ""I6-6"", ""type"": ""company"", ""value"": ""SK하이닉스""}, {""intent_id"": ""I6-7"", ""type"": ""theme"", ""value"": ""HBM""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""영업이익""}], ""constraints"": [{""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""최근분기""}, {""intent_id"": ""I6-7"", ""type"": ""direction"", ""value"": ""상승""}], ""subject"": ""SK하이닉스 영업이익 추정치""}",2696,668,
+2,현대차 피지컬 AI 및 로봇 사업 진출에 따른 향후 주가 전망,3,I6-8;I6-7;I6-2,"I6-2 company=현대차
+I6-7 theme=피지컬 AI
+I6-7 theme=로봇 사업",,현대차 피지컬 AI·로봇 진출의 주가 영향,"{""intents"": [""I6-8"", ""I6-7"", ""I6-2""], ""entities"": [{""intent_id"": ""I6-2"", ""type"": ""company"", ""value"": ""현대차""}, {""intent_id"": ""I6-7"", ""type"": ""theme"", ""value"": ""피지컬 AI""}, {""intent_id"": ""I6-7"", ""type"": ""theme"", ""value"": ""로봇 사업""}], ""constraints"": [], ""subject"": ""현대차 피지컬 AI·로봇 진출의 주가 영향""}",2694,434,
+3,한화에어로스페이스 방산 수주 확대에 따른 2026년 실적 전망,3,I6-8;I6-6;I6-3,"I6-8 company=한화에어로스페이스
+I6-3 sector=방산
+I6-3 corporate_event=방산 수주 확대","I6-8 period=2026년
+I6-6 period=2026년",한화에어로스페이스 2026년 실적 전망,"{""intents"": [""I6-8"", ""I6-6"", ""I6-3""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""한화에어로스페이스""}, {""intent_id"": ""I6-3"", ""type"": ""sector"", ""value"": ""방산""}, {""intent_id"": ""I6-3"", ""type"": ""corporate_event"", ""value"": ""방산 수주 확대""}], ""constraints"": [{""intent_id"": ""I6-8"", ""type"": ""period"", ""value"": ""2026년""}, {""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""2026년""}], ""subject"": ""한화에어로스페이스 2026년 실적 전망""}",2695,754,
+4,네이버(NAVER) 최근 외국인 대량 매도 및 주가 하락 배경 분석,2,I6-7;I7-1,"I6-7 company=네이버(NAVER)
+I6-7 market_event=외국인 대량 매도
+I7-1 investor_group=외국인",I7-1 direction=하락,네이버 주가 하락 배경,"{""intents"": [""I6-7"", ""I7-1""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""네이버(NAVER)""}, {""intent_id"": ""I6-7"", ""type"": ""market_event"", ""value"": ""외국인 대량 매도""}, {""intent_id"": ""I7-1"", ""type"": ""investor_group"", ""value"": ""외국인""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""direction"", ""value"": ""하락""}], ""subject"": ""네이버 주가 하락 배경""}",2694,457,
+5,LG에너지솔루션 전기차 수요 둔화 관련 목표 주가 하향 가능성,2,I8-2;I5-2,"I8-2 company=LG에너지솔루션
+I5-2 market_event=전기차 수요 둔화",,LG에너지솔루션 목표주가 하향 가능성,"{""intents"": [""I8-2"", ""I5-2""], ""entities"": [{""intent_id"": ""I8-2"", ""type"": ""company"", ""value"": ""LG에너지솔루션""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""전기차 수요 둔화""}], ""constraints"": [], ""subject"": ""LG에너지솔루션 목표주가 하향 가능성""}",2695,423,
+6,크래프톤 신작 모멘텀 부재 상황에서 현재 주가 바닥 확인 지표,2,I7-2;I8-1,"I7-2 company=크래프톤
+I8-1 company=크래프톤
+I7-2 theme=신작 모멘텀 부재",,크래프톤 주가 바닥 확인 지표,"{""intents"": [""I7-2"", ""I8-1""], ""entities"": [{""intent_id"": ""I7-2"", ""type"": ""company"", ""value"": ""크래프톤""}, {""intent_id"": ""I8-1"", ""type"": ""company"", ""value"": ""크래프톤""}, {""intent_id"": ""I7-2"", ""type"": ""theme"", ""value"": ""신작 모멘텀 부재""}], ""constraints"": [], ""subject"": ""크래프톤 주가 바닥 확인 지표""}",2695,456,
+7,하이브 자사주 매입 발표가 단기 주가 상승에 미치는 효과,2,I7-1;I6-4,"I6-4 company=하이브
+I6-4 corporate_event=자사주 매입 발표",I7-1 period=단기,하이브 자사주 매입 발표의 단기 주가 영향,"{""intents"": [""I7-1"", ""I6-4""], ""entities"": [{""intent_id"": ""I6-4"", ""type"": ""company"", ""value"": ""하이브""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""자사주 매입 발표""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""단기""}], ""subject"": ""하이브 자사주 매입 발표의 단기 주가 영향""}",2692,416,
+8,에스피지 K-소비재 수출 급증에 따른 3분기 매출 증가 예상치,3,I5-2;I6-6;I6-8,"I6-6 company=에스피지
+I5-2 theme=K-소비재
+I5-2 market_event=수출 급증
+I6-6 metric=3분기 매출","I5-2 direction=급증
+I6-6 period=3분기",에스피지 3분기 매출 전망,"{""intents"": [""I5-2"", ""I6-6"", ""I6-8""], ""entities"": [{""intent_id"": ""I6-6"", ""type"": ""company"", ""value"": ""에스피지""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""K-소비재""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""수출 급증""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""3분기 매출""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""direction"", ""value"": ""급증""}, {""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""3분기""}], ""subject"": ""에스피지 3분기 매출 전망""}",2697,846,
+9,일진전기 전력 인프라 수요 증가 수혜에 따른 향후 실적 전망,3,I6-8;I6-7;I5-2,"I6-8 company=일진전기
+I6-7 company=일진전기
+I5-2 theme=전력 인프라 수요 증가",,일진전기 향후 실적 전망,"{""intents"": [""I6-8"", ""I6-7"", ""I5-2""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""일진전기""}, {""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""일진전기""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""전력 인프라 수요 증가""}], ""constraints"": [], ""subject"": ""일진전기 향후 실적 전망""}",2694,477,
+10,가온전선 글로벌 시장 확장에 따른 2026년 예상 매출 성장률,2,I6-8;I6-6,"I6-8 company=가온전선
+I6-8 market_event=글로벌 시장 확장
+I6-6 company=가온전선
+I6-6 metric=매출 성장률","I6-8 period=2026년
+I6-6 period=2026년",가온전선 2026년 매출 성장률,"{""intents"": [""I6-8"", ""I6-6""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""가온전선""}, {""intent_id"": ""I6-8"", ""type"": ""market_event"", ""value"": ""글로벌 시장 확장""}, {""intent_id"": ""I6-6"", ""type"": ""company"", ""value"": ""가온전선""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""매출 성장률""}], ""constraints"": [{""intent_id"": ""I6-8"", ""type"": ""period"", ""value"": ""2026년""}, {""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""2026년""}], ""subject"": ""가온전선 2026년 매출 성장률""}",2692,594,
+11,팬오션 1분기 실적 발표 이후 운임지수 반영 주가 전망,3,I6-8;I6-7;I6-6,"I6-8 company=팬오션
+I6-6 corporate_event=1분기 실적 발표
+I6-7 metric=운임지수",I6-6 period=1분기,팬오션 주가 전망,"{""intents"": [""I6-8"", ""I6-7"", ""I6-6""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""팬오션""}, {""intent_id"": ""I6-6"", ""type"": ""corporate_event"", ""value"": ""1분기 실적 발표""}, {""intent_id"": ""I6-7"", ""type"": ""metric"", ""value"": ""운임지수""}], ""constraints"": [{""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""1분기""}], ""subject"": ""팬오션 주가 전망""}",2693,471,
+12,한화솔루션 유상증자 결정 공시 후 단기 주가 변동성 분석,2,I6-4;I7-2,"I6-4 company=한화솔루션
+I6-4 corporate_event=유상증자 결정 공시
+I7-2 metric=단기 주가 변동성
+I7-2 company=한화솔루션",I7-2 period=단기,한화솔루션 단기 주가 변동성,"{""intents"": [""I6-4"", ""I7-2""], ""entities"": [{""intent_id"": ""I6-4"", ""type"": ""company"", ""value"": ""한화솔루션""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""유상증자 결정 공시""}, {""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""단기 주가 변동성""}, {""intent_id"": ""I7-2"", ""type"": ""company"", ""value"": ""한화솔루션""}], ""constraints"": [{""intent_id"": ""I7-2"", ""type"": ""period"", ""value"": ""단기""}], ""subject"": ""한화솔루션 단기 주가 변동성""}",2694,444,
+13,퍼스텍 부채비율 급증 원인 및 재무 건전성 리스크 점검,3,I6-7;I6-8;I6-6,"I6-7 company=퍼스텍
+I6-7 metric=부채비율
+I6-8 company=퍼스텍
+I6-8 metric=부채비율
+I6-6 company=퍼스텍
+I6-6 metric=부채비율","I6-7 direction=급증
+I6-8 direction=급증
+I6-6 direction=급증",퍼스텍 부채비율 및 재무 건전성,"{""intents"": [""I6-7"", ""I6-8"", ""I6-6""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""퍼스텍""}, {""intent_id"": ""I6-7"", ""type"": ""metric"", ""value"": ""부채비율""}, {""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""퍼스텍""}, {""intent_id"": ""I6-8"", ""type"": ""metric"", ""value"": ""부채비율""}, {""intent_id"": ""I6-6"", ""type"": ""company"", ""value"": ""퍼스텍""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""부채비율""}], ""constraints"": [{""intent_id"": ""I6-7"", ""type"": ""direction"", ""value"": ""급증""}, {""intent_id"": ""I6-8"", ""type"": ""direction"", ""value"": ""급증""}, {""intent_id"": ""I6-6"", ""type"": ""direction"", ""value"": ""급증""}], ""subject"": ""퍼스텍 부채비율 및 재무 건전성""}",2694,479,
+14,RF머티리얼즈 주요 임원진의 자사주 대량 매수 의미,3,I6-7;I6-8;I6-4,"I6-7 company=RF머티리얼즈
+I6-7 investor_group=주요 임원진
+I6-8 company=RF머티리얼즈
+I6-4 company=RF머티리얼즈
+I6-4 corporate_event=자사주 대량 매수",,RF머티리얼즈 주요 임원 임원진 자사주 대량 매수 의미,"{""intents"": [""I6-7"", ""I6-8"", ""I6-4""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""RF머티리얼즈""}, {""intent_id"": ""I6-7"", ""type"": ""investor_group"", ""value"": ""주요 임원진""}, {""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""RF머티리얼즈""}, {""intent_id"": ""I6-4"", ""type"": ""company"", ""value"": ""RF머티리얼즈""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""자사주 대량 매수""}], ""constraints"": [], ""subject"": ""RF머티리얼즈 주요 임원 임원진 자사주 대량 매수 의미""}",2692,611,
+15,최근 5일간 외국인이 가장 많이 순매수한 코스닥 특징주,1,I7-1,"I7-1 market=코스닥
+I7-1 investor_group=외국인","I7-1 period=최근 5일간
+I7-1 ranking=가장 많이 순매수한",코스닥 외국인 순매수 상위 종목,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""코스닥""}, {""intent_id"": ""I7-1"", ""type"": ""investor_group"", ""value"": ""외국인""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""최근 5일간""}, {""intent_id"": ""I7-1"", ""type"": ""ranking"", ""value"": ""가장 많이 순매수한""}], ""subject"": ""코스닥 외국인 순매수 상위 종목""}",2692,566,
+16,오늘 코스피 시장 기관 순매수 상위 TOP 5 종목 분석,2,I7-1;I6-7,"I7-1 market=코스피
+I7-1 investor_group=기관","I7-1 period=오늘
+I7-1 count=5
+I7-1 ranking=상위
+I7-1 scope=코스피 시장",코스피 기관 순매수 상위 TOP 5 종목,"{""intents"": [""I7-1"", ""I6-7""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""코스피""}, {""intent_id"": ""I7-1"", ""type"": ""investor_group"", ""value"": ""기관""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""오늘""}, {""intent_id"": ""I7-1"", ""type"": ""count"", ""value"": ""5""}, {""intent_id"": ""I7-1"", ""type"": ""ranking"", ""value"": ""상위""}, {""intent_id"": ""I7-1"", ""type"": ""scope"", ""value"": ""코스피 시장""}], ""subject"": ""코스피 기관 순매수 상위 TOP 5 종목""}",2690,700,
+17,에코프로비엠 최근 공매도 잔고 추이 및 외국인 숏커버링 동향,1,I7-2,"I7-2 company=에코프로비엠
+I7-2 metric=공매도 잔고
+I7-2 metric=숏커버링
+I7-2 investor_group=외국인",I7-2 period=최근,에코프로비엠 공매도 잔고 및 외국인 숏커버링 동향,"{""intents"": [""I7-2""], ""entities"": [{""intent_id"": ""I7-2"", ""type"": ""company"", ""value"": ""에코프로비엠""}, {""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""공매도 잔고""}, {""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""숏커버링""}, {""intent_id"": ""I7-2"", ""type"": ""investor_group"", ""value"": ""외국인""}], ""constraints"": [{""intent_id"": ""I7-2"", ""type"": ""period"", ""value"": ""최근""}], ""subject"": ""에코프로비엠 공매도 잔고 및 외국인 숏커버링 동향""}",2699,492,
+18,"코스닥 상장사 중 PER 10배 미만, 영업이익률 20% 이상 가치주 목록",2,I8-1;I6-6,"I8-1 market=코스닥
+I8-1 metric=PER
+I6-6 metric=영업이익률","I8-1 scope=코스닥
+I8-1 condition=PER 10배 미만
+I6-6 scope=코스닥
+I6-6 condition=영업이익률 20% 이상",코스닥 가치주 목록,"{""intents"": [""I8-1"", ""I6-6""], ""entities"": [{""intent_id"": ""I8-1"", ""type"": ""market"", ""value"": ""코스닥""}, {""intent_id"": ""I8-1"", ""type"": ""metric"", ""value"": ""PER""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""영업이익률""}], ""constraints"": [{""intent_id"": ""I8-1"", ""type"": ""scope"", ""value"": ""코스닥""}, {""intent_id"": ""I8-1"", ""type"": ""condition"", ""value"": ""PER 10배 미만""}, {""intent_id"": ""I6-6"", ""type"": ""scope"", ""value"": ""코스닥""}, {""intent_id"": ""I6-6"", ""type"": ""condition"", ""value"": ""영업이익률 20% 이상""}], ""subject"": ""코스닥 가치주 목록""}",2699,716,
+19,셀트리온 합병 이후 재무제표 상 상각비 부담 규모 및 실적 영향,2,I6-7;I6-6,"I6-7 company=셀트리온
+I6-7 corporate_event=합병
+I6-6 company=셀트리온
+I6-6 corporate_event=합병
+I6-6 metric=상각비",,셀트리온 합병 이후 상각비 및 실적 영향,"{""intents"": [""I6-7"", ""I6-6""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""셀트리온""}, {""intent_id"": ""I6-7"", ""type"": ""corporate_event"", ""value"": ""합병""}, {""intent_id"": ""I6-6"", ""type"": ""company"", ""value"": ""셀트리온""}, {""intent_id"": ""I6-6"", ""type"": ""corporate_event"", ""value"": ""합병""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""상각비""}], ""constraints"": [], ""subject"": ""셀트리온 합병 이후 상각비 및 실적 영향""}",2694,701,
+20,통신 3사 1분기 무선사업 영업이익 비교 분석,2,I6-6;I6-7,"I6-6 theme=통신 3사
+I6-6 metric=무선사업 영업이익
+I6-7 theme=통신 3사
+I6-7 metric=무선사업 영업이익","I6-6 period=1분기
+I6-7 period=1분기
+I6-6 scope=통신 3사
+I6-7 scope=통신 3사",통신 3사 1분기 무선사업 영업이익,"{""intents"": [""I6-6"", ""I6-7""], ""entities"": [{""intent_id"": ""I6-6"", ""type"": ""theme"", ""value"": ""통신 3사""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""무선사업 영업이익""}, {""intent_id"": ""I6-7"", ""type"": ""theme"", ""value"": ""통신 3사""}, {""intent_id"": ""I6-7"", ""type"": ""metric"", ""value"": ""무선사업 영업이익""}], ""constraints"": [{""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""1분기""}, {""intent_id"": ""I6-7"", ""type"": ""period"", ""value"": ""1분기""}, {""intent_id"": ""I6-6"", ""type"": ""scope"", ""value"": ""통신 3사""}, {""intent_id"": ""I6-7"", ""type"": ""scope"", ""value"": ""통신 3사""}], ""subject"": ""통신 3사 1분기 무선사업 영업이익""}",2691,548,
+21,음식료 업종 주요 기업들의 글로벌 수출 실적 및 영업 마진율,2,I5-2;I6-6,"I5-2 sector=음식료 업종
+I6-6 metric=글로벌 수출 실적
+I6-6 metric=영업 마진율",,음식료 업종 주요 기업들의 글로벌 수출 실적 및 영업 마진율,"{""intents"": [""I5-2"", ""I6-6""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""음식료 업종""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""글로벌 수출 실적""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""영업 마진율""}], ""constraints"": [], ""subject"": ""음식료 업종 주요 기업들의 글로벌 수출 실적 및 영업 마진율""}",2692,361,
+22,유상증자 제3자 배정 결정 기업의 수급 변화 및 주가 흐름 분석,3,I6-4;I7-1;I7-2,"I6-4 corporate_event=유상증자 제3자 배정 결정
+I7-1 metric=수급 변화
+I7-2 metric=주가 흐름",,유상증자 제3자 배정 결정 기업의 수급 및 주가,"{""intents"": [""I6-4"", ""I7-1"", ""I7-2""], ""entities"": [{""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""유상증자 제3자 배정 결정""}, {""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""수급 변화""}, {""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""주가 흐름""}], ""constraints"": [], ""subject"": ""유상증자 제3자 배정 결정 기업의 수급 및 주가""}",2694,546,
+23,기업설명회(IR) 직후 외국인 수급이 강하게 유입된 우량주,1,I7-1,"I7-1 corporate_event=기업설명회(IR)
+I7-1 investor_group=외국인","I7-1 period=직후
+I7-1 direction=강하게 유입된
+I7-1 condition=우량주",우량주,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""corporate_event"", ""value"": ""기업설명회(IR)""}, {""intent_id"": ""I7-1"", ""type"": ""investor_group"", ""value"": ""외국인""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""직후""}, {""intent_id"": ""I7-1"", ""type"": ""direction"", ""value"": ""강하게 유입된""}, {""intent_id"": ""I7-1"", ""type"": ""condition"", ""value"": ""우량주""}], ""subject"": ""우량주""}",2695,554,
+24,코스닥 시장 당일 거래대금 급증 섹터 및 주요 주도주 확인,2,I5-2;I7-1,"I5-2 market=코스닥 시장
+I5-2 metric=거래대금
+I5-2 market_event=급증
+I7-1 market=코스닥 시장
+I7-1 metric=거래대금
+I7-1 market_event=급증","I5-2 period=당일
+I5-2 direction=급증
+I7-1 period=당일
+I7-1 direction=급증",코스닥 당일 거래대금 급증 섹터 및 주요 주도주,"{""intents"": [""I5-2"", ""I7-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""market"", ""value"": ""코스닥 시장""}, {""intent_id"": ""I5-2"", ""type"": ""metric"", ""value"": ""거래대금""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""급증""}, {""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""코스닥 시장""}, {""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""거래대금""}, {""intent_id"": ""I7-1"", ""type"": ""market_event"", ""value"": ""급증""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""당일""}, {""intent_id"": ""I5-2"", ""type"": ""direction"", ""value"": ""급증""}, {""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""당일""}, {""intent_id"": ""I7-1"", ""type"": ""direction"", ""value"": ""급증""}], ""subject"": ""코스닥 당일 거래대금 급증 섹터 및 주요 주도주""}",2693,642,
+25,오늘 국내 증시(코스피/코스닥) 마감 시황 및 주요 상승 테마 요약,2,I7-1;I5-2,"I7-1 market=코스피
+I7-1 market=코스닥","I7-1 period=오늘
+I5-2 period=오늘",국내 증시 마감 시황 및 주요 상승 테마,"{""intents"": [""I7-1"", ""I5-2""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""코스피""}, {""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""코스닥""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""오늘""}, {""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""오늘""}], ""subject"": ""국내 증시 마감 시황 및 주요 상승 테마""}",2697,457,
+26,미국 CPI(소비자물가지수) 예상치 하회가 국내 금리 인하 기대감에 미치는 영향,2,I5-1;I9-1,"I9-1 index=미국 CPI(소비자물가지수)
+I5-1 market_event=국내 금리 인하 기대감",,미국 CPI가 국내 금리 인하 기대감에 미치는 영향,"{""intents"": [""I5-1"", ""I9-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""index"", ""value"": ""미국 CPI(소비자물가지수)""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""국내 금리 인하 기대감""}], ""constraints"": [], ""subject"": ""미국 CPI가 국내 금리 인하 기대감에 미치는 영향""}",2700,481,
+27,필라델피아 반도체 지수(SOX) 사상 최고치 경신이 국내 IT주에 미치는 파급력,2,I5-1;I5-2,"I5-1 index=필라델피아 반도체 지수(SOX)
+I5-1 market_event=사상 최고치 경신
+I5-2 sector=국내 IT주",,SOX 최고치의 국내 IT주 영향,"{""intents"": [""I5-1"", ""I5-2""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""index"", ""value"": ""필라델피아 반도체 지수(SOX)""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""사상 최고치 경신""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""국내 IT주""}], ""constraints"": [], ""subject"": ""SOX 최고치의 국내 IT주 영향""}",2702,404,
+28,중동 지정학적 리스크 완화에 따른 국제 유가 하락 및 정유주 수혜 여부,2,I5-1;I5-2,"I5-1 theme=중동 지정학적 리스크
+I5-1 market_event=국제 유가 하락
+I5-2 sector=정유주",I5-1 direction=하락,국제 유가·정유주,"{""intents"": [""I5-1"", ""I5-2""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""theme"", ""value"": ""중동 지정학적 리스크""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""국제 유가 하락""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""정유주""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""direction"", ""value"": ""하락""}], ""subject"": ""국제 유가·정유주""}",2696,543,
+29,2026년 한국 명목 GDP 성장률 상향 예상에 따른 하반기 코스피 밴드 전망,2,I5-1;I9-1,"I5-1 market=코스피
+I9-1 index=한국 명목 GDP 성장률","I5-1 period=하반기
+I9-1 period=2026년",코스피 밴드 전망,"{""intents"": [""I5-1"", ""I9-1""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""market"", ""value"": ""코스피""}, {""intent_id"": ""I9-1"", ""type"": ""index"", ""value"": ""한국 명목 GDP 성장률""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""period"", ""value"": ""하반기""}, {""intent_id"": ""I9-1"", ""type"": ""period"", ""value"": ""2026년""}], ""subject"": ""코스피 밴드 전망""}",2697,542,
+30,"달러-원 환율 1,400원 돌파 시 수출주(자동차)와 내수주 포트폴리오 대응 전략",2,I5-1;I2-3,"I5-1 metric=달러-원 환율
+I5-1 sector=자동차
+I2-3 theme=내수주
+I2-3 sector=자동차","I5-1 condition=1,400원 돌파 시
+I2-3 condition=1,400원 돌파 시",포트폴리오 대응 전략 (수출주·내수주),"{""intents"": [""I5-1"", ""I2-3""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""metric"", ""value"": ""달러-원 환율""}, {""intent_id"": ""I5-1"", ""type"": ""sector"", ""value"": ""자동차""}, {""intent_id"": ""I2-3"", ""type"": ""theme"", ""value"": ""내수주""}, {""intent_id"": ""I2-3"", ""type"": ""sector"", ""value"": ""자동차""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""condition"", ""value"": ""1,400원 돌파 시""}, {""intent_id"": ""I2-3"", ""type"": ""condition"", ""value"": ""1,400원 돌파 시""}], ""subject"": ""포트폴리오 대응 전략 (수출주·내수주)""}",2705,534,
+31,국민연금기금 국내 주식투자 비중 상향 조정 시 수급 유입 기대 섹터,1,I5-2,"I5-2 investor_group=국민연금기금
+I5-2 market_event=국내 주식투자 비중 상향 조정",,국민연금기금 비중 상향에 따른 수급 유입 기대 섹터,"{""intents"": [""I5-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""investor_group"", ""value"": ""국민연금기금""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""국내 주식투자 비중 상향 조정""}], ""constraints"": [], ""subject"": ""국민연금기금 비중 상향에 따른 수급 유입 기대 섹터""}",2699,586,
+32,"간밤 미국 증시(S&P500, 나스닥) 마감 상황 및 AI 빅테크 주요 특징주",2,I7-1;I5-2,"I7-1 market=미국 증시
+I7-1 index=S&P500
+I7-1 index=나스닥
+I5-2 theme=AI
+I5-2 theme=빅테크",,미국 증시 마감 및 AI·빅테크 특징주,"{""intents"": [""I7-1"", ""I5-2""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""미국 증시""}, {""intent_id"": ""I7-1"", ""type"": ""index"", ""value"": ""S&P500""}, {""intent_id"": ""I7-1"", ""type"": ""index"", ""value"": ""나스닥""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""AI""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""빅테크""}], ""constraints"": [], ""subject"": ""미국 증시 마감 및 AI·빅테크 특징주""}",2698,514,
+33,2026년 하반기 연준(Fed) 글로벌 금리 인하 기대감에 따른 바이오 수혜 분석,3,I5-2;I6-7;I6-8,"I5-2 sector=바이오
+I5-2 market_event=연준(Fed) 글로벌 금리 인하 기대감",I5-2 period=2026년 하반기,바이오 수혜 분석,"{""intents"": [""I5-2"", ""I6-7"", ""I6-8""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""바이오""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""연준(Fed) 글로벌 금리 인하 기대감""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""2026년 하반기""}], ""subject"": ""바이오 수혜 분석""}",2698,519,
+34,최근 1개월 코스피 지수 반등을 견인한 주요 매크로 지표 동향,1,I5-1,I5-1 index=코스피,I5-1 period=최근 1개월,코스피 반등 원인(매크로 지표 동향),"{""intents"": [""I5-1""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""index"", ""value"": ""코스피""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""period"", ""value"": ""최근 1개월""}], ""subject"": ""코스피 반등 원인(매크로 지표 동향)""}",2696,376,
+35,OECD의 한국 성장률 전망치 상향 업데이트가 증시 외국인 자금에 주는 의미,2,I6-3;I5-1,"I6-3 market_event=OECD의 한국 성장률 전망치 상향 업데이트
+I5-1 investor_group=외국인
+I5-1 market=증시","I6-3 direction=상향
+I5-1 direction=상승",OECD 성장률 전망치 상향이 외국인 자금에 미치는 영향,"{""intents"": [""I6-3"", ""I5-1""], ""entities"": [{""intent_id"": ""I6-3"", ""type"": ""market_event"", ""value"": ""OECD의 한국 성장률 전망치 상향 업데이트""}, {""intent_id"": ""I5-1"", ""type"": ""investor_group"", ""value"": ""외국인""}, {""intent_id"": ""I5-1"", ""type"": ""market"", ""value"": ""증시""}], ""constraints"": [{""intent_id"": ""I6-3"", ""type"": ""direction"", ""value"": ""상향""}, {""intent_id"": ""I5-1"", ""type"": ""direction"", ""value"": ""상승""}], ""subject"": ""OECD 성장률 전망치 상향이 외국인 자금에 미치는 영향""}",2696,634,
+36,시중 유동성 급증이 부동산 리츠(REITs) 및 금융주에 미치는 영향 분석,2,I5-2;I5-1,"I5-2 theme=부동산 리츠(REITs)
+I5-2 market_event=시중 유동성 급증
+I5-1 sector=금융주
+I5-1 market_event=시중 유동성 급증","I5-2 direction=급증
+I5-1 direction=급증",시중 유동성 급증이 부동산 리츠 및 금융주에 미치는 영향,"{""intents"": [""I5-2"", ""I5-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""부동산 리츠(REITs)""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""시중 유동성 급증""}, {""intent_id"": ""I5-1"", ""type"": ""sector"", ""value"": ""금융주""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""시중 유동성 급증""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""direction"", ""value"": ""급증""}, {""intent_id"": ""I5-1"", ""type"": ""direction"", ""value"": ""급증""}], ""subject"": ""시중 유동성 급증이 부동산 리츠 및 금융주에 미치는 영향""}",2698,525,
+37,금일 5일선이 20일선을 상향 돌파(골든크로스)한 기술적 강세 종목 리스트,1,I7-1,"I7-1 metric=5일선
+I7-1 metric=20일선
+I7-1 market_event=골든크로스
+I7-1 metric=기술적 강세","I7-1 period=금일
+I7-1 condition=상향 돌파(골든크로스)",5일선이 20일선을 상향 돌파한 종목 리스트,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""5일선""}, {""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""20일선""}, {""intent_id"": ""I7-1"", ""type"": ""market_event"", ""value"": ""골든크로스""}, {""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""기술적 강세""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""금일""}, {""intent_id"": ""I7-1"", ""type"": ""condition"", ""value"": ""상향 돌파(골든크로스)""}], ""subject"": ""5일선이 20일선을 상향 돌파한 종목 리스트""}",2703,507,
+38,오늘 코스피/코스닥 시장에서 52주 신고가를 경신한 주도주 확인,1,I7-1,"I7-1 market=코스피
+I7-1 market=코스닥
+I7-1 market_event=52주 신고가","I7-1 period=오늘
+I7-1 condition=주도주",코스피/코스닥 52주 신고가 주도주,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""코스피""}, {""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""코스닥""}, {""intent_id"": ""I7-1"", ""type"": ""market_event"", ""value"": ""52주 신고가""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""오늘""}, {""intent_id"": ""I7-1"", ""type"": ""condition"", ""value"": ""주도주""}], ""subject"": ""코스피/코스닥 52주 신고가 주도주""}",2696,492,
+39,이동평균선 역배열 등 하락세 지속 및 매도 압력이 큰 약세장 신호 분석,2,I5-1;I7-2,"I5-1 metric=이동평균선 역배열
+I5-1 market_event=매도 압력
+I7-2 metric=하락세","I5-1 direction=하락세 지속
+I5-1 condition=매도 압력이 큰",약세장 신호 분석,"{""intents"": [""I5-1"", ""I7-2""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""metric"", ""value"": ""이동평균선 역배열""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""매도 압력""}, {""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""하락세""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""direction"", ""value"": ""하락세 지속""}, {""intent_id"": ""I5-1"", ""type"": ""condition"", ""value"": ""매도 압력이 큰""}], ""subject"": ""약세장 신호 분석""}",2698,566,
+40,미국 대선 결과 예측이 국내 2차전지 및 신재생에너지 섹터에 미치는 정책적 영향,2,I5-2;I2-2,"I5-2 sector=2차전지
+I5-2 sector=신재생에너지
+I2-2 market_event=미국 대선 결과 예측
+I5-2 market_event=미국 대선 결과 예측",,미국 대선 결과 예측이 국내 2차전지·신재생에너지에 미치는 정책적 영향,"{""intents"": [""I5-2"", ""I2-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""2차전지""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""신재생에너지""}, {""intent_id"": ""I2-2"", ""type"": ""market_event"", ""value"": ""미국 대선 결과 예측""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""미국 대선 결과 예측""}], ""constraints"": [], ""subject"": ""미국 대선 결과 예측이 국내 2차전지·신재생에너지에 미치는 정책적 영향""}",2702,549,
+41,미국 장단기 금리차 역전 현상 해소 조짐에 따른 은행주 투자 전략,2,I5-2;I6-8,"I5-2 market=미국
+I5-2 market_event=미국 장단기 금리차 역전 현상
+I6-8 sector=은행주
+I5-2 metric=장단기 금리차",,은행주 투자 전략,"{""intents"": [""I5-2"", ""I6-8""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""market"", ""value"": ""미국""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""미국 장단기 금리차 역전 현상""}, {""intent_id"": ""I6-8"", ""type"": ""sector"", ""value"": ""은행주""}, {""intent_id"": ""I5-2"", ""type"": ""metric"", ""value"": ""장단기 금리차""}], ""constraints"": [], ""subject"": ""은행주 투자 전략""}",2696,488,
+42,중국 경기 부양책(부동산/소비재) 발표 시 국내 철강 및 화학 섹터 수혜 가능성,2,I5-2;I5-1,"I5-2 sector=철강
+I5-2 sector=화학
+I5-2 theme=부동산
+I5-2 theme=소비재
+I5-1 market=중국
+I5-1 market_event=중국 경기 부양책(부동산/소비재) 발표","I5-2 condition=중국 경기 부양책(부동산/소비재) 발표 시
+I5-1 condition=중국 경기 부양책(부동산/소비재) 발표 시",중국 경기 부양책 발표 시 국내 철강 및 화학 섹터 수혜 가능성,"{""intents"": [""I5-2"", ""I5-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""철강""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""화학""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""부동산""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""소비재""}, {""intent_id"": ""I5-1"", ""type"": ""market"", ""value"": ""중국""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""중국 경기 부양책(부동산/소비재) 발표""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""condition"", ""value"": ""중국 경기 부양책(부동산/소비재) 발표 시""}, {""intent_id"": ""I5-1"", ""type"": ""condition"", ""value"": ""중국 경기 부양책(부동산/소비재) 발표 시""}], ""subject"": ""중국 경기 부양책 발표 시 국내 철강 및 화학 섹터 수혜 가능성""}",2703,722,
+43,코스피 하락 종목수가 상승 종목수를 압도하는 쏠림 현상의 배경 분석,1,I5-1,"I5-1 market=코스피
+I5-1 market_event=하락 종목수
+I5-1 market_event=상승 종목수
+I5-1 market_event=쏠림 현상",I5-1 direction=하락,코스피 하락 우세 쏠림 현상 배경,"{""intents"": [""I5-1""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""market"", ""value"": ""코스피""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""하락 종목수""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""상승 종목수""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""쏠림 현상""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""direction"", ""value"": ""하락""}], ""subject"": ""코스피 하락 우세 쏠림 현상 배경""}",2697,508,
+44,반도체 수출액 급증이 전체 무역수지 흑자에 미치는 긍정적 파급 효과,2,I5-1;I5-2,"I5-1 sector=반도체
+I5-1 metric=수출액
+I5-1 market_event=급증
+I5-1 index=무역수지
+I5-1 metric=흑자",I5-1 direction=급증,반도체 수출 급증이 무역수지 흑자에 미치는 영향,"{""intents"": [""I5-1"", ""I5-2""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""sector"", ""value"": ""반도체""}, {""intent_id"": ""I5-1"", ""type"": ""metric"", ""value"": ""수출액""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""급증""}, {""intent_id"": ""I5-1"", ""type"": ""index"", ""value"": ""무역수지""}, {""intent_id"": ""I5-1"", ""type"": ""metric"", ""value"": ""흑자""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""direction"", ""value"": ""급증""}], ""subject"": ""반도체 수출 급증이 무역수지 흑자에 미치는 영향""}",2700,624,
+45,금융투자소득세(금투세) 유예 또는 폐지 논의가 증시 거래대금에 미치는 영향,2,I2-1;I5-1,"I2-1 regulation=금융투자소득세(금투세)
+I5-1 metric=거래대금",,금투세 유예·폐지 논의의 증시 거래대금 영향,"{""intents"": [""I2-1"", ""I5-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""금융투자소득세(금투세)""}, {""intent_id"": ""I5-1"", ""type"": ""metric"", ""value"": ""거래대금""}], ""constraints"": [], ""subject"": ""금투세 유예·폐지 논의의 증시 거래대금 영향""}",2702,308,
+46,한국은행 기준금리 동결 결정이 건설주 및 프로젝트파이낸싱(PF) 시장에 주는 의미,2,I5-2;I5-1,"I5-2 sector=건설주
+I5-2 theme=프로젝트파이낸싱(PF)
+I5-1 market_event=한국은행 기준금리 동결 결정",,금리 동결이 건설주 및 PF에 미치는 영향,"{""intents"": [""I5-2"", ""I5-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""건설주""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""프로젝트파이낸싱(PF)""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""한국은행 기준금리 동결 결정""}], ""constraints"": [], ""subject"": ""금리 동결이 건설주 및 PF에 미치는 영향""}",2699,399,
+47,글로벌 공급망 재편 및 니어쇼어링 수혜를 받는 국내 전장 부품 관련주,1,I5-2,"I5-2 theme=글로벌 공급망 재편
+I5-2 theme=니어쇼어링
+I5-2 sector=국내 전장 부품",,국내 전장 부품 관련주,"{""intents"": [""I5-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""글로벌 공급망 재편""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""니어쇼어링""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""국내 전장 부품""}], ""constraints"": [], ""subject"": ""국내 전장 부품 관련주""}",2697,306,
+48,VIX(변동성 지수) 하락에 따른 위험자산 선호 심리 회복 및 성장주 투자 적기 판단,3,I5-1;I6-8;I2-3,"I5-1 index=VIX(변동성 지수)
+I6-8 theme=성장주",,성장주 투자 적기,"{""intents"": [""I5-1"", ""I6-8"", ""I2-3""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""index"", ""value"": ""VIX(변동성 지수)""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""성장주""}], ""constraints"": [], ""subject"": ""성장주 투자 적기""}",2702,532,
+49,외국인 선물 매도 포지션 누적이 코스피 베이시스 및 프로그램 매매에 미치는 영향,2,I5-1;I7-1,"I7-1 investor_group=외국인
+I7-1 market_event=선물 매도 포지션 누적
+I5-1 metric=코스피 베이시스
+I5-1 market=코스피
+I5-1 market_event=프로그램 매매",,외국인 선물 매도 포지션 누적이 코스피 베이시스 및 프로그램 매매에 미치는 영향,"{""intents"": [""I5-1"", ""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""investor_group"", ""value"": ""외국인""}, {""intent_id"": ""I7-1"", ""type"": ""market_event"", ""value"": ""선물 매도 포지션 누적""}, {""intent_id"": ""I5-1"", ""type"": ""metric"", ""value"": ""코스피 베이시스""}, {""intent_id"": ""I5-1"", ""type"": ""market"", ""value"": ""코스피""}, {""intent_id"": ""I5-1"", ""type"": ""market_event"", ""value"": ""프로그램 매매""}], ""constraints"": [], ""subject"": ""외국인 선물 매도 포지션 누적이 코스피 베이시스 및 프로그램 매매에 미치는 영향""}",2701,736,
+50,삼성전자 올해 고정 배당금(DPS) 및 초과 잉여현금흐름(FCF) 발생 시 특별 배당 가능성,2,I6-5;I6-6,"I6-5 company=삼성전자
+I6-5 metric=DPS
+I6-5 corporate_event=특별 배당
+I6-6 metric=초과 잉여현금흐름(FCF)","I6-5 period=올해
+I6-6 period=올해",삼성전자 배당(고정 DPS 및 특별배당 가능성),"{""intents"": [""I6-5"", ""I6-6""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-5"", ""type"": ""metric"", ""value"": ""DPS""}, {""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""특별 배당""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""초과 잉여현금흐름(FCF)""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""period"", ""value"": ""올해""}, {""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""올해""}], ""subject"": ""삼성전자 배당(고정 DPS 및 특별배당 가능성)""}",2707,542,
+51,삼성전자 분기 배당 시기 및 다음 배당락일 기준일 확인,1,I6-5,"I6-5 company=삼성전자
+I6-5 corporate_event=분기 배당
+I6-5 corporate_event=배당락일 기준일",,삼성전자 분기 배당,"{""intents"": [""I6-5""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""분기 배당""}, {""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""배당락일 기준일""}], ""constraints"": [], ""subject"": ""삼성전자 분기 배당""}",2691,342,
+52,내 계좌에 들어온 배당금 내역은 HTS/MTS 어디서 조회하나요?,1,I3-1,"I3-1 app_feature=HTS/MTS
+I3-1 account=계좌
+I3-1 corporate_event=배당금 내역",,계좌 배당금 내역 조회,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""HTS/MTS""}, {""intent_id"": ""I3-1"", ""type"": ""account"", ""value"": ""계좌""}, {""intent_id"": ""I3-1"", ""type"": ""corporate_event"", ""value"": ""배당금 내역""}], ""constraints"": [], ""subject"": ""계좌 배당금 내역 조회""}",2695,438,
+53,자본준비금 감액을 통한 배당(비과세 배당) 실시 기업의 절세 혜택 상세 안내,1,I2-1,"I2-1 corporate_event=자본준비금 감액을 통한 배당
+I2-1 corporate_event=비과세 배당",,자본준비금 감액 통한 비과세 배당의 절세 혜택,"{""intents"": [""I2-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""corporate_event"", ""value"": ""자본준비금 감액을 통한 배당""}, {""intent_id"": ""I2-1"", ""type"": ""corporate_event"", ""value"": ""비과세 배당""}], ""constraints"": [], ""subject"": ""자본준비금 감액 통한 비과세 배당의 절세 혜택""}",2701,366,
+54,위클리 커버드콜 ETF의 월 분배금 현황 및 연환산 배당 수익률 추정,2,I6-5;I8-1,"I6-5 company=위클리 커버드콜 ETF
+I6-5 metric=월 분배금
+I8-1 company=위클리 커버드콜 ETF
+I8-1 metric=연환산 배당 수익률 추정",,위클리 커버드콜 ETF 분배금 및 배당수익률,"{""intents"": [""I6-5"", ""I8-1""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""company"", ""value"": ""위클리 커버드콜 ETF""}, {""intent_id"": ""I6-5"", ""type"": ""metric"", ""value"": ""월 분배금""}, {""intent_id"": ""I8-1"", ""type"": ""company"", ""value"": ""위클리 커버드콜 ETF""}, {""intent_id"": ""I8-1"", ""type"": ""metric"", ""value"": ""연환산 배당 수익률 추정""}], ""constraints"": [], ""subject"": ""위클리 커버드콜 ETF 분배금 및 배당수익률""}",2699,531,
+55,삼일제약 베트남 공장 가동 성과 가시화 시 중장기 배당 재개 가능성,3,I6-4;I6-5;I6-8,"I6-4 company=삼일제약
+I6-4 corporate_event=베트남 공장 가동 성과 가시화
+I6-5 company=삼일제약
+I6-8 company=삼일제약","I6-5 condition=가동 성과 가시화 시
+I6-8 condition=가동 성과 가시화 시
+I6-5 period=중장기
+I6-8 period=중장기",삼일제약 배당 재개 가능성,"{""intents"": [""I6-4"", ""I6-5"", ""I6-8""], ""entities"": [{""intent_id"": ""I6-4"", ""type"": ""company"", ""value"": ""삼일제약""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""베트남 공장 가동 성과 가시화""}, {""intent_id"": ""I6-5"", ""type"": ""company"", ""value"": ""삼일제약""}, {""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""삼일제약""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""condition"", ""value"": ""가동 성과 가시화 시""}, {""intent_id"": ""I6-8"", ""type"": ""condition"", ""value"": ""가동 성과 가시화 시""}, {""intent_id"": ""I6-5"", ""type"": ""period"", ""value"": ""중장기""}, {""intent_id"": ""I6-8"", ""type"": ""period"", ""value"": ""중장기""}], ""subject"": ""삼일제약 배당 재개 가능성""}",2699,597,
+56,국내 4대 금융지주사 중 현재 주가 기준 예상 배당 수익률이 가장 높은 곳,1,I6-5,I6-5 theme=국내 4대 금융지주사,"I6-5 condition=현재 주가 기준
+I6-5 ranking=상위",국내 4대 금융지주사 배당수익률,"{""intents"": [""I6-5""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""theme"", ""value"": ""국내 4대 금융지주사""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""condition"", ""value"": ""현재 주가 기준""}, {""intent_id"": ""I6-5"", ""type"": ""ranking"", ""value"": ""상위""}], ""subject"": ""국내 4대 금융지주사 배당수익률""}",2697,468,
+57,대표적 방어주인 통신주 및 유틸리티 업종의 하반기 예상 배당락일 및 투자 전략,2,I6-5;I5-2,"I6-5 sector=통신주
+I6-5 sector=유틸리티 업종","I6-5 period=하반기
+I5-2 period=하반기",통신주·유틸리티 업종 배당락일 및 투자 전략,"{""intents"": [""I6-5"", ""I5-2""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""sector"", ""value"": ""통신주""}, {""intent_id"": ""I6-5"", ""type"": ""sector"", ""value"": ""유틸리티 업종""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""period"", ""value"": ""하반기""}, {""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""하반기""}], ""subject"": ""통신주·유틸리티 업종 배당락일 및 투자 전략""}",2702,361,
+58,분기 배당을 수년째 꾸준히 실시하고 있는 코스피 우량 배당주 리스트,1,I6-5,"I6-5 corporate_event=분기 배당
+I6-5 market=코스피","I6-5 scope=코스피
+I6-5 condition=우량 배당주
+I6-5 condition=분기 배당을 수년째 꾸준히 실시",코스피 우량 분기 배당주 리스트,"{""intents"": [""I6-5""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""분기 배당""}, {""intent_id"": ""I6-5"", ""type"": ""market"", ""value"": ""코스피""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""scope"", ""value"": ""코스피""}, {""intent_id"": ""I6-5"", ""type"": ""condition"", ""value"": ""우량 배당주""}, {""intent_id"": ""I6-5"", ""type"": ""condition"", ""value"": ""분기 배당을 수년째 꾸준히 실시""}], ""subject"": ""코스피 우량 분기 배당주 리스트""}",2696,669,
+59,최근 주주친화정책의 일환으로 대규모 자사주 매입 및 소각을 발표한 기업 동향,2,I5-2;I6-3,"I5-2 theme=주주친화정책
+I6-3 corporate_event=자사주 매입 및 소각",I5-2 period=최근,자사주 매입 및 소각을 발표한 기업 동향,"{""intents"": [""I5-2"", ""I6-3""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""주주친화정책""}, {""intent_id"": ""I6-3"", ""type"": ""corporate_event"", ""value"": ""자사주 매입 및 소각""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""최근""}], ""subject"": ""자사주 매입 및 소각을 발표한 기업 동향""}",2701,453,
+60,국내 상장 고배당 ETF 리스트 및 주요 구성 종목의 배당 특성,2,I1-2;I6-5,I1-2 product=ETF,"I1-2 scope=국내 상장
+I6-5 scope=국내 상장",고배당 ETF 및 주요 구성종목의 배당 특성,"{""intents"": [""I1-2"", ""I6-5""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""ETF""}], ""constraints"": [{""intent_id"": ""I1-2"", ""type"": ""scope"", ""value"": ""국내 상장""}, {""intent_id"": ""I6-5"", ""type"": ""scope"", ""value"": ""국내 상장""}], ""subject"": ""고배당 ETF 및 주요 구성종목의 배당 특성""}",2692,500,
+61,배당락일 전후 주가 하락 방어를 위한 공매도 및 옵션 헤지(Hedge) 전략,1,I2-3,I2-3 corporate_event=배당락일,,배당락일 전후 주가 하락 방어 헤지 전략,"{""intents"": [""I2-3""], ""entities"": [{""intent_id"": ""I2-3"", ""type"": ""corporate_event"", ""value"": ""배당락일""}], ""constraints"": [], ""subject"": ""배당락일 전후 주가 하락 방어 헤지 전략""}",2698,279,
+62,배당 소득세 15.4% 원천징수 부과 기준 및 금융소득종합과세 해당 요건,1,I2-1,"I2-1 regulation=배당 소득세 15.4% 원천징수
+I2-1 regulation=금융소득종합과세",,배당소득세 원천징수 및 금융소득종합과세 요건,"{""intents"": [""I2-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""배당 소득세 15.4% 원천징수""}, {""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""금융소득종합과세""}], ""constraints"": [], ""subject"": ""배당소득세 원천징수 및 금융소득종합과세 요건""}",2701,285,
+63,현금 흐름표 기반 기업 실적 둔화에도 안정적 배당 유지가 가능한 현금 창출력 우수 기업,3,I6-6;I6-5;I6-7,"I6-6 metric=현금 흐름표
+I6-6 metric=현금 창출력
+I6-5 corporate_event=배당","I6-5 condition=실적 둔화에도 안정적 배당 유지 가능한
+I6-6 condition=현금 흐름표 기반",현금 창출력 우수 기업,"{""intents"": [""I6-6"", ""I6-5"", ""I6-7""], ""entities"": [{""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""현금 흐름표""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""현금 창출력""}, {""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""배당""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""condition"", ""value"": ""실적 둔화에도 안정적 배당 유지 가능한""}, {""intent_id"": ""I6-6"", ""type"": ""condition"", ""value"": ""현금 흐름표 기반""}], ""subject"": ""현금 창출력 우수 기업""}",2701,596,
+64,매년 배당금을 증액하는 '배당성장주' 국내 추천 종목 리스트,2,I6-5;I6-8,"I6-5 theme=배당성장주
+I6-8 theme=배당성장주","I6-5 scope=국내
+I6-8 scope=국내",배당성장주 추천 종목 리스트,"{""intents"": [""I6-5"", ""I6-8""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""theme"", ""value"": ""배당성장주""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""배당성장주""}], ""constraints"": [{""intent_id"": ""I6-5"", ""type"": ""scope"", ""value"": ""국내""}, {""intent_id"": ""I6-8"", ""type"": ""scope"", ""value"": ""국내""}], ""subject"": ""배당성장주 추천 종목 리스트""}",2693,407,
+65,우선주와 보통주의 가격 괴리율 확대를 이용한 단기 배당 투자 전략,1,I2-3,"I2-3 theme=우선주
+I2-3 theme=보통주
+I2-3 metric=가격 괴리율","I2-3 period=단기
+I2-3 condition=배당주",우선주·보통주 가격 괴리 활용 단기 배당 투자전략,"{""intents"": [""I2-3""], ""entities"": [{""intent_id"": ""I2-3"", ""type"": ""theme"", ""value"": ""우선주""}, {""intent_id"": ""I2-3"", ""type"": ""theme"", ""value"": ""보통주""}, {""intent_id"": ""I2-3"", ""type"": ""metric"", ""value"": ""가격 괴리율""}], ""constraints"": [{""intent_id"": ""I2-3"", ""type"": ""period"", ""value"": ""단기""}, {""intent_id"": ""I2-3"", ""type"": ""condition"", ""value"": ""배당주""}], ""subject"": ""우선주·보통주 가격 괴리 활용 단기 배당 투자전략""}",2695,442,
+66,연말 결산 배당을 노리고 3분기에 선취매 진입하기 좋은 고배당주 분석,3,I6-5;I6-7;I6-8,"I6-5 corporate_event=연말 결산 배당
+I6-5 theme=고배당주",I6-7 period=3분기,연말 결산 배당 노린 3분기 선취매 고배당주 분석,"{""intents"": [""I6-5"", ""I6-7"", ""I6-8""], ""entities"": [{""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""연말 결산 배당""}, {""intent_id"": ""I6-5"", ""type"": ""theme"", ""value"": ""고배당주""}], ""constraints"": [{""intent_id"": ""I6-7"", ""type"": ""period"", ""value"": ""3분기""}], ""subject"": ""연말 결산 배당 노린 3분기 선취매 고배당주 분석""}",2698,598,
+67,현금 배당 대신 주식 배당을 실시하는 기업의 배당락 이후 주가 방향성 통계,2,I7-2;I6-5,"I7-2 metric=주가 방향성
+I7-2 market_event=배당락
+I6-5 corporate_event=주식 배당
+I6-5 corporate_event=현금 배당",,주식배당 실시 기업의 배당락 이후 주가 방향성 통계,"{""intents"": [""I7-2"", ""I6-5""], ""entities"": [{""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""주가 방향성""}, {""intent_id"": ""I7-2"", ""type"": ""market_event"", ""value"": ""배당락""}, {""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""주식 배당""}, {""intent_id"": ""I6-5"", ""type"": ""corporate_event"", ""value"": ""현금 배당""}], ""constraints"": [], ""subject"": ""주식배당 실시 기업의 배당락 이후 주가 방향성 통계""}",2697,626,
+68,상장 리츠(REITs) 상품별 기초자산 특성 및 연환산 배당 수익률 비교,3,I6-2;I6-5;I2-3,"I6-2 theme=상장 리츠(REITs)
+I6-5 theme=상장 리츠(REITs)
+I6-5 metric=연환산 배당 수익률
+I2-3 theme=상장 리츠(REITs)",,상장 리츠 상품별 기초자산 특성 및 연환산 배당 수익률,"{""intents"": [""I6-2"", ""I6-5"", ""I2-3""], ""entities"": [{""intent_id"": ""I6-2"", ""type"": ""theme"", ""value"": ""상장 리츠(REITs)""}, {""intent_id"": ""I6-5"", ""type"": ""theme"", ""value"": ""상장 리츠(REITs)""}, {""intent_id"": ""I6-5"", ""type"": ""metric"", ""value"": ""연환산 배당 수익률""}, {""intent_id"": ""I2-3"", ""type"": ""theme"", ""value"": ""상장 리츠(REITs)""}], ""constraints"": [], ""subject"": ""상장 리츠 상품별 기초자산 특성 및 연환산 배당 수익률""}",2699,620,
+69,회사채 금리 대비 주식 배당 수익률(일드 갭)이 매력적인 구간에 진입한 섹터,2,I5-2;I8-1,"I5-2 metric=회사채 금리
+I5-2 metric=주식 배당 수익률(일드 갭)
+I8-1 metric=배당 수익률",I5-2 condition=매력적인 구간에 진입한,일드 갭이 매력적인 섹터,"{""intents"": [""I5-2"", ""I8-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""metric"", ""value"": ""회사채 금리""}, {""intent_id"": ""I5-2"", ""type"": ""metric"", ""value"": ""주식 배당 수익률(일드 갭)""}, {""intent_id"": ""I8-1"", ""type"": ""metric"", ""value"": ""배당 수익률""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""condition"", ""value"": ""매력적인 구간에 진입한""}], ""subject"": ""일드 갭이 매력적인 섹터""}",2703,476,
+70,코리아 디스카운트 해소를 위한 밸류업 프로그램 수혜 고배당 저PBR 주식,2,I8-1;I6-8,"I8-1 metric=고배당
+I8-1 metric=저PBR
+I6-8 theme=코리아 디스카운트 해소를 위한 밸류업 프로그램 수혜","I8-1 condition=고배당
+I8-1 condition=저PBR",코리아 디스카운트 해소 밸류업 수혜주(고배당·저PBR),"{""intents"": [""I8-1"", ""I6-8""], ""entities"": [{""intent_id"": ""I8-1"", ""type"": ""metric"", ""value"": ""고배당""}, {""intent_id"": ""I8-1"", ""type"": ""metric"", ""value"": ""저PBR""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""코리아 디스카운트 해소를 위한 밸류업 프로그램 수혜""}], ""constraints"": [{""intent_id"": ""I8-1"", ""type"": ""condition"", ""value"": ""고배당""}, {""intent_id"": ""I8-1"", ""type"": ""condition"", ""value"": ""저PBR""}], ""subject"": ""코리아 디스카운트 해소 밸류업 수혜주(고배당·저PBR)""}",2699,657,
+71,중간배당 신설을 정관에 추가한 중소형 기업들의 주가 모멘텀 분석,3,I7-2;I5-2;I6-4,"I5-2 theme=중간배당 신설
+I6-4 corporate_event=정관에 추가
+I7-2 regulation=중소형 기업들",,중간배당 정관 추가 중소형 기업들의 주가 모멘텀,"{""intents"": [""I7-2"", ""I5-2"", ""I6-4""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""중간배당 신설""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""정관에 추가""}, {""intent_id"": ""I7-2"", ""type"": ""regulation"", ""value"": ""중소형 기업들""}], ""constraints"": [], ""subject"": ""중간배당 정관 추가 중소형 기업들의 주가 모멘텀""}",2697,688,
+72,해외(미국) 주식 배당금 수령 시 발생하는 현지 세금 및 국내 과세 이중과세 조정,1,I2-1,"I2-1 market=미국
+I2-1 regulation=현지 세금
+I2-1 regulation=국내 과세
+I2-1 regulation=이중과세 조정",,해외(미국) 주식 배당금 세금,"{""intents"": [""I2-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""market"", ""value"": ""미국""}, {""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""현지 세금""}, {""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""국내 과세""}, {""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""이중과세 조정""}], ""constraints"": [], ""subject"": ""해외(미국) 주식 배당금 세금""}",2703,356,
+73,배당금 재투자를 통한 복리 효과를 극대화할 수 있는 TR(Total Return) ETF 상품 안내,1,I1-2,I1-2 theme=TR(Total Return) ETF,,TR ETF 상품,"{""intents"": [""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""theme"", ""value"": ""TR(Total Return) ETF""}], ""constraints"": [], ""subject"": ""TR ETF 상품""}",2698,438,
+74,대주주 지분율이 높아 고배당 기조를 유지할 가능성이 높은 알짜 기업 분석,2,I6-7;I6-5,I6-7 metric=대주주 지분율,"I6-7 condition=대주주 지분율이 높아
+I6-5 condition=고배당 기조를 유지할 가능성",고배당 알짜 기업,"{""intents"": [""I6-7"", ""I6-5""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""metric"", ""value"": ""대주주 지분율""}], ""constraints"": [{""intent_id"": ""I6-7"", ""type"": ""condition"", ""value"": ""대주주 지분율이 높아""}, {""intent_id"": ""I6-5"", ""type"": ""condition"", ""value"": ""고배당 기조를 유지할 가능성""}], ""subject"": ""고배당 알짜 기업""}",2697,468,
+75,"로봇 산업 주요 대기업(현대차, LG전자) 생태계 및 보스턴다이나믹스 상장 수혜주",2,I5-2;I4-1,"I5-2 sector=로봇 산업
+I5-2 company=현대차
+I5-2 company=LG전자
+I4-1 company=보스턴다이나믹스
+I4-1 corporate_event=상장",,로봇 산업 생태계 및 보스턴다이나믹스 상장 수혜주,"{""intents"": [""I5-2"", ""I4-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""로봇 산업""}, {""intent_id"": ""I5-2"", ""type"": ""company"", ""value"": ""현대차""}, {""intent_id"": ""I5-2"", ""type"": ""company"", ""value"": ""LG전자""}, {""intent_id"": ""I4-1"", ""type"": ""company"", ""value"": ""보스턴다이나믹스""}, {""intent_id"": ""I4-1"", ""type"": ""corporate_event"", ""value"": ""상장""}], ""constraints"": [], ""subject"": ""로봇 산업 생태계 및 보스턴다이나믹스 상장 수혜주""}",2705,664,
+76,"AI 반도체 HBM 수요 폭발에 따른 밸류체인(삼성전자, SK하이닉스, 한미반도체) 동향",2,I5-2;I6-7,"I5-2 theme=AI 반도체
+I5-2 theme=HBM
+I5-2 market_event=수요 폭발
+I6-7 company=삼성전자
+I6-7 company=SK하이닉스
+I6-7 company=한미반도체",,AI 반도체 HBM 밸류체인 동향,"{""intents"": [""I5-2"", ""I6-7""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""AI 반도체""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""HBM""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""수요 폭발""}, {""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""SK하이닉스""}, {""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""한미반도체""}], ""constraints"": [], ""subject"": ""AI 반도체 HBM 밸류체인 동향""}",2709,569,
+77,6G 핵심 기술 및 통신망 실증 관련 LG유플러스 및 네트워크 장비 관련주,2,I5-2;I6-1,"I5-2 theme=6G 핵심 기술
+I5-2 corporate_event=통신망 실증
+I5-2 sector=네트워크 장비
+I6-1 company=LG유플러스",,6G 핵심 기술 및 통신망 실증 관련 LG유플러스 및 네트워크 장비 관련주,"{""intents"": [""I5-2"", ""I6-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""6G 핵심 기술""}, {""intent_id"": ""I5-2"", ""type"": ""corporate_event"", ""value"": ""통신망 실증""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""네트워크 장비""}, {""intent_id"": ""I6-1"", ""type"": ""company"", ""value"": ""LG유플러스""}], ""constraints"": [], ""subject"": ""6G 핵심 기술 및 통신망 실증 관련 LG유플러스 및 네트워크 장비 관련주""}",2697,559,
+78,"인터넷 플랫폼 대표주(네이버, 카카오)의 광고 수익 둔화 및 AI 융합 신사업 모멘텀",3,I6-7;I6-8;I5-2,"I6-7 company=네이버
+I6-7 company=카카오
+I6-7 metric=광고 수익 둔화
+I6-8 theme=AI 융합 신사업 모멘텀
+I5-2 sector=인터넷 플랫폼",,네이버·카카오의 광고 수익 둔화와 AI 신사업 모멘텀,"{""intents"": [""I6-7"", ""I6-8"", ""I5-2""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""네이버""}, {""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""카카오""}, {""intent_id"": ""I6-7"", ""type"": ""metric"", ""value"": ""광고 수익 둔화""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""AI 융합 신사업 모멘텀""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""인터넷 플랫폼""}], ""constraints"": [], ""subject"": ""네이버·카카오의 광고 수익 둔화와 AI 신사업 모멘텀""}",2702,519,
+79,"전선(대한전선, 가온전선 등) 섹터의 북미 AI 데이터센터 전력 인프라 확충 수혜 분석",2,I5-2;I6-7,"I5-2 sector=전선
+I5-2 theme=북미 AI 데이터센터 전력 인프라 확충
+I6-7 company=대한전선
+I6-7 company=가온전선",I5-2 scope=북미,전선 섹터의 북미 AI 데이터센터 전력 인프라 확충 수혜,"{""intents"": [""I5-2"", ""I6-7""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""전선""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""북미 AI 데이터센터 전력 인프라 확충""}, {""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""대한전선""}, {""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""가온전선""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""scope"", ""value"": ""북미""}], ""subject"": ""전선 섹터의 북미 AI 데이터센터 전력 인프라 확충 수혜""}",2705,560,
+80,"보안, 전력설비, 냉각시스템 등 광범위한 AI 데이터센터 관련 파생 수혜주 리스트",2,I5-2;I6-1,"I5-2 theme=AI 데이터센터
+I5-2 sector=보안
+I5-2 sector=전력설비
+I5-2 sector=냉각시스템",,AI 데이터센터 관련 파생 수혜주 리스트,"{""intents"": [""I5-2"", ""I6-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""AI 데이터센터""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""보안""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""전력설비""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""냉각시스템""}], ""constraints"": [], ""subject"": ""AI 데이터센터 관련 파생 수혜주 리스트""}",2701,526,
+81,K-뷰티 및 중소형 화장품 관련주의 미국/일본 시장 인디브랜드 수출 성장 모멘텀,1,I5-2,"I5-2 sector=K-뷰티
+I5-2 sector=중소형 화장품 관련주
+I5-2 market=미국
+I5-2 market=일본
+I5-2 theme=인디브랜드
+I5-2 metric=수출 성장 모멘텀",,K-뷰티·중소형 화장품주 인디브랜드 수출 모멘텀,"{""intents"": [""I5-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""K-뷰티""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""중소형 화장품 관련주""}, {""intent_id"": ""I5-2"", ""type"": ""market"", ""value"": ""미국""}, {""intent_id"": ""I5-2"", ""type"": ""market"", ""value"": ""일본""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""인디브랜드""}, {""intent_id"": ""I5-2"", ""type"": ""metric"", ""value"": ""수출 성장 모멘텀""}], ""constraints"": [], ""subject"": ""K-뷰티·중소형 화장품주 인디브랜드 수출 모멘텀""}",2702,522,
+82,게임주 주요 대작 신작 출시 일정 및 글로벌 흥행 성과에 따른 하반기 주가 전망,3,I5-1;I6-4;I6-3,"I5-1 sector=게임주
+I6-4 corporate_event=출시 일정
+I6-3 theme=대작 신작
+I6-3 market_event=글로벌 흥행 성과","I5-1 period=하반기
+I6-3 scope=글로벌",게임주 대작 신작 출시 일정 및 하반기 주가 전망,"{""intents"": [""I5-1"", ""I6-4"", ""I6-3""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""sector"", ""value"": ""게임주""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""출시 일정""}, {""intent_id"": ""I6-3"", ""type"": ""theme"", ""value"": ""대작 신작""}, {""intent_id"": ""I6-3"", ""type"": ""market_event"", ""value"": ""글로벌 흥행 성과""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""period"", ""value"": ""하반기""}, {""intent_id"": ""I6-3"", ""type"": ""scope"", ""value"": ""글로벌""}], ""subject"": ""게임주 대작 신작 출시 일정 및 하반기 주가 전망""}",2697,751,
+83,방산주의 동유럽/중동 추가 수주 계약 소식 및 현대로템 등 핵심 무기체계 수출 전망,3,I6-3;I5-2;I6-8,"I6-3 corporate_event=추가 수주 계약 소식
+I5-2 theme=방산주
+I6-8 company=현대로템","I6-3 scope=동유럽/중동
+I6-8 scope=동유럽/중동",방산주 동유럽·중동 수주 소식 및 현대로템 핵심 무기체계 수출 전망,"{""intents"": [""I6-3"", ""I5-2"", ""I6-8""], ""entities"": [{""intent_id"": ""I6-3"", ""type"": ""corporate_event"", ""value"": ""추가 수주 계약 소식""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""방산주""}, {""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""현대로템""}], ""constraints"": [{""intent_id"": ""I6-3"", ""type"": ""scope"", ""value"": ""동유럽/중동""}, {""intent_id"": ""I6-8"", ""type"": ""scope"", ""value"": ""동유럽/중동""}], ""subject"": ""방산주 동유럽·중동 수주 소식 및 현대로템 핵심 무기체계 수출 전망""}",2702,592,
+84,조선업종 슈퍼사이클 진입 및 친환경 선가 상승에 따른 HD한국조선해양 등 실적 턴어라운드,3,I5-2;I6-7;I6-8,"I5-2 sector=조선업종
+I5-2 market_event=슈퍼사이클 진입
+I5-2 theme=친환경 선가 상승
+I6-7 company=HD한국조선해양
+I6-8 company=HD한국조선해양",,HD한국조선해양 실적 턴어라운드,"{""intents"": [""I5-2"", ""I6-7"", ""I6-8""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""조선업종""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""슈퍼사이클 진입""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""친환경 선가 상승""}, {""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""HD한국조선해양""}, {""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""HD한국조선해양""}], ""constraints"": [], ""subject"": ""HD한국조선해양 실적 턴어라운드""}",2708,661,
+85,비트코인 등 가상화폐 규제 완화 기조에 따른 국내 거래소 지분 보유 관련주,3,I6-1;I5-2;I2-2,"I6-1 theme=비트코인
+I2-2 regulation=가상화폐 규제 완화 기조",I6-1 scope=국내,국내 거래소 지분 보유 관련주,"{""intents"": [""I6-1"", ""I5-2"", ""I2-2""], ""entities"": [{""intent_id"": ""I6-1"", ""type"": ""theme"", ""value"": ""비트코인""}, {""intent_id"": ""I2-2"", ""type"": ""regulation"", ""value"": ""가상화폐 규제 완화 기조""}], ""constraints"": [{""intent_id"": ""I6-1"", ""type"": ""scope"", ""value"": ""국내""}], ""subject"": ""국내 거래소 지분 보유 관련주""}",2699,717,
+86,전고체 배터리 상용화 로드맵 및 국내 2차전지 소재/장비 밸류체인 수혜주,2,I5-2;I6-8,"I5-2 theme=전고체 배터리
+I5-2 sector=2차전지
+I6-8 sector=2차전지
+I6-8 theme=소재/장비 밸류체인","I5-2 scope=국내
+I6-8 scope=국내",전고체 배터리 상용화 로드맵 및 국내 2차전지 소재·장비 밸류체인 수혜주,"{""intents"": [""I5-2"", ""I6-8""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""전고체 배터리""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""2차전지""}, {""intent_id"": ""I6-8"", ""type"": ""sector"", ""value"": ""2차전지""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""소재/장비 밸류체인""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""scope"", ""value"": ""국내""}, {""intent_id"": ""I6-8"", ""type"": ""scope"", ""value"": ""국내""}], ""subject"": ""전고체 배터리 상용화 로드맵 및 국내 2차전지 소재·장비 밸류체인 수혜주""}",2705,629,
+87,미국 IRA 법안 변동성 및 글로벌 풍력/태양광 정책 수혜 가능한 국내 신재생에너지 관련주,3,I2-2;I5-2;I6-1,"I2-2 regulation=미국 IRA 법안
+I5-2 theme=글로벌 풍력/태양광 정책
+I6-1 sector=국내 신재생에너지 관련주",,미국 IRA 법안 변동성 및 글로벌 풍력·태양광 정책 수혜 국내 신재생에너지 관련주,"{""intents"": [""I2-2"", ""I5-2"", ""I6-1""], ""entities"": [{""intent_id"": ""I2-2"", ""type"": ""regulation"", ""value"": ""미국 IRA 법안""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""글로벌 풍력/태양광 정책""}, {""intent_id"": ""I6-1"", ""type"": ""sector"", ""value"": ""국내 신재생에너지 관련주""}], ""constraints"": [], ""subject"": ""미국 IRA 법안 변동성 및 글로벌 풍력·태양광 정책 수혜 국내 신재생에너지 관련주""}",2701,676,
+88,수소 경제 로드맵 본격화 및 발전용 연료전지 관련주 매수 진입 시점 점검,2,I5-2;I7-2,"I5-2 theme=수소 경제 로드맵
+I5-2 theme=발전용 연료전지
+I7-2 theme=발전용 연료전지",,발전용 연료전지 관련주 매수 진입 시점,"{""intents"": [""I5-2"", ""I7-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""수소 경제 로드맵""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""발전용 연료전지""}, {""intent_id"": ""I7-2"", ""type"": ""theme"", ""value"": ""발전용 연료전지""}], ""constraints"": [], ""subject"": ""발전용 연료전지 관련주 매수 진입 시점""}",2700,439,
+89,메타버스 생태계 확장 및 XR(확장현실) 기기 핵심 부품(마이크로 OLED 등) 밸류체인,1,I5-2,"I5-2 theme=메타버스
+I5-2 sector=XR(확장현실)
+I5-2 theme=마이크로 OLED",,메타버스 생태계 확장 및 XR 기기 핵심 부품 밸류체인,"{""intents"": [""I5-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""메타버스""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""XR(확장현실)""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""마이크로 OLED""}], ""constraints"": [], ""subject"": ""메타버스 생태계 확장 및 XR 기기 핵심 부품 밸류체인""}",2708,562,
+90,"AI 의료기기(루닛, 뷰노 등) 및 비대면 진료 관련주의 국내외 FDA 인허가 모멘텀",3,I6-3;I6-4;I5-2,"I6-3 company=루닛
+I6-3 company=뷰노
+I6-3 theme=AI 의료기기
+I6-3 theme=비대면 진료
+I6-3 corporate_event=FDA 인허가
+I6-4 corporate_event=FDA 인허가
+I5-2 theme=AI 의료기기
+I5-2 theme=비대면 진료","I6-3 scope=국내외
+I6-4 scope=국내외
+I5-2 scope=국내외",AI 의료기기·비대면 진료 관련주의 국내외 FDA 인허가 모멘텀,"{""intents"": [""I6-3"", ""I6-4"", ""I5-2""], ""entities"": [{""intent_id"": ""I6-3"", ""type"": ""company"", ""value"": ""루닛""}, {""intent_id"": ""I6-3"", ""type"": ""company"", ""value"": ""뷰노""}, {""intent_id"": ""I6-3"", ""type"": ""theme"", ""value"": ""AI 의료기기""}, {""intent_id"": ""I6-3"", ""type"": ""theme"", ""value"": ""비대면 진료""}, {""intent_id"": ""I6-3"", ""type"": ""corporate_event"", ""value"": ""FDA 인허가""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""FDA 인허가""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""AI 의료기기""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""비대면 진료""}], ""constraints"": [{""intent_id"": ""I6-3"", ""type"": ""scope"", ""value"": ""국내외""}, {""intent_id"": ""I6-4"", ""type"": ""scope"", ""value"": ""국내외""}, {""intent_id"": ""I5-2"", ""type"": ""scope"", ""value"": ""국내외""}], ""subject"": ""AI 의료기기·비대면 진료 관련주의 국내외 FDA 인허가 모멘텀""}",2706,729,
+91,스마트팩토리 및 산업용 피지컬 AI 도입 가속화에 따른 물류 로봇/자동화 섹터 동향,1,I5-2,"I5-2 theme=스마트팩토리
+I5-2 theme=산업용 피지컬 AI 도입 가속화
+I5-2 sector=물류 로봇/자동화 섹터",,물류 로봇/자동화 섹터 동향,"{""intents"": [""I5-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""스마트팩토리""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""산업용 피지컬 AI 도입 가속화""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""물류 로봇/자동화 섹터""}], ""constraints"": [], ""subject"": ""물류 로봇/자동화 섹터 동향""}",2705,403,
+92,정부 원전 생태계 복원 정책 및 체코 SMR(소형모듈원전) 해외 수주 기대 관련주,2,I5-2;I6-1,"I5-2 theme=원전 생태계 복원 정책
+I5-2 theme=체코 SMR(소형모듈원전) 해외 수주
+I6-1 sector=원전",,원전 생태계 복원·체코 SMR 해외 수주 관련주,"{""intents"": [""I5-2"", ""I6-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""원전 생태계 복원 정책""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""체코 SMR(소형모듈원전) 해외 수주""}, {""intent_id"": ""I6-1"", ""type"": ""sector"", ""value"": ""원전""}], ""constraints"": [], ""subject"": ""원전 생태계 복원·체코 SMR 해외 수주 관련주""}",2702,676,
+93,"IT 부품(디스플레이, 스마트폰 부품) 업종의 하반기 세트 재고 축적 및 업황 턴어라운드 전망",1,I5-2,"I5-2 sector=IT 부품(디스플레이, 스마트폰 부품)
+I5-2 market_event=세트 재고 축적",I5-2 period=하반기,IT 부품 업종 하반기 업황 전망,"{""intents"": [""I5-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""IT 부품(디스플레이, 스마트폰 부품)""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""세트 재고 축적""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""하반기""}], ""subject"": ""IT 부품 업종 하반기 업황 전망""}",2709,430,
+94,비만치료제(GLP-1) 글로벌 흥행 돌풍에 따른 국내 바이오 펩타이드 위탁생산(CMO) 관련주,2,I5-2;I6-1,"I5-2 theme=비만치료제(GLP-1)
+I5-2 market_event=글로벌 흥행 돌풍
+I6-1 sector=바이오 펩타이드 위탁생산(CMO)",,국내 바이오 펩타이드 CMO 관련주,"{""intents"": [""I5-2"", ""I6-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""비만치료제(GLP-1)""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""글로벌 흥행 돌풍""}, {""intent_id"": ""I6-1"", ""type"": ""sector"", ""value"": ""바이오 펩타이드 위탁생산(CMO)""}], ""constraints"": [], ""subject"": ""국내 바이오 펩타이드 CMO 관련주""}",2707,564,
+95,우주항공청 개청 및 스페이스X 저궤도 위성통신 서비스 상용화에 따른 우주항공 관련주,2,I5-2;I6-8,"I5-2 sector=우주항공
+I5-2 market_event=우주항공청 개청
+I5-2 theme=스페이스X 저궤도 위성통신 서비스 상용화
+I6-8 sector=우주항공",,우주항공 관련주,"{""intents"": [""I5-2"", ""I6-8""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""우주항공""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""우주항공청 개청""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""스페이스X 저궤도 위성통신 서비스 상용화""}, {""intent_id"": ""I6-8"", ""type"": ""sector"", ""value"": ""우주항공""}], ""constraints"": [], ""subject"": ""우주항공 관련주""}",2706,489,
+96,저출산 고령화 인구 구조 변화에 따른 시니어 헬스케어 및 키즈 산업 관련주,1,I5-2,"I5-2 theme=시니어 헬스케어
+I5-2 theme=키즈 산업
+I5-2 market_event=저출산 고령화 인구 구조 변화",,시니어 헬스케어 및 키즈 산업 관련주,"{""intents"": [""I5-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""시니어 헬스케어""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""키즈 산업""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""저출산 고령화 인구 구조 변화""}], ""constraints"": [], ""subject"": ""시니어 헬스케어 및 키즈 산업 관련주""}",2699,414,
+97,"여름철 폭염 및 겨울철 한파 등 이상 기후에 따른 계절성 테마주(가전, 에너지) 사이클 분석",1,I5-2,"I5-2 theme=계절성 테마주
+I5-2 market_event=여름철 폭염
+I5-2 market_event=겨울철 한파
+I5-2 sector=가전
+I5-2 sector=에너지","I5-2 period=여름철
+I5-2 period=겨울철",가전·에너지 계절성 테마주 사이클,"{""intents"": [""I5-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""계절성 테마주""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""여름철 폭염""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""겨울철 한파""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""가전""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""에너지""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""여름철""}, {""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""겨울철""}], ""subject"": ""가전·에너지 계절성 테마주 사이클""}",2706,607,
+98,웹툰 및 K-콘텐츠 플랫폼의 해외 상장(나스닥) 및 IP(지식재산권) 수출 확대 관련주,2,I5-2;I6-1,"I5-2 theme=웹툰
+I5-2 theme=K-콘텐츠 플랫폼
+I5-2 theme=IP(지식재산권) 수출 확대
+I5-2 market=나스닥",,웹툰 및 K-콘텐츠 플랫폼의 해외 상장(나스닥) 및 IP 수출 확대 관련주,"{""intents"": [""I5-2"", ""I6-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""웹툰""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""K-콘텐츠 플랫폼""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""IP(지식재산권) 수출 확대""}, {""intent_id"": ""I5-2"", ""type"": ""market"", ""value"": ""나스닥""}], ""constraints"": [], ""subject"": ""웹툰 및 K-콘텐츠 플랫폼의 해외 상장(나스닥) 및 IP 수출 확대 관련주""}",2705,524,
+99,희토류 등 핵심 광물 수출 통제 리스크에 따른 국내 페라이트 및 대체 소재 관련주,3,I5-2;I6-1;I6-7,"I5-2 theme=희토류
+I5-2 theme=핵심 광물
+I5-2 theme=페라이트
+I5-2 theme=대체 소재
+I5-2 market_event=수출 통제 리스크
+I6-1 theme=페라이트
+I6-1 theme=대체 소재
+I6-7 theme=희토류
+I6-7 theme=핵심 광물
+I6-7 market_event=수출 통제 리스크",I5-2 scope=국내,페라이트 및 대체 소재 관련주,"{""intents"": [""I5-2"", ""I6-1"", ""I6-7""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""희토류""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""핵심 광물""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""페라이트""}, {""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""대체 소재""}, {""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""수출 통제 리스크""}, {""intent_id"": ""I6-1"", ""type"": ""theme"", ""value"": ""페라이트""}, {""intent_id"": ""I6-1"", ""type"": ""theme"", ""value"": ""대체 소재""}, {""intent_id"": ""I6-7"", ""type"": ""theme"", ""value"": ""희토류""}, {""intent_id"": ""I6-7"", ""type"": ""theme"", ""value"": ""핵심 광물""}, {""intent_id"": ""I6-7"", ""type"": ""market_event"", ""value"": ""수출 통제 리스크""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""scope"", ""value"": ""국내""}], ""subject"": ""페라이트 및 대체 소재 관련주""}",2699,828,

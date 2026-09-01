@@ -1,0 +1,22 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,두산로보틱스 공모가랑 상장일 알려줘,1,I4-1,"I4-1 company=두산로보틱스
+I4-1 corporate_event=공모가
+I4-1 corporate_event=상장일",,두산로보틱스 공모가 및 상장일,"{""intents"": [""I4-1""], ""entities"": [{""intent_id"": ""I4-1"", ""type"": ""company"", ""value"": ""두산로보틱스""}, {""intent_id"": ""I4-1"", ""type"": ""corporate_event"", ""value"": ""공모가""}, {""intent_id"": ""I4-1"", ""type"": ""corporate_event"", ""value"": ""상장일""}], ""constraints"": [], ""subject"": ""두산로보틱스 공모가 및 상장일""}",2688,401,
+1,에이피알 상장 당시 공모주식수와 자본금 규모 알려줘,1,I4-1,"I4-1 company=에이피알
+I4-1 corporate_event=상장
+I4-1 metric=공모주식수
+I4-1 metric=자본금 규모",,에이피알 상장 당시 공모주식수·자본금 규모,"{""intents"": [""I4-1""], ""entities"": [{""intent_id"": ""I4-1"", ""type"": ""company"", ""value"": ""에이피알""}, {""intent_id"": ""I4-1"", ""type"": ""corporate_event"", ""value"": ""상장""}, {""intent_id"": ""I4-1"", ""type"": ""metric"", ""value"": ""공모주식수""}, {""intent_id"": ""I4-1"", ""type"": ""metric"", ""value"": ""자본금 규모""}], ""constraints"": [], ""subject"": ""에이피알 상장 당시 공모주식수·자본금 규모""}",2692,359,
+2,케이뱅크 상장할 때 어느 시장 어느 업종으로 상장했어?,2,I4-1;I6-1,I4-1 company=케이뱅크,,케이뱅크 상장시장·업종,"{""intents"": [""I4-1"", ""I6-1""], ""entities"": [{""intent_id"": ""I4-1"", ""type"": ""company"", ""value"": ""케이뱅크""}], ""constraints"": [], ""subject"": ""케이뱅크 상장시장·업종""}",2694,371,
+3,올해 신규 상장한 종목 중에 공모가 대비 수익률 높은 5개 알려줘,2,I4-1;I7-2,"I4-1 corporate_event=상장
+I7-2 metric=공모가 대비 수익률","I4-1 period=올해
+I4-1 scope=신규 상장한 종목
+I4-1 count=5
+I7-2 ranking=상위",올해 신규 상장 종목의 공모가 대비 수익률 상위 5개,"{""intents"": [""I4-1"", ""I7-2""], ""entities"": [{""intent_id"": ""I4-1"", ""type"": ""corporate_event"", ""value"": ""상장""}, {""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""공모가 대비 수익률""}], ""constraints"": [{""intent_id"": ""I4-1"", ""type"": ""period"", ""value"": ""올해""}, {""intent_id"": ""I4-1"", ""type"": ""scope"", ""value"": ""신규 상장한 종목""}, {""intent_id"": ""I4-1"", ""type"": ""count"", ""value"": ""5""}, {""intent_id"": ""I7-2"", ""type"": ""ranking"", ""value"": ""상위""}], ""subject"": ""올해 신규 상장 종목의 공모가 대비 수익률 상위 5개""}",2696,764,
+4,요즘 IPO 시장 분위기 어때? 공모주 청약 경쟁률 높은 편이야?,2,I5-1;I4-1,"I5-1 market=IPO 시장
+I4-1 corporate_event=공모주 청약",,IPO 시장 분위기 및 공모주 청약 경쟁률,"{""intents"": [""I5-1"", ""I4-1""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""market"", ""value"": ""IPO 시장""}, {""intent_id"": ""I4-1"", ""type"": ""corporate_event"", ""value"": ""공모주 청약""}], ""constraints"": [], ""subject"": ""IPO 시장 분위기 및 공모주 청약 경쟁률""}",2694,505,
+5,공모주 청약하려면 어떻게 해야 하나요?,1,I4-2,,,공모주 청약 절차,"{""intents"": [""I4-2""], ""entities"": [], ""constraints"": [], ""subject"": ""공모주 청약 절차""}",2685,131,
+6,이번 주 공모주 청약 일정 알려줘,1,I4-2,I4-2 corporate_event=공모주 청약,I4-2 period=이번 주,공모주 청약 일정,"{""intents"": [""I4-2""], ""entities"": [{""intent_id"": ""I4-2"", ""type"": ""corporate_event"", ""value"": ""공모주 청약""}], ""constraints"": [{""intent_id"": ""I4-2"", ""type"": ""period"", ""value"": ""이번 주""}], ""subject"": ""공모주 청약 일정""}",2683,243,
+7,공모주 균등배정이랑 비례배정 차이가 뭐야?,2,I1-1;I4-2,"I1-1 corporate_event=공모주
+I4-2 corporate_event=공모주",,공모주 배정방식,"{""intents"": [""I1-1"", ""I4-2""], ""entities"": [{""intent_id"": ""I1-1"", ""type"": ""corporate_event"", ""value"": ""공모주""}, {""intent_id"": ""I4-2"", ""type"": ""corporate_event"", ""value"": ""공모주""}], ""constraints"": [], ""subject"": ""공모주 배정방식""}",2692,484,
+8,청약 증거금은 언제 환불되고 티레이더M 어디서 확인해?,2,I4-2;I3-1,"I4-2 corporate_event=청약 증거금
+I3-1 app_feature=티레이더M",,청약 증거금 환불 시기 및 티레이더M 확인 위치,"{""intents"": [""I4-2"", ""I3-1""], ""entities"": [{""intent_id"": ""I4-2"", ""type"": ""corporate_event"", ""value"": ""청약 증거금""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""티레이더M""}], ""constraints"": [], ""subject"": ""청약 증거금 환불 시기 및 티레이더M 확인 위치""}",2692,325,

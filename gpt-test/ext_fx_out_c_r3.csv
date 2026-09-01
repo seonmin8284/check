@@ -1,0 +1,11 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,지금 원달러 환율 얼마야?,1,I9-1,I9-1 index=원달러 환율,,원달러 환율,"{""intents"": [""I9-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""index"", ""value"": ""원달러 환율""}], ""constraints"": [], ""subject"": ""원달러 환율""}",2683,201,
+1,엔화 환율 오늘 등락률 알려줘,1,I9-1,"I9-1 index=엔화 환율
+I9-1 metric=등락률",I9-1 period=오늘,엔화 환율 등락률,"{""intents"": [""I9-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""index"", ""value"": ""엔화 환율""}, {""intent_id"": ""I9-1"", ""type"": ""metric"", ""value"": ""등락률""}], ""constraints"": [{""intent_id"": ""I9-1"", ""type"": ""period"", ""value"": ""오늘""}], ""subject"": ""엔화 환율 등락률""}",2683,351,
+2,원달러 환율이 오르면 수출주에 어떤 영향이 있어?,2,I5-1;I6-8,"I5-1 index=원달러 환율
+I6-8 theme=수출주","I5-1 direction=상승
+I6-8 direction=상승",원달러 환율 상승이 수출주에 미치는 영향,"{""intents"": [""I5-1"", ""I6-8""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""index"", ""value"": ""원달러 환율""}, {""intent_id"": ""I6-8"", ""type"": ""theme"", ""value"": ""수출주""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""direction"", ""value"": ""상승""}, {""intent_id"": ""I6-8"", ""type"": ""direction"", ""value"": ""상승""}], ""subject"": ""원달러 환율 상승이 수출주에 미치는 영향""}",2690,420,
+3,환율 급등 상황에서 유리한 업종 상위 5개 알려줘,1,I5-2,I5-2 market_event=환율 급등,"I5-2 count=5
+I5-2 direction=급등",환율 급등 상황에서 유리한 업종,"{""intents"": [""I5-2""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""market_event"", ""value"": ""환율 급등""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""count"", ""value"": ""5""}, {""intent_id"": ""I5-2"", ""type"": ""direction"", ""value"": ""급등""}], ""subject"": ""환율 급등 상황에서 유리한 업종""}",2691,325,
+4,최근 환율 흐름이 코스피에 미치는 영향 분석해줘,2,I5-1;I9-1,"I5-1 market=코스피
+I9-1 index=환율",I9-1 period=최근,환율 흐름이 코스피에 미치는 영향,"{""intents"": [""I5-1"", ""I9-1""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""market"", ""value"": ""코스피""}, {""intent_id"": ""I9-1"", ""type"": ""index"", ""value"": ""환율""}], ""constraints"": [{""intent_id"": ""I9-1"", ""type"": ""period"", ""value"": ""최근""}], ""subject"": ""환율 흐름이 코스피에 미치는 영향""}",2689,634,

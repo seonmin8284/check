@@ -1,0 +1,17 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,코스피 지수 오늘 종가랑 거래대금 알려줘,1,I7-1,"I7-1 index=코스피 지수
+I7-1 metric=종가
+I7-1 metric=거래대금",I7-1 period=오늘,코스피 지수 종가 및 거래대금,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""index"", ""value"": ""코스피 지수""}, {""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""종가""}, {""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""거래대금""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""오늘""}], ""subject"": ""코스피 지수 종가 및 거래대금""}",2687,361,
+1,코스닥 이번 달 외국인 수급 동향 알려줘,1,I5-1,"I5-1 market=코스닥
+I5-1 investor_group=외국인
+I5-1 metric=수급",I5-1 period=이번 달,코스닥 외국인 수급 동향,"{""intents"": [""I5-1""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""market"", ""value"": ""코스닥""}, {""intent_id"": ""I5-1"", ""type"": ""investor_group"", ""value"": ""외국인""}, {""intent_id"": ""I5-1"", ""type"": ""metric"", ""value"": ""수급""}], ""constraints"": [{""intent_id"": ""I5-1"", ""type"": ""period"", ""value"": ""이번 달""}], ""subject"": ""코스닥 외국인 수급 동향""}",2687,401,
+2,코스피 지수 향후 전망 어떻게 봐?,1,I5-1,I5-1 index=코스피,,코스피 지수 전망,"{""intents"": [""I5-1""], ""entities"": [{""intent_id"": ""I5-1"", ""type"": ""index"", ""value"": ""코스피""}], ""constraints"": [], ""subject"": ""코스피 지수 전망""}",2685,185,
+3,코스피 PER이 과거 대비 저평가 구간인지 알려줘,2,I8-1;I7-2,"I8-1 metric=PER
+I7-2 market=코스피",I7-2 scope=과거 대비,코스피 PER,"{""intents"": [""I8-1"", ""I7-2""], ""entities"": [{""intent_id"": ""I8-1"", ""type"": ""metric"", ""value"": ""PER""}, {""intent_id"": ""I7-2"", ""type"": ""market"", ""value"": ""코스피""}], ""constraints"": [{""intent_id"": ""I7-2"", ""type"": ""scope"", ""value"": ""과거 대비""}], ""subject"": ""코스피 PER""}",2689,478,
+4,최근 한 달 수익률 상위 업종 5개랑 그 배경 알려줘,2,I5-2;I7-2,,"I5-2 period=최근 한 달
+I5-2 count=5
+I5-2 ranking=상위",최근 한 달 업종별 수익률 상위 5개,"{""intents"": [""I5-2"", ""I7-2""], ""entities"": [], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""최근 한 달""}, {""intent_id"": ""I5-2"", ""type"": ""count"", ""value"": ""5""}, {""intent_id"": ""I5-2"", ""type"": ""ranking"", ""value"": ""상위""}], ""subject"": ""최근 한 달 업종별 수익률 상위 5개""}",2692,462,
+5,코스닥 공매도 비중이 지금 높은 편인지 확인해줘,1,I7-1,"I7-1 market=코스닥
+I7-1 metric=공매도 비중",I7-1 period=지금,코스닥 공매도 비중,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""코스닥""}, {""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""공매도 비중""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""지금""}], ""subject"": ""코스닥 공매도 비중""}",2689,287,
+6,미국 금리 인하가 국내 증시에 미치는 영향 알려줘,2,I5-1;I9-1,"I9-1 market_event=미국 금리 인하
+I5-1 market=국내 증시",,미국 금리 인하가 국내 증시에 미치는 영향,"{""intents"": [""I5-1"", ""I9-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""market_event"", ""value"": ""미국 금리 인하""}, {""intent_id"": ""I5-1"", ""type"": ""market"", ""value"": ""국내 증시""}], ""constraints"": [], ""subject"": ""미국 금리 인하가 국내 증시에 미치는 영향""}",2688,415,

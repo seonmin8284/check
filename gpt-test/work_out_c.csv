@@ -1,0 +1,202 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,개설된 자녀계좌 확인하는 방법 알려줘.,1,I3-2,I3-2 account=자녀계좌,,자녀계좌 개설 확인 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""자녀계좌""}], ""constraints"": [], ""subject"": ""자녀계좌 개설 확인 방법""}",2686,322,
+1,유안타증권 비대면 자녀계좌 등록 및 개설 절차,1,I3-2,"I3-2 company=유안타증권
+I3-2 account=자녀계좌
+I3-2 procedure=등록
+I3-2 procedure=개설",I3-2 channel=비대면,비대면 자녀계좌 등록 및 개설 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""company"", ""value"": ""유안타증권""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""자녀계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""등록""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""개설""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""비대면 자녀계좌 등록 및 개설 절차""}",2691,440,
+2,자녀계좌 온라인 개설 후 잔고 확인은 어떻게 하나요?,2,I3-1;I3-2,"I3-1 account=자녀계좌
+I3-2 procedure=개설",I3-2 channel=온라인,자녀계좌 잔고 확인,"{""intents"": [""I3-1"", ""I3-2""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""account"", ""value"": ""자녀계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""개설""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""온라인""}], ""subject"": ""자녀계좌 잔고 확인""}",2690,459,
+3,일반 비대면 주식계좌 개설 절차 안내,1,I3-2,"I3-2 account=주식계좌
+I3-2 procedure=계좌 개설",I3-2 channel=비대면,주식계좌 개설 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""주식계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""계좌 개설""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""주식계좌 개설 절차""}",2687,317,
+4,해외주식 전용 계좌개설은 어디서 해야 하나요?,1,I3-2,I3-2 account=해외주식 전용 계좌개설,,해외주식 전용 계좌개설,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""해외주식 전용 계좌개설""}], ""constraints"": [], ""subject"": ""해외주식 전용 계좌개설""}",2690,420,
+5,기존 국내 주식 계좌가 있는데 해외주식용을 별도로 개설해야 하나요?,1,I3-2,"I3-2 account=국내 주식 계좌
+I3-2 account=해외주식용",,해외주식 계좌 개설 필요 여부,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""국내 주식 계좌""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""해외주식용""}], ""constraints"": [], ""subject"": ""해외주식 계좌 개설 필요 여부""}",2695,286,
+6,미성년자 계좌개설 시 필수 제출 서류 목록,1,I3-2,,,미성년자 계좌개설 제출서류,"{""intents"": [""I3-2""], ""entities"": [], ""constraints"": [], ""subject"": ""미성년자 계좌개설 제출서류""}",2688,241,
+7,연금저축계좌 비대면 개설 방법,1,I3-2,I3-2 product=연금저축계좌,I3-2 channel=비대면,연금저축계좌 개설 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""연금저축계좌""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""연금저축계좌 개설 방법""}",2685,313,
+8,퇴직연금(IRP) 계좌개설 완료 후 다음 단계는?,1,I3-2,"I3-2 product=IRP
+I3-2 procedure=계좌개설",,퇴직연금(IRP) 계좌,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""IRP""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""계좌개설""}], ""constraints"": [], ""subject"": ""퇴직연금(IRP) 계좌""}",2690,290,
+9,계좌 해지 방법과 필요 서류,1,I3-2,"I3-2 account=계좌
+I3-2 procedure=계좌 해지
+I3-2 document=필요 서류",,계좌 해지,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""계좌 해지""}, {""intent_id"": ""I3-2"", ""type"": ""document"", ""value"": ""필요 서류""}], ""constraints"": [], ""subject"": ""계좌 해지""}",2682,413,
+10,휴면계좌의 거래 재개 및 활성화 방법,1,I3-2,"I3-2 account=휴면계좌
+I3-2 procedure=거래 재개 및 활성화 방법",,휴면계좌 활성화 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""휴면계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""거래 재개 및 활성화 방법""}], ""constraints"": [], ""subject"": ""휴면계좌 활성화 방법""}",2685,539,
+11,비대면계좌 개설 후 한도제한계좌 해제 방법,1,I3-2,"I3-2 account=비대면계좌
+I3-2 account=한도제한계좌
+I3-2 procedure=해제",,한도제한계좌 해제 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""비대면계좌""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""한도제한계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""해제""}], ""constraints"": [], ""subject"": ""한도제한계좌 해제 방법""}",2690,455,
+12,계좌 비밀번호 5회 오류 시 재등록 방법,1,I3-2,"I3-2 account=계좌 비밀번호
+I3-2 procedure=재등록",I3-2 condition=5회 오류,계좌 비밀번호 재등록 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""계좌 비밀번호""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""재등록""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""condition"", ""value"": ""5회 오류""}], ""subject"": ""계좌 비밀번호 재등록 방법""}",2685,308,
+13,온라인에서 계좌비밀번호 변경하는 방법,1,I3-2,"I3-2 account=계좌비밀번호
+I3-2 procedure=변경",I3-2 channel=온라인,계좌비밀번호 변경,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""계좌비밀번호""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""변경""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""온라인""}], ""subject"": ""계좌비밀번호 변경""}",2682,323,
+14,ISA계좌 만기연장 신청 방법,1,I3-2,"I3-2 product=ISA
+I3-2 procedure=만기연장 신청",,ISA계좌 만기연장 신청 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""ISA""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""만기연장 신청""}], ""constraints"": [], ""subject"": ""ISA계좌 만기연장 신청 방법""}",2682,260,
+15,ISA계좌 일반형에서 서민형으로 전환 절차,1,I3-2,"I3-2 product=ISA
+I3-2 account=일반형
+I3-2 account=서민형
+I3-2 procedure=전환",,ISA계좌 일반형에서 서민형 전환 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""ISA""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""일반형""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""서민형""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""전환""}], ""constraints"": [], ""subject"": ""ISA계좌 일반형에서 서민형 전환 절차""}",2687,417,
+16,모계좌 연결 및 주식투자 계좌 연결 방법,1,I3-2,"I3-2 account=모계좌
+I3-2 account=주식투자 계좌",,계좌 연결 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""모계좌""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""주식투자 계좌""}], ""constraints"": [], ""subject"": ""계좌 연결 방법""}",2686,265,
+17,신탁계좌 비대면 신청 절차,1,I3-2,"I3-2 product=신탁
+I3-2 procedure=신청",I3-2 channel=비대면,신탁계좌 비대면 신청 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""신탁""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""신청""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""신탁계좌 비대면 신청 절차""}",2683,359,
+18,투자성향등록 및 갱신 방법,1,I3-2,"I3-2 procedure=투자성향등록
+I3-2 procedure=갱신",,투자성향 등록 및 갱신 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""투자성향등록""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""갱신""}], ""constraints"": [], ""subject"": ""투자성향 등록 및 갱신 방법""}",2683,252,
+19,고객확인의무(CDD) 투자정보확인서 작성 메뉴 위치,1,I3-1,"I3-1 regulation=고객확인의무(CDD)
+I3-1 document=투자정보확인서
+I3-1 app_feature=메뉴",,투자정보확인서 작성 메뉴 위치,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""regulation"", ""value"": ""고객확인의무(CDD)""}, {""intent_id"": ""I3-1"", ""type"": ""document"", ""value"": ""투자정보확인서""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""메뉴""}], ""constraints"": [], ""subject"": ""투자정보확인서 작성 메뉴 위치""}",2689,359,
+20,VIP 고객 대상 주식 매매 수수료 혜택 안내,1,I9-1,I9-1 investor_group=VIP 고객,,VIP 고객 대상 주식 매매 수수료 혜택 안내,"{""intents"": [""I9-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""investor_group"", ""value"": ""VIP 고객""}], ""constraints"": [], ""subject"": ""VIP 고객 대상 주식 매매 수수료 혜택 안내""}",2687,275,
+21,모바일 앱 거래와 HTS 거래 간 수수료율 차이,1,I2-3,"I2-3 app_feature=모바일 앱 거래
+I2-3 app_feature=HTS 거래",,모바일 앱과 HTS 간 수수료율 차이,"{""intents"": [""I2-3""], ""entities"": [{""intent_id"": ""I2-3"", ""type"": ""app_feature"", ""value"": ""모바일 앱 거래""}, {""intent_id"": ""I2-3"", ""type"": ""app_feature"", ""value"": ""HTS 거래""}], ""constraints"": [], ""subject"": ""모바일 앱과 HTS 간 수수료율 차이""}",2688,456,
+22,현재 내 계좌에 적용 중인 주식거래 수수료율 확인법,1,I3-1,"I3-1 account=계좌
+I3-1 metric=주식거래 수수료율",,계좌 수수료율 확인방법,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""account"", ""value"": ""계좌""}, {""intent_id"": ""I3-1"", ""type"": ""metric"", ""value"": ""주식거래 수수료율""}], ""constraints"": [], ""subject"": ""계좌 수수료율 확인방법""}",2691,414,
+23,주식모으기(적립식) 서비스 이용 시 수수료 정책,1,I1-2,I1-2 product=주식모으기(적립식) 서비스,,주식모으기(적립식) 서비스 수수료 정책,"{""intents"": [""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""주식모으기(적립식) 서비스""}], ""constraints"": [], ""subject"": ""주식모으기(적립식) 서비스 수수료 정책""}",2690,296,
+24,"해외주식 매수 시 국가별(미국, 중국 등) 수수료 안내",1,I9-1,"I9-1 market=미국
+I9-1 market=중국",,해외주식 국가별 수수료 안내,"{""intents"": [""I9-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""market"", ""value"": ""미국""}, {""intent_id"": ""I9-1"", ""type"": ""market"", ""value"": ""중국""}], ""constraints"": [], ""subject"": ""해외주식 국가별 수수료 안내""}",2693,374,
+25,선물옵션 모바일 거래 수수료 문의,2,I9-1;I3-1,I9-1 product=선물옵션,I9-1 channel=모바일,선물옵션 모바일 거래 수수료 문의,"{""intents"": [""I9-1"", ""I3-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""product"", ""value"": ""선물옵션""}], ""constraints"": [{""intent_id"": ""I9-1"", ""type"": ""channel"", ""value"": ""모바일""}], ""subject"": ""선물옵션 모바일 거래 수수료 문의""}",2683,588,
+26,타 증권사로 주식 대체 출고 시 발생하는 수수료,1,I3-2,"I3-2 procedure=주식 대체 출고
+I3-2 metric=수수료",,주식 대체 출고 수수료,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""주식 대체 출고""}, {""intent_id"": ""I3-2"", ""type"": ""metric"", ""value"": ""수수료""}], ""constraints"": [], ""subject"": ""주식 대체 출고 수수료""}",2690,508,
+27,주식 담보 대출 금리 산정 방식,2,I1-2;I1-1,"I1-2 product=주식 담보 대출
+I1-1 metric=금리",,주식 담보 대출 금리 산정 방식,"{""intents"": [""I1-2"", ""I1-1""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""주식 담보 대출""}, {""intent_id"": ""I1-1"", ""type"": ""metric"", ""value"": ""금리""}], ""constraints"": [], ""subject"": ""주식 담보 대출 금리 산정 방식""}",2684,355,
+28,주식 담보 대출의 개인별 대출 한도 산정 기준,2,I2-2;I1-2,"I2-2 product=주식 담보 대출
+I2-2 metric=대출 한도
+I1-2 product=주식 담보 대출",,주식 담보 대출의 개인별 대출 한도 산정 기준,"{""intents"": [""I2-2"", ""I1-2""], ""entities"": [{""intent_id"": ""I2-2"", ""type"": ""product"", ""value"": ""주식 담보 대출""}, {""intent_id"": ""I2-2"", ""type"": ""metric"", ""value"": ""대출 한도""}, {""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""주식 담보 대출""}], ""constraints"": [], ""subject"": ""주식 담보 대출의 개인별 대출 한도 산정 기준""}",2689,400,
+29,스마트출금 대출 서비스 금리와 이용 조건,1,I1-2,"I1-2 product=스마트출금 대출 서비스
+I1-2 metric=금리",,스마트출금 대출 서비스,"{""intents"": [""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""스마트출금 대출 서비스""}, {""intent_id"": ""I1-2"", ""type"": ""metric"", ""value"": ""금리""}], ""constraints"": [], ""subject"": ""스마트출금 대출 서비스""}",2685,400,
+30,공모주 청약 시 고객 등급별 수수료 면제 조건,1,I4-2,"I4-2 corporate_event=공모주 청약
+I4-2 investor_group=고객 등급별",,공모주 청약 수수료 면제 조건,"{""intents"": [""I4-2""], ""entities"": [{""intent_id"": ""I4-2"", ""type"": ""corporate_event"", ""value"": ""공모주 청약""}, {""intent_id"": ""I4-2"", ""type"": ""investor_group"", ""value"": ""고객 등급별""}], ""constraints"": [], ""subject"": ""공모주 청약 수수료 면제 조건""}",2689,386,
+31,배당금 입금 알림(카카오톡/문자) 서비스 설정 방법,1,I3-1,I3-1 app_feature=알림,I3-1 channel=카카오톡/문자,배당금 입금 알림 서비스 설정,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""알림""}], ""constraints"": [{""intent_id"": ""I3-1"", ""type"": ""channel"", ""value"": ""카카오톡/문자""}], ""subject"": ""배당금 입금 알림 서비스 설정""}",2691,414,
+32,모바일 Push 알림 서비스 신청 및 발생 비용 안내,1,I3-2,"I3-2 app_feature=모바일 Push 알림 서비스
+I3-2 procedure=신청
+I3-2 metric=발생 비용",,모바일 Push 알림 서비스,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""app_feature"", ""value"": ""모바일 Push 알림 서비스""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""신청""}, {""intent_id"": ""I3-2"", ""type"": ""metric"", ""value"": ""발생 비용""}], ""constraints"": [], ""subject"": ""모바일 Push 알림 서비스""}",2684,515,
+33,프리미엄 알리미 서비스와 기본 알리미의 혜택 차이,1,I3-1,"I3-1 app_feature=프리미엄 알리미 서비스
+I3-1 app_feature=기본 알리미",,알리미 서비스 혜택 차이,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""프리미엄 알리미 서비스""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""기본 알리미""}], ""constraints"": [], ""subject"": ""알리미 서비스 혜택 차이""}",2692,319,
+34,우수고객 우대제도 선정 기준 및 혜택,1,I2-2,I2-2 product=우수고객 우대제도,,우수고객 우대제도,"{""intents"": [""I2-2""], ""entities"": [{""intent_id"": ""I2-2"", ""type"": ""product"", ""value"": ""우수고객 우대제도""}], ""constraints"": [], ""subject"": ""우수고객 우대제도""}",2687,413,
+35,신용융자 매매 시 이자율 및 수수료 체계,1,I1-2,"I1-2 metric=이자율
+I1-2 metric=수수료 체계",,신용융자 매매,"{""intents"": [""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""metric"", ""value"": ""이자율""}, {""intent_id"": ""I1-2"", ""type"": ""metric"", ""value"": ""수수료 체계""}], ""constraints"": [], ""subject"": ""신용융자 매매""}",2689,264,
+36,해외주식 양도소득세 신고 대행 서비스 신청 수수료,1,I2-1,"I2-1 regulation=양도소득세
+I2-1 market=해외주식",,해외주식 양도소득세 신고 대행 서비스 수수료,"{""intents"": [""I2-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""양도소득세""}, {""intent_id"": ""I2-1"", ""type"": ""market"", ""value"": ""해외주식""}], ""constraints"": [], ""subject"": ""해외주식 양도소득세 신고 대행 서비스 수수료""}",2690,392,
+37,통합증거금으로 해외주식 원화 매수 시 환전 수수료율,1,I1-2,"I1-2 product=통합증거금
+I1-2 market=해외주식
+I1-2 metric=환전 수수료율",,통합증거금으로 해외주식 원화 매수 시 환전 수수료율,"{""intents"": [""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""통합증거금""}, {""intent_id"": ""I1-2"", ""type"": ""market"", ""value"": ""해외주식""}, {""intent_id"": ""I1-2"", ""type"": ""metric"", ""value"": ""환전 수수료율""}], ""constraints"": [], ""subject"": ""통합증거금으로 해외주식 원화 매수 시 환전 수수료율""}",2693,427,
+38,외화 자동환전과 수기환전 시 우대 수수료율 차이,1,I9-1,"I9-1 procedure=외화 자동환전
+I9-1 procedure=수기환전",,외화 환전 우대 수수료율,"{""intents"": [""I9-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""procedure"", ""value"": ""외화 자동환전""}, {""intent_id"": ""I9-1"", ""type"": ""procedure"", ""value"": ""수기환전""}], ""constraints"": [], ""subject"": ""외화 환전 우대 수수료율""}",2692,407,
+39,연금저축계좌 운용 수수료 및 관리비용 안내,1,I1-2,"I1-2 product=연금저축
+I1-2 metric=운용 수수료
+I1-2 metric=관리비용",,연금저축계좌 수수료 및 관리비용,"{""intents"": [""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""연금저축""}, {""intent_id"": ""I1-2"", ""type"": ""metric"", ""value"": ""운용 수수료""}, {""intent_id"": ""I1-2"", ""type"": ""metric"", ""value"": ""관리비용""}], ""constraints"": [], ""subject"": ""연금저축계좌 수수료 및 관리비용""}",2689,291,
+40,IRP 계좌 퇴직금 수령 시 발생하는 세금 및 수수료,2,I2-1;I1-2,"I2-1 product=IRP
+I1-2 product=IRP",,IRP 계좌 퇴직금 수령 시 발생하는 세금 및 수수료,"{""intents"": [""I2-1"", ""I1-2""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""product"", ""value"": ""IRP""}, {""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""IRP""}], ""constraints"": [], ""subject"": ""IRP 계좌 퇴직금 수령 시 발생하는 세금 및 수수료""}",2692,281,
+41,CMA 계좌 이체 수수료 면제 조건,1,I2-2,I2-2 product=CMA,,CMA 계좌 이체 수수료 면제 조건,"{""intents"": [""I2-2""], ""entities"": [{""intent_id"": ""I2-2"", ""type"": ""product"", ""value"": ""CMA""}], ""constraints"": [], ""subject"": ""CMA 계좌 이체 수수료 면제 조건""}",2685,214,
+42,특정금전신탁 중도 해지 시 발생하는 페널티 및 수수료,1,I1-2,"I1-2 product=특정금전신탁
+I1-2 procedure=중도 해지",,특정금전신탁 중도해지 시 수수료·페널티,"{""intents"": [""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""특정금전신탁""}, {""intent_id"": ""I1-2"", ""type"": ""procedure"", ""value"": ""중도 해지""}], ""constraints"": [], ""subject"": ""특정금전신탁 중도해지 시 수수료·페널티""}",2693,327,
+43,랩(Wrap) 어카운트 자문 수수료 부과 방식,1,I1-2,I1-2 product=랩(Wrap) 어카운트,,랩 어카운트 자문 수수료 부과 방식,"{""intents"": [""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""랩(Wrap) 어카운트""}], ""constraints"": [], ""subject"": ""랩 어카운트 자문 수수료 부과 방식""}",2689,336,
+44,비과세 종합저축 가입에 따른 세제 혜택 문의,2,I2-1;I1-2,"I2-1 product=비과세 종합저축
+I1-2 product=비과세 종합저축",,비과세 종합저축 가입에 따른 세제 혜택,"{""intents"": [""I2-1"", ""I1-2""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""product"", ""value"": ""비과세 종합저축""}, {""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""비과세 종합저축""}], ""constraints"": [], ""subject"": ""비과세 종합저축 가입에 따른 세제 혜택""}",2689,323,
+45,온라인 보안등급별 1일 이체한도 변경 방법,1,I3-2,I3-2 procedure=변경,I3-2 channel=온라인,보안등급별 1일 이체한도 변경 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""변경""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""온라인""}], ""subject"": ""보안등급별 1일 이체한도 변경 방법""}",2688,383,
+46,한도제한계좌의 1일 출금 및 이체 한도액,1,I2-2,"I2-2 account=한도제한계좌
+I2-2 metric=출금 및 이체 한도액",I2-2 period=1일,한도제한계좌의 1일 출금 및 이체 한도액,"{""intents"": [""I2-2""], ""entities"": [{""intent_id"": ""I2-2"", ""type"": ""account"", ""value"": ""한도제한계좌""}, {""intent_id"": ""I2-2"", ""type"": ""metric"", ""value"": ""출금 및 이체 한도액""}], ""constraints"": [{""intent_id"": ""I2-2"", ""type"": ""period"", ""value"": ""1일""}], ""subject"": ""한도제한계좌의 1일 출금 및 이체 한도액""}",2691,358,
+47,유안타증권 계좌 간 현금 및 주식 이체 절차,1,I3-2,"I3-2 company=유안타증권
+I3-2 account=계좌
+I3-2 procedure=이체",,계좌 간 현금 및 주식 이체 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""company"", ""value"": ""유안타증권""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""이체""}], ""constraints"": [], ""subject"": ""계좌 간 현금 및 주식 이체 절차""}",2690,417,
+48,랩(Wrap) 계좌에 추가 자금 입금하는 방법,1,I3-2,"I3-2 product=랩(Wrap)
+I3-2 account=계좌",,랩 계좌 추가 자금 입금 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""랩(Wrap)""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""계좌""}], ""constraints"": [], ""subject"": ""랩 계좌 추가 자금 입금 방법""}",2687,350,
+49,계좌 출금고 제한 상태 해제 방법,1,I3-2,"I3-2 account=계좌
+I3-2 account=출금고",,계좌 출금고 제한 상태 해제 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""계좌""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""출금고""}], ""constraints"": [], ""subject"": ""계좌 출금고 제한 상태 해제 방법""}",2683,353,
+50,현금제한증거금 인출 조건 및 출금 방법,1,I3-2,I3-2 regulation=현금제한증거금,,현금제한증거금 인출 조건 및 출금 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""regulation"", ""value"": ""현금제한증거금""}], ""constraints"": [], ""subject"": ""현금제한증거금 인출 조건 및 출금 방법""}",2687,320,
+51,해외주식 매도 대금(외화 예수금) 원화 환전 후 이체 절차,1,I3-2,"I3-2 procedure=환전
+I3-2 procedure=이체",,해외주식 매도 대금(외화 예수금) 원화 환전 및 이체 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""환전""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""이체""}], ""constraints"": [], ""subject"": ""해외주식 매도 대금(외화 예수금) 원화 환전 및 이체 절차""}",2697,436,
+52,"예수금 D+2, D+3일의 의미와 실제 현금 출금 가능일",2,I1-1;I3-2,"I1-1 metric=예수금
+I3-2 procedure=현금 출금",,예수금 D+2·D+3 및 현금 출금 가능일,"{""intents"": [""I1-1"", ""I3-2""], ""entities"": [{""intent_id"": ""I1-1"", ""type"": ""metric"", ""value"": ""예수금""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""현금 출금""}], ""constraints"": [], ""subject"": ""예수금 D+2·D+3 및 현금 출금 가능일""}",2694,395,
+53,입금된 배당금 내역 및 잔고 확인 메뉴,1,I3-1,"I3-1 app_feature=입금된 배당금 내역
+I3-1 app_feature=잔고 확인 메뉴",,입금된 배당금 내역 및 잔고 확인 메뉴,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""입금된 배당금 내역""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""잔고 확인 메뉴""}], ""constraints"": [], ""subject"": ""입금된 배당금 내역 및 잔고 확인 메뉴""}",2687,310,
+54,외화가상계좌 발급 및 타행에서 달러 송금받는 방법,1,I3-2,"I3-2 product=외화가상계좌
+I3-2 procedure=발급
+I3-2 procedure=타행에서 달러 송금받는 방법",,외화가상계좌 발급 및 달러 송금 수신 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""외화가상계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""발급""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""타행에서 달러 송금받는 방법""}], ""constraints"": [], ""subject"": ""외화가상계좌 발급 및 달러 송금 수신 방법""}",2692,636,
+55,잔고증명서 온라인 비대면 발급 절차,1,I3-2,I3-2 document=잔고증명서,I3-2 channel=온라인 비대면,잔고증명서 발급 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""document"", ""value"": ""잔고증명서""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""온라인 비대면""}], ""subject"": ""잔고증명서 발급 절차""}",2686,298,
+56,개인전문투자자용 잔고증명서 신청 메뉴 안내,1,I3-1,"I3-1 document=개인전문투자자용 잔고증명서
+I3-1 procedure=신청",,개인전문투자자용 잔고증명서 신청 메뉴,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""document"", ""value"": ""개인전문투자자용 잔고증명서""}, {""intent_id"": ""I3-1"", ""type"": ""procedure"", ""value"": ""신청""}], ""constraints"": [], ""subject"": ""개인전문투자자용 잔고증명서 신청 메뉴""}",2690,427,
+57,미성년자 계좌의 ATM 일일 출금 한도,1,I2-2,"I2-2 account=미성년자 계좌
+I2-2 metric=ATM 일일 출금 한도",,미성년자 계좌의 ATM 일일 출금 한도,"{""intents"": [""I2-2""], ""entities"": [{""intent_id"": ""I2-2"", ""type"": ""account"", ""value"": ""미성년자 계좌""}, {""intent_id"": ""I2-2"", ""type"": ""metric"", ""value"": ""ATM 일일 출금 한도""}], ""constraints"": [], ""subject"": ""미성년자 계좌의 ATM 일일 출금 한도""}",2687,400,
+58,타 기관 OTP 등록을 통한 이체 한도 상향 절차,1,I3-2,"I3-2 procedure=타 기관 OTP 등록
+I3-2 metric=이체 한도",,이체 한도 상향 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""타 기관 OTP 등록""}, {""intent_id"": ""I3-2"", ""type"": ""metric"", ""value"": ""이체 한도""}], ""constraints"": [], ""subject"": ""이체 한도 상향 절차""}",2687,352,
+59,통합증거금 서비스 해지 후 현금 출금 방법,1,I3-2,"I3-2 product=통합증거금
+I3-2 procedure=해지",,통합증거금 해지 후 현금 출금 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""통합증거금""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""해지""}], ""constraints"": [], ""subject"": ""통합증거금 해지 후 현금 출금 방법""}",2687,397,
+60,연금저축계좌 연간 납입한도 조회 및 잔여 한도 확인,1,I1-2,"I1-2 product=연금저축계좌
+I1-2 metric=연간 납입한도
+I1-2 metric=잔여 한도",,연금저축계좌 연간 납입한도 및 잔여 한도,"{""intents"": [""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""연금저축계좌""}, {""intent_id"": ""I1-2"", ""type"": ""metric"", ""value"": ""연간 납입한도""}, {""intent_id"": ""I1-2"", ""type"": ""metric"", ""value"": ""잔여 한도""}], ""constraints"": [], ""subject"": ""연금저축계좌 연간 납입한도 및 잔여 한도""}",2694,553,
+61,공모주 청약 환불금을 타행 계좌로 자동 이체 설정하기,1,I3-2,"I3-2 corporate_event=공모주 청약 환불금
+I3-2 account=타행 계좌
+I3-2 procedure=자동 이체 설정",,공모주 청약 환불금 자동 이체 설정,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""corporate_event"", ""value"": ""공모주 청약 환불금""}, {""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""타행 계좌""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""자동 이체 설정""}], ""constraints"": [], ""subject"": ""공모주 청약 환불금 자동 이체 설정""}",2691,405,
+62,내 자산 월별 수익률 추이 그래프 확인 방법,1,I3-1,I3-1 app_feature=월별 수익률 추이 그래프,I3-1 period=월별,내 자산 월별 수익률 추이 그래프,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""월별 수익률 추이 그래프""}], ""constraints"": [{""intent_id"": ""I3-1"", ""type"": ""period"", ""value"": ""월별""}], ""subject"": ""내 자산 월별 수익률 추이 그래프""}",2687,408,
+63,거래내역(입출금 및 매매) 이메일 또는 PDF 다운로드 방법,1,I3-1,I3-1 document=PDF,I3-1 channel=이메일,거래내역(입출금 및 매매) 다운로드 방법,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""document"", ""value"": ""PDF""}], ""constraints"": [{""intent_id"": ""I3-1"", ""type"": ""channel"", ""value"": ""이메일""}], ""subject"": ""거래내역(입출금 및 매매) 다운로드 방법""}",2690,553,
+64,배당 소득세 등 원천징수 내역 실시간 조회 기능,1,I3-1,I3-1 app_feature=배당 소득세 등 원천징수 내역 실시간 조회 기능,,배당 소득세 원천징수 내역 실시간 조회 기능,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""배당 소득세 등 원천징수 내역 실시간 조회 기능""}], ""constraints"": [], ""subject"": ""배당 소득세 원천징수 내역 실시간 조회 기능""}",2689,396,
+65,코스피/코스닥 정규장 시간 및 동시호가 시간 안내,1,I9-1,"I9-1 market=코스피
+I9-1 market=코스닥
+I9-1 market_event=정규장 시간
+I9-1 market_event=동시호가 시간",,코스피/코스닥 정규장 및 동시호가 시간,"{""intents"": [""I9-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""market"", ""value"": ""코스피""}, {""intent_id"": ""I9-1"", ""type"": ""market"", ""value"": ""코스닥""}, {""intent_id"": ""I9-1"", ""type"": ""market_event"", ""value"": ""정규장 시간""}, {""intent_id"": ""I9-1"", ""type"": ""market_event"", ""value"": ""동시호가 시간""}], ""constraints"": [], ""subject"": ""코스피/코스닥 정규장 및 동시호가 시간""}",2691,465,
+66,장 개시 전 시간외종가 매매 주문 가능 시간,1,I3-2,I3-2 market_event=시간외종가 매매,,시간외종가 매매 주문 가능 시간,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""market_event"", ""value"": ""시간외종가 매매""}], ""constraints"": [], ""subject"": ""시간외종가 매매 주문 가능 시간""}",2686,378,
+67,대체거래소(NXT) 프리마켓 및 메인마켓 거래 시간,1,I9-1,I9-1 market=대체거래소(NXT),,대체거래소 프리마켓 및 메인마켓 거래 시간,"{""intents"": [""I9-1""], ""entities"": [{""intent_id"": ""I9-1"", ""type"": ""market"", ""value"": ""대체거래소(NXT)""}], ""constraints"": [], ""subject"": ""대체거래소 프리마켓 및 메인마켓 거래 시간""}",2692,292,
+68,코스피 정규장 종료(오후 3시 30분) 이후 주식 매도 방법,1,I3-2,I3-2 market=코스피 정규장 종료(오후 3시 30분),I3-2 period=오후 3시 30분,정규장 종료 후 주식 매도 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""market"", ""value"": ""코스피 정규장 종료(오후 3시 30분)""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""period"", ""value"": ""오후 3시 30분""}], ""subject"": ""정규장 종료 후 주식 매도 방법""}",2696,350,
+69,미국 주식 주간거래(데이마켓) 및 프리마켓 시작 시간,1,I7-1,I7-1 market=미국 주식,,미국 주식 거래시간,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""미국 주식""}], ""constraints"": [], ""subject"": ""미국 주식 거래시간""}",2694,226,
+70,CFD 지정가/시장가 주문 유형 및 매도 진입 절차,3,I1-1;I3-2;I1-2,"I1-2 product=CFD
+I3-2 procedure=매도 진입",,CFD 지정가/시장가 주문 유형 및 매도 진입 절차,"{""intents"": [""I1-1"", ""I3-2"", ""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""CFD""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""매도 진입""}], ""constraints"": [], ""subject"": ""CFD 지정가/시장가 주문 유형 및 매도 진입 절차""}",2689,566,
+71,앱에서 매수/매도 예약 주문 내역 확인 메뉴,1,I3-1,I3-1 app_feature=매수/매도 예약 주문 내역 확인 메뉴,I3-1 channel=앱에서,예약 주문 내역 확인,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""매수/매도 예약 주문 내역 확인 메뉴""}], ""constraints"": [{""intent_id"": ""I3-1"", ""type"": ""channel"", ""value"": ""앱에서""}], ""subject"": ""예약 주문 내역 확인""}",2687,375,
+72,보유 주식 매입가 확인 및 평균 매입 단가 임의 수정 방법,2,I3-1;I3-2,"I3-1 metric=매입가
+I3-2 metric=평균 매입 단가
+I3-2 procedure=임의 수정",,보유 주식 매입가 확인 및 평균 매입 단가 임의 수정 방법,"{""intents"": [""I3-1"", ""I3-2""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""metric"", ""value"": ""매입가""}, {""intent_id"": ""I3-2"", ""type"": ""metric"", ""value"": ""평균 매입 단가""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""임의 수정""}], ""constraints"": [], ""subject"": ""보유 주식 매입가 확인 및 평균 매입 단가 임의 수정 방법""}",2691,585,
+73,해외 ETF 매월 특정일 자동매수(적립식) 주문 설정,1,I3-2,I3-2 theme=해외 ETF,I3-2 period=매월 특정일,해외 ETF 자동매수 주문 설정,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""theme"", ""value"": ""해외 ETF""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""period"", ""value"": ""매월 특정일""}], ""subject"": ""해외 ETF 자동매수 주문 설정""}",2690,462,
+74,미수 발생 시 장중 반대매매 실행 절차 및 시간,1,I3-2,I3-2 procedure=장중 반대매매 실행,I3-2 condition=미수 발생,미수 발생 시 장중 반대매매 실행 절차 및 시간,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""장중 반대매매 실행""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""condition"", ""value"": ""미수 발생""}], ""subject"": ""미수 발생 시 장중 반대매매 실행 절차 및 시간""}",2688,503,
+75,반대매매를 막기 위한 추가증거금 납부 및 미수금 변제 방법,1,I3-2,"I3-2 procedure=추가증거금 납부
+I3-2 procedure=미수금 변제",,추가증거금 납부 및 미수금 변제 방법,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""추가증거금 납부""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""미수금 변제""}], ""constraints"": [], ""subject"": ""추가증거금 납부 및 미수금 변제 방법""}",2695,332,
+76,신용융자 대출 약정 후 실제 매수 주문 시 체크 항목,2,I3-2;I2-3,I3-2 product=신용융자,,신용융자 대출 약정 후 매수 주문 체크리스트,"{""intents"": [""I3-2"", ""I2-3""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""신용융자""}], ""constraints"": [], ""subject"": ""신용융자 대출 약정 후 매수 주문 체크리스트""}",2690,586,
+77,레버리지/인버스 ETF 거래를 위한 사전 교육 이수 등록,1,I3-2,"I3-2 theme=레버리지/인버스 ETF
+I3-2 procedure=등록",,레버리지/인버스 ETF 거래를 위한 사전 교육 이수 등록,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""theme"", ""value"": ""레버리지/인버스 ETF""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""등록""}], ""constraints"": [], ""subject"": ""레버리지/인버스 ETF 거래를 위한 사전 교육 이수 등록""}",2690,522,
+78,해외주식 소수점 거래 시 최소 매수 금액 단위(USD),1,I2-2,"I2-2 metric=최소 매수 금액 단위(USD)
+I2-2 market=해외주식",,해외주식 소수점 거래 최소 매수 금액 단위,"{""intents"": [""I2-2""], ""entities"": [{""intent_id"": ""I2-2"", ""type"": ""metric"", ""value"": ""최소 매수 금액 단위(USD)""}, {""intent_id"": ""I2-2"", ""type"": ""market"", ""value"": ""해외주식""}], ""constraints"": [], ""subject"": ""해외주식 소수점 거래 최소 매수 금액 단위""}",2692,460,
+79,매도 대금 담보 대출 신청 및 자동 상환 방식,2,I3-2;I1-2,"I1-2 product=매도 대금 담보 대출
+I3-2 procedure=신청
+I3-2 procedure=자동 상환 방식",,매도 대금 담보 대출 신청 및 자동 상환 방식,"{""intents"": [""I3-2"", ""I1-2""], ""entities"": [{""intent_id"": ""I1-2"", ""type"": ""product"", ""value"": ""매도 대금 담보 대출""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""신청""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""자동 상환 방식""}], ""constraints"": [], ""subject"": ""매도 대금 담보 대출 신청 및 자동 상환 방식""}",2687,416,
+80,해외선물 가환전 제도 이용 및 익일 정산 프로세스,2,I3-2;I2-2,"I3-2 market=해외선물
+I2-2 regulation=가환전 제도
+I3-2 procedure=익일 정산 프로세스",,해외선물 가환전 제도 및 익일 정산,"{""intents"": [""I3-2"", ""I2-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""market"", ""value"": ""해외선물""}, {""intent_id"": ""I2-2"", ""type"": ""regulation"", ""value"": ""가환전 제도""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""익일 정산 프로세스""}], ""constraints"": [], ""subject"": ""해외선물 가환전 제도 및 익일 정산""}",2691,451,
+81,금현물 시장 자동 매수 주문 설정 메뉴,1,I3-1,"I3-1 market=금현물 시장
+I3-1 app_feature=자동 매수 주문 설정 메뉴",,금현물 자동 매수 주문 설정 메뉴,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""market"", ""value"": ""금현물 시장""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""자동 매수 주문 설정 메뉴""}], ""constraints"": [], ""subject"": ""금현물 자동 매수 주문 설정 메뉴""}",2683,362,
+82,ETF 및 ETN 거래를 위한 투자성향 갱신 메뉴,1,I3-1,"I3-1 theme=ETF 및 ETN
+I3-1 app_feature=투자성향 갱신 메뉴",,투자성향 갱신 메뉴,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""theme"", ""value"": ""ETF 및 ETN""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""투자성향 갱신 메뉴""}], ""constraints"": [], ""subject"": ""투자성향 갱신 메뉴""}",2687,363,
+83,종목 검색 후 호가창 화면에서 바로 매수 주문하는 법,1,I3-1,"I3-1 app_feature=종목 검색
+I3-1 app_feature=호가창 화면
+I3-1 procedure=매수 주문",,종목 검색 후 호가창에서 매수 주문하는 방법,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""종목 검색""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""호가창 화면""}, {""intent_id"": ""I3-1"", ""type"": ""procedure"", ""value"": ""매수 주문""}], ""constraints"": [], ""subject"": ""종목 검색 후 호가창에서 매수 주문하는 방법""}",2688,378,
+84,통합증거금 매매 시 미수 발생 환전 변제 순서,1,I3-2,"I3-2 product=통합증거금
+I3-2 procedure=매매
+I3-2 procedure=변제",,통합증거금 매매 중 미수 발생 시 환전·변제 순서,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""통합증거금""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""매매""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""변제""}], ""constraints"": [], ""subject"": ""통합증거금 매매 중 미수 발생 시 환전·변제 순서""}",2690,482,
+85,다크모드(야간모드) 설정하는 방법,1,I3-1,I3-1 app_feature=다크모드(야간모드),,다크모드 설정 방법,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""다크모드(야간모드)""}], ""constraints"": [], ""subject"": ""다크모드 설정 방법""}",2686,174,
+86,HTS와 모바일 앱 동시 접속 허용 설정,2,I3-1;I3-2,"I3-1 app_feature=HTS
+I3-1 app_feature=모바일 앱
+I3-2 procedure=동시 접속 허용 설정",,HTS와 모바일 앱 동시 접속 허용 설정,"{""intents"": [""I3-1"", ""I3-2""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""HTS""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""모바일 앱""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""동시 접속 허용 설정""}], ""constraints"": [], ""subject"": ""HTS와 모바일 앱 동시 접속 허용 설정""}",2685,513,
+87,공동인증서 스마트폰으로 내보내기/가져오기 방법,1,I3-1,I3-1 document=공동인증서,,공동인증서 스마트폰 내보내기/가져오기,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""document"", ""value"": ""공동인증서""}], ""constraints"": [], ""subject"": ""공동인증서 스마트폰 내보내기/가져오기""}",2690,389,
+88,간편인증(생체인증) 등록 및 해지 절차,1,I3-2,"I3-2 app_feature=생체인증
+I3-2 procedure=등록
+I3-2 procedure=해지",,간편인증(생체인증) 등록 및 해지 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""app_feature"", ""value"": ""생체인증""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""등록""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""해지""}], ""constraints"": [], ""subject"": ""간편인증(생체인증) 등록 및 해지 절차""}",2689,361,
+89,모바일 앱 완전 탈퇴 및 회원 정보 삭제 요청,1,I3-2,"I3-2 procedure=완전 탈퇴
+I3-2 procedure=회원 정보 삭제
+I3-2 app_feature=모바일 앱",,모바일 앱 회원 완전 탈퇴 및 회원 정보 삭제,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""완전 탈퇴""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""회원 정보 삭제""}, {""intent_id"": ""I3-2"", ""type"": ""app_feature"", ""value"": ""모바일 앱""}], ""constraints"": [], ""subject"": ""모바일 앱 회원 완전 탈퇴 및 회원 정보 삭제""}",2685,377,
+90,원천징수영수증 모바일 앱 발급 절차,1,I3-2,"I3-2 document=원천징수영수증
+I3-2 app_feature=모바일 앱
+I3-2 procedure=발급",I3-2 channel=모바일 앱,원천징수영수증 발급 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""document"", ""value"": ""원천징수영수증""}, {""intent_id"": ""I3-2"", ""type"": ""app_feature"", ""value"": ""모바일 앱""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""발급""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""모바일 앱""}], ""subject"": ""원천징수영수증 발급 절차""}",2686,482,
+91,ARS 거래 비밀번호 분실 시 비대면 재등록 절차,1,I3-2,"I3-2 account=ARS 거래 비밀번호
+I3-2 procedure=비대면 재등록",I3-2 channel=비대면,ARS 거래 비밀번호 재등록 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""account"", ""value"": ""ARS 거래 비밀번호""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""비대면 재등록""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""ARS 거래 비밀번호 재등록 절차""}",2687,367,
+92,고객센터 ARS 번호 및 상담원 연결 가능 시간,1,I9-1,,,고객센터 ARS 번호 및 상담원 연결 가능 시간,"{""intents"": [""I9-1""], ""entities"": [], ""constraints"": [], ""subject"": ""고객센터 ARS 번호 및 상담원 연결 가능 시간""}",2685,206,
+93,앱 내 가까운 영업점 및 제휴 ATM 위치 검색 기능,1,I3-1,I3-1 app_feature=가까운 영업점 및 제휴 ATM 위치 검색 기능,I3-1 channel=앱 내,가까운 영업점 및 제휴 ATM 위치 검색 기능,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""가까운 영업점 및 제휴 ATM 위치 검색 기능""}], ""constraints"": [{""intent_id"": ""I3-1"", ""type"": ""channel"", ""value"": ""앱 내""}], ""subject"": ""가까운 영업점 및 제휴 ATM 위치 검색 기능""}",2688,373,
+94,해외주식 양도소득세 내역 조회 및 신고용 파일 다운로드,2,I2-1;I3-1,"I2-1 regulation=양도소득세
+I2-1 market=해외주식
+I3-1 procedure=조회
+I3-1 procedure=다운로드
+I3-1 document=신고용 파일",,해외주식 양도소득세 내역,"{""intents"": [""I2-1"", ""I3-1""], ""entities"": [{""intent_id"": ""I2-1"", ""type"": ""regulation"", ""value"": ""양도소득세""}, {""intent_id"": ""I2-1"", ""type"": ""market"", ""value"": ""해외주식""}, {""intent_id"": ""I3-1"", ""type"": ""procedure"", ""value"": ""조회""}, {""intent_id"": ""I3-1"", ""type"": ""procedure"", ""value"": ""다운로드""}, {""intent_id"": ""I3-1"", ""type"": ""document"", ""value"": ""신고용 파일""}], ""constraints"": [], ""subject"": ""해외주식 양도소득세 내역""}",2690,525,
+95,연금개시신청서 앱에서 비대면 작성 및 제출 방법,2,I3-2;I3-1,I3-2 document=연금개시신청서,I3-2 channel=비대면,연금개시신청서 비대면 제출 방법,"{""intents"": [""I3-2"", ""I3-1""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""document"", ""value"": ""연금개시신청서""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""비대면""}], ""subject"": ""연금개시신청서 비대면 제출 방법""}",2689,542,
+96,특정금전신탁 상품 운용 지시 모바일 처리 방법,1,I3-2,"I3-2 product=특정금전신탁
+I3-2 procedure=운용 지시",I3-2 channel=모바일,특정금전신탁 운용 지시 처리,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""product"", ""value"": ""특정금전신탁""}, {""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""운용 지시""}], ""constraints"": [{""intent_id"": ""I3-2"", ""type"": ""channel"", ""value"": ""모바일""}], ""subject"": ""특정금전신탁 운용 지시 처리""}",2687,374,
+97,금융소득종합과세 내역 확인 및 명세서 출력 기능,1,I3-1,"I3-1 regulation=금융소득종합과세
+I3-1 app_feature=내역 확인
+I3-1 app_feature=명세서 출력 기능",,금융소득종합과세 내역 및 명세서,"{""intents"": [""I3-1""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""regulation"", ""value"": ""금융소득종합과세""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""내역 확인""}, {""intent_id"": ""I3-1"", ""type"": ""app_feature"", ""value"": ""명세서 출력 기능""}], ""constraints"": [], ""subject"": ""금융소득종합과세 내역 및 명세서""}",2690,705,
+98,타 증권사 보유 주식을 당사로 이관(대체 입고)하는 절차,1,I3-2,I3-2 procedure=이관(대체 입고),,타 증권사 보유 주식 대체 입고 절차,"{""intents"": [""I3-2""], ""entities"": [{""intent_id"": ""I3-2"", ""type"": ""procedure"", ""value"": ""이관(대체 입고)""}], ""constraints"": [], ""subject"": ""타 증권사 보유 주식 대체 입고 절차""}",2695,253,
+99,권리락 또는 액면분할로 인한 거래 정지 종목 상태 확인법,2,I3-1;I6-4,"I3-1 corporate_event=권리락
+I3-1 corporate_event=액면분할
+I6-4 corporate_event=권리락
+I6-4 corporate_event=액면분할",,권리락·액면분할로 인한 거래정지 종목 확인법,"{""intents"": [""I3-1"", ""I6-4""], ""entities"": [{""intent_id"": ""I3-1"", ""type"": ""corporate_event"", ""value"": ""권리락""}, {""intent_id"": ""I3-1"", ""type"": ""corporate_event"", ""value"": ""액면분할""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""권리락""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""액면분할""}], ""constraints"": [], ""subject"": ""권리락·액면분할로 인한 거래정지 종목 확인법""}",2692,398,
