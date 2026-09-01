@@ -15,7 +15,7 @@
 
 실행:
     .venv/Scripts/python.exe ensemble.py            # dev 만
-    .venv/Scripts/python.exe ensemble.py --holdout  # 봉인 해제 (마지막 1회)
+    .venv/Scripts/python.exe ensemble.py --sealed   # 봉인 해제 (되돌릴 수 없다)
 """
 
 import argparse
@@ -23,7 +23,7 @@ import statistics
 import sys
 from collections import Counter
 
-from freeze_split import dev_keys, holdout_keys
+from freeze_split import dev_keys, sealed_keys
 import rep_var as V
 
 
@@ -57,7 +57,7 @@ def score(preds, golden, keys):
 def main():
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser()
-    ap.add_argument("--holdout", action="store_true", help="봉인 해제")
+    ap.add_argument("--sealed", action="store_true", help="봉인 해제 (되돌릴 수 없다)")
     ap.add_argument("--reps", default="2,3", help="쓸 실행 (rep1 은 그래프에 오염됨)")
     args = ap.parse_args()
 
@@ -70,9 +70,9 @@ def main():
     }
     arms = sorted({a for a, _ in reps})
 
-    keys = sorted(holdout_keys() if args.holdout else dev_keys())
-    label = "HOLDOUT" if args.holdout else "dev"
-    if args.holdout:
+    keys = sorted(sealed_keys() if args.sealed else dev_keys())
+    label = "SEALED" if args.sealed else "dev"
+    if args.sealed:
         print("!! holdout 을 열었다. 이 뒤로 holdout 은 오염된 것으로 간주하라.\n")
 
     use = tuple(int(x) for x in args.reps.split(","))

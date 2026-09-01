@@ -29,7 +29,7 @@ from route_intent import predict as intent_predict
 
 GOLDEN = "golden_labels.csv"
 SOURCES = ["work", "invest", "ext_ipo", "ext_tax", "ext_div", "ext_fx",
-           "ext_index", "ext_basis"]
+           "ext_index", "ext_basis", "ext_edge"]
 REPS = (1, 2, 3, 4)
 # rep1 은 기존 산출물, rep2~4 는 run_reps*.sh 가 낸 것.
 # rep1 은 capability graph 가 그 실행을 보고 작성돼 오염돼 있다(A 8/8 진단).

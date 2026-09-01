@@ -18,7 +18,7 @@ import statistics
 import sys
 
 from ensemble import score, vote
-from freeze_split import dev_keys, holdout_keys
+from freeze_split import dev_keys, sealed_keys
 import rep_var as V
 
 REPS = V.CLEAN_REPS  # (2, 3, 4)
@@ -30,7 +30,7 @@ def run_sets(reps, arm):
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    use_holdout = "--holdout" in sys.argv
+    use_sealed = "--sealed" in sys.argv
     golden = V.load_golden()
     reps = {}
     for a in V.SUFFIX:
@@ -38,9 +38,9 @@ def main():
             got = V.load_rep(a, r, golden)
             if got is not None:
                 reps[(a, r)] = got
-    keys = sorted(holdout_keys() if use_holdout else dev_keys())
-    label = "HOLDOUT" if use_holdout else "dev"
-    if use_holdout:
+    keys = sorted(sealed_keys() if use_sealed else dev_keys())
+    label = "SEALED" if use_sealed else "dev"
+    if use_sealed:
         print("!! holdout 을 열었다. 이 뒤로 holdout 은 오염된 것으로 간주하라.\n")
     print(f"[{label}] {len(keys)}행 · rep1 제외, 사용 실행 {REPS}\n")
 

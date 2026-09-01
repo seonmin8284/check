@@ -1,0 +1,55 @@
+﻿idx,input,n_intents,intents,entities,constraints,subject,json,in_tok,out_tok,error
+0,삼성전자 작년 영업이익 얼마야?,1,I6-6,"I6-6 company=삼성전자
+I6-6 metric=영업이익",I6-6 period=작년,삼성전자 작년 영업이익,"{""intents"": [""I6-6""], ""entities"": [{""intent_id"": ""I6-6"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""영업이익""}], ""constraints"": [{""intent_id"": ""I6-6"", ""type"": ""period"", ""value"": ""작년""}], ""subject"": ""삼성전자 작년 영업이익""}",2685,249,
+1,삼성전자 영업이익이 왜 줄었어?,2,I6-7;I6-6,"I6-7 company=삼성전자
+I6-7 metric=영업이익
+I6-6 company=삼성전자
+I6-6 metric=영업이익",,삼성전자 영업이익,"{""intents"": [""I6-7"", ""I6-6""], ""entities"": [{""intent_id"": ""I6-7"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-7"", ""type"": ""metric"", ""value"": ""영업이익""}, {""intent_id"": ""I6-6"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-6"", ""type"": ""metric"", ""value"": ""영업이익""}], ""constraints"": [], ""subject"": ""삼성전자 영업이익""}",2686,301,
+2,삼성전자 내년 영업이익 얼마나 나올까?,1,I8-2,"I8-2 company=삼성전자
+I8-2 metric=영업이익",I8-2 period=내년,삼성전자 내년 영업이익,"{""intents"": [""I8-2""], ""entities"": [{""intent_id"": ""I8-2"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I8-2"", ""type"": ""metric"", ""value"": ""영업이익""}], ""constraints"": [{""intent_id"": ""I8-2"", ""type"": ""period"", ""value"": ""내년""}], ""subject"": ""삼성전자 내년 영업이익""}",2687,353,
+3,삼성전자 뉴스 알려줘,1,I6-3,I6-3 company=삼성전자,,삼성전자 뉴스,"{""intents"": [""I6-3""], ""entities"": [{""intent_id"": ""I6-3"", ""type"": ""company"", ""value"": ""삼성전자""}], ""constraints"": [], ""subject"": ""삼성전자 뉴스""}",2679,147,
+4,반도체 업황 뉴스 알려줘,1,I6-3,I6-3 theme=반도체,,반도체 업황 뉴스,"{""intents"": [""I6-3""], ""entities"": [{""intent_id"": ""I6-3"", ""type"": ""theme"", ""value"": ""반도체""}], ""constraints"": [], ""subject"": ""반도체 업황 뉴스""}",2681,275,
+5,삼성전자 관련해서 반도체 업황 뉴스 있어?,2,I6-3;I5-2,"I6-3 company=삼성전자
+I5-2 sector=반도체 업황",,삼성전자 관련 반도체 업황 뉴스,"{""intents"": [""I6-3"", ""I5-2""], ""entities"": [{""intent_id"": ""I6-3"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I5-2"", ""type"": ""sector"", ""value"": ""반도체 업황""}], ""constraints"": [], ""subject"": ""삼성전자 관련 반도체 업황 뉴스""}",2686,518,
+6,오늘 증시 주요 뉴스 정리해줘,1,I6-3,,I6-3 period=오늘,오늘 증시 주요 뉴스,"{""intents"": [""I6-3""], ""entities"": [], ""constraints"": [{""intent_id"": ""I6-3"", ""type"": ""period"", ""value"": ""오늘""}], ""subject"": ""오늘 증시 주요 뉴스""}",2682,259,
+7,삼성전자가 속한 업종 오늘 등락률 알려줘,2,I7-1;I5-2,I7-1 company=삼성전자,I7-1 period=오늘,삼성전자가 속한 업종 등락률,"{""intents"": [""I7-1"", ""I5-2""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""company"", ""value"": ""삼성전자""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""오늘""}], ""subject"": ""삼성전자가 속한 업종 등락률""}",2687,436,
+8,2차전지 테마 오늘 얼마나 올랐어?,2,I5-2;I7-1,"I5-2 theme=2차전지 테마
+I7-1 theme=2차전지 테마","I5-2 period=오늘
+I7-1 period=오늘",2차전지 테마 상승률,"{""intents"": [""I5-2"", ""I7-1""], ""entities"": [{""intent_id"": ""I5-2"", ""type"": ""theme"", ""value"": ""2차전지 테마""}, {""intent_id"": ""I7-1"", ""type"": ""theme"", ""value"": ""2차전지 테마""}], ""constraints"": [{""intent_id"": ""I5-2"", ""type"": ""period"", ""value"": ""오늘""}, {""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""오늘""}], ""subject"": ""2차전지 테마 상승률""}",2686,412,
+9,코스피200 공매도 잔고 알려줘,1,I7-1,"I7-1 index=코스피200
+I7-1 metric=공매도 잔고",,코스피200 공매도 잔고,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""index"", ""value"": ""코스피200""}, {""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""공매도 잔고""}], ""constraints"": [], ""subject"": ""코스피200 공매도 잔고""}",2685,277,
+10,카카오뱅크 액면가 얼마야?,1,I6-1,"I6-1 company=카카오뱅크
+I6-1 metric=액면가",,카카오뱅크 액면가,"{""intents"": [""I6-1""], ""entities"": [{""intent_id"": ""I6-1"", ""type"": ""company"", ""value"": ""카카오뱅크""}, {""intent_id"": ""I6-1"", ""type"": ""metric"", ""value"": ""액면가""}], ""constraints"": [], ""subject"": ""카카오뱅크 액면가""}",2685,266,
+11,카카오뱅크 상장할 때 액면가는 얼마였어?,1,I4-1,"I4-1 company=카카오뱅크
+I4-1 corporate_event=상장",,카카오뱅크 액면가,"{""intents"": [""I4-1""], ""entities"": [{""intent_id"": ""I4-1"", ""type"": ""company"", ""value"": ""카카오뱅크""}, {""intent_id"": ""I4-1"", ""type"": ""corporate_event"", ""value"": ""상장""}], ""constraints"": [], ""subject"": ""카카오뱅크 액면가""}",2690,208,
+12,현대차 목표주가 얼마야?,1,I8-2,"I8-2 company=현대차
+I8-2 metric=목표주가",,현대차 목표주가,"{""intents"": [""I8-2""], ""entities"": [{""intent_id"": ""I8-2"", ""type"": ""company"", ""value"": ""현대차""}, {""intent_id"": ""I8-2"", ""type"": ""metric"", ""value"": ""목표주가""}], ""constraints"": [], ""subject"": ""현대차 목표주가""}",2682,296,
+13,현대차 투자 점수 몇 점이야?,1,I6-8,I6-8 company=현대차,,현대차 투자 점수,"{""intents"": [""I6-8""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""현대차""}], ""constraints"": [], ""subject"": ""현대차 투자 점수""}",2684,171,
+14,신용거래가 뭐야?,1,I1-1,,,신용거래,"{""intents"": [""I1-1""], ""entities"": [], ""constraints"": [], ""subject"": ""신용거래""}",2681,177,
+15,신용거래 하려면 어떻게 신청해?,1,I3-2,,,신용거래 신청,"{""intents"": [""I3-2""], ""entities"": [], ""constraints"": [], ""subject"": ""신용거래 신청""}",2684,212,
+16,신용거래 증거금률 규정이 어떻게 돼?,1,I2-2,I2-2 regulation=신용거래 증거금률,,신용거래 증거금률 규정,"{""intents"": [""I2-2""], ""entities"": [{""intent_id"": ""I2-2"", ""type"": ""regulation"", ""value"": ""신용거래 증거금률""}], ""constraints"": [], ""subject"": ""신용거래 증거금률 규정""}",2688,288,
+17,신용거래 할 때 주의할 점 알려줘,1,I2-3,,,신용거래,"{""intents"": [""I2-3""], ""entities"": [], ""constraints"": [], ""subject"": ""신용거래""}",2685,258,
+18,오늘 상한가 종목 알려줘,1,I7-1,,I7-1 period=오늘,오늘 상한가 종목,"{""intents"": [""I7-1""], ""entities"": [], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""오늘""}], ""subject"": ""오늘 상한가 종목""}",2681,230,
+19,오늘 상승률 상위 10종목 알려줘,1,I7-1,I7-1 metric=상승률,"I7-1 period=오늘
+I7-1 count=10",상승률 상위 10종목,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""metric"", ""value"": ""상승률""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""오늘""}, {""intent_id"": ""I7-1"", ""type"": ""count"", ""value"": ""10""}], ""subject"": ""상승률 상위 10종목""}",2684,287,
+20,52주 신고가 갱신한 종목 알려줘,1,I7-2,I7-2 metric=52주 신고가,,52주 신고가 갱신 종목,"{""intents"": [""I7-2""], ""entities"": [{""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""52주 신고가""}], ""constraints"": [], ""subject"": ""52주 신고가 갱신 종목""}",2685,280,
+21,PER 낮은 종목 5개 뽑아줘,1,I8-1,I8-1 metric=PER,"I8-1 count=5
+I8-1 condition=PER 낮은",PER 낮은 종목 5개,"{""intents"": [""I8-1""], ""entities"": [{""intent_id"": ""I8-1"", ""type"": ""metric"", ""value"": ""PER""}], ""constraints"": [{""intent_id"": ""I8-1"", ""type"": ""count"", ""value"": ""5""}, {""intent_id"": ""I8-1"", ""type"": ""condition"", ""value"": ""PER 낮은""}], ""subject"": ""PER 낮은 종목 5개""}",2686,306,
+22,PER 낮은 업종 5개 뽑아줘,1,I8-1,I8-1 metric=PER,I8-1 count=5,PER 낮은 업종,"{""intents"": [""I8-1""], ""entities"": [{""intent_id"": ""I8-1"", ""type"": ""metric"", ""value"": ""PER""}], ""constraints"": [{""intent_id"": ""I8-1"", ""type"": ""count"", ""value"": ""5""}], ""subject"": ""PER 낮은 업종""}",2686,331,
+23,PER이 낮으면 무조건 좋은 거야?,1,I1-1,I1-1 metric=PER,,PER(주가수익비율),"{""intents"": [""I1-1""], ""entities"": [{""intent_id"": ""I1-1"", ""type"": ""metric"", ""value"": ""PER""}], ""constraints"": [], ""subject"": ""PER(주가수익비율)""}",2683,303,
+24,삼성전자 이번 주 공시 뭐 올라왔어?,1,I6-4,I6-4 company=삼성전자,I6-4 period=이번 주,삼성전자 공시,"{""intents"": [""I6-4""], ""entities"": [{""intent_id"": ""I6-4"", ""type"": ""company"", ""value"": ""삼성전자""}], ""constraints"": [{""intent_id"": ""I6-4"", ""type"": ""period"", ""value"": ""이번 주""}], ""subject"": ""삼성전자 공시""}",2685,201,
+25,삼성전자 실적발표 언제야?,1,I6-4,"I6-4 company=삼성전자
+I6-4 corporate_event=실적발표",,삼성전자 실적발표 일정,"{""intents"": [""I6-4""], ""entities"": [{""intent_id"": ""I6-4"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I6-4"", ""type"": ""corporate_event"", ""value"": ""실적발표""}], ""constraints"": [], ""subject"": ""삼성전자 실적발표 일정""}",2683,231,
+26,삼성전자랑 SK하이닉스 PER 비교해줘,1,I8-1,"I8-1 company=삼성전자
+I8-1 company=SK하이닉스
+I8-1 metric=PER",,삼성전자와 SK하이닉스 PER,"{""intents"": [""I8-1""], ""entities"": [{""intent_id"": ""I8-1"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I8-1"", ""type"": ""company"", ""value"": ""SK하이닉스""}, {""intent_id"": ""I8-1"", ""type"": ""metric"", ""value"": ""PER""}], ""constraints"": [], ""subject"": ""삼성전자와 SK하이닉스 PER""}",2686,245,
+27,삼성전자 어제 종가랑 지금 현재가 같이 알려줘,1,I7-1,I7-1 company=삼성전자,"I7-1 period=어제
+I7-1 period=지금",삼성전자 주가,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""company"", ""value"": ""삼성전자""}], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""어제""}, {""intent_id"": ""I7-1"", ""type"": ""period"", ""value"": ""지금""}], ""subject"": ""삼성전자 주가""}",2687,304,
+28,비트코인 시세 알려줘,1,I7-1,I7-1 market=비트코인,,비트코인 시세,"{""intents"": [""I7-1""], ""entities"": [{""intent_id"": ""I7-1"", ""type"": ""market"", ""value"": ""비트코인""}], ""constraints"": [], ""subject"": ""비트코인 시세""}",2681,277,
+29,내일 삼성전자 살까 말까?,2,I6-8;I2-3,"I6-8 company=삼성전자
+I2-3 company=삼성전자","I6-8 period=내일
+I2-3 period=내일",삼성전자 매수 여부,"{""intents"": [""I6-8"", ""I2-3""], ""entities"": [{""intent_id"": ""I6-8"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I2-3"", ""type"": ""company"", ""value"": ""삼성전자""}], ""constraints"": [{""intent_id"": ""I6-8"", ""type"": ""period"", ""value"": ""내일""}, {""intent_id"": ""I2-3"", ""type"": ""period"", ""value"": ""내일""}], ""subject"": ""삼성전자 매수 여부""}",2682,451,
+30,삼성전자 공매도 비중 최근 한 달 추이 보여줘,1,I7-2,"I7-2 company=삼성전자
+I7-2 metric=공매도 비중",I7-2 period=최근 한 달,삼성전자 공매도 비중 추이,"{""intents"": [""I7-2""], ""entities"": [{""intent_id"": ""I7-2"", ""type"": ""company"", ""value"": ""삼성전자""}, {""intent_id"": ""I7-2"", ""type"": ""metric"", ""value"": ""공매도 비중""}], ""constraints"": [{""intent_id"": ""I7-2"", ""type"": ""period"", ""value"": ""최근 한 달""}], ""subject"": ""삼성전자 공매도 비중 추이""}",2688,316,
+31,공매도 비율 높은 종목 5개 알려줘,1,I7-1,,"I7-1 count=5
+I7-1 condition=공매도 비율 높은",공매도 비율 높은 종목 5개,"{""intents"": [""I7-1""], ""entities"": [], ""constraints"": [{""intent_id"": ""I7-1"", ""type"": ""count"", ""value"": ""5""}, {""intent_id"": ""I7-1"", ""type"": ""condition"", ""value"": ""공매도 비율 높은""}], ""subject"": ""공매도 비율 높은 종목 5개""}",2686,320,

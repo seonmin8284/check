@@ -19,7 +19,7 @@ import statistics
 import sys
 
 from ensemble import score, vote
-from freeze_split import dev_keys, holdout_keys
+from freeze_split import dev_keys, fit_only_keys, sealed_keys
 import rep_var as V
 
 ARMS = "ABC"
@@ -59,9 +59,10 @@ def main():
         cand = tuple(statistics.mean(x[i] for x in vals) for i in range(4))
         return base, cand
 
-    print("!! holdout 개봉. 이 뒤로 holdout 은 오염됐다.\n")
-    for name, keys in (("dev", sorted(dev_keys())),
-                       ("HOLDOUT", sorted(holdout_keys()))):
+    print("!! sealed 개봉. 이 뒤로 ext_edge 는 burned 로 내려간다.\n")
+    for name, keys in (("dev+burned", sorted(dev_keys())),
+                       ("fit-only(dev)", sorted(fit_only_keys())),
+                       ("SEALED (ext_edge)", sorted(sealed_keys()))):
         base, cand = evaluate(keys)
         print(f"── {name} ({len(keys)}행) ──────────────────────")
         print(f"  {'구성':<22}{'F1':>8}{'P':>8}{'R':>8}{'완전일치':>10}")
