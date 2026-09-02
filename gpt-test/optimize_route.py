@@ -35,11 +35,10 @@ import refit_b as F
 import route as R
 
 # _out_e*.csv = STEP4 ② 프롬프트(facet=none 제거) 산출물.
-# _out_d*.csv 는 ② 이전 것이라 파스 분포가 다르다 — 규칙을 그 위에서 고르면
-# 지금 쓰지 않는 분포에 맞추게 된다.
+# ② 이전 산출물(_out_d*.csv)은 파스 분포가 달라 backup/ 으로 뺐다 —
+# 규칙을 그 위에서 고르면 지금 쓰지 않는 분포에 맞추게 된다.
 PARSE_SETS = {
     "e": ["_out_e.csv", "_out_e_r2.csv", "_out_e_r3.csv"],
-    "d": ["_out_d.csv", "_out_d_r2.csv", "_out_d_r3.csv"],
 }
 MIN_CONTEXT = 8   # 이만큼은 나와야 후보 문맥으로 삼는다
 MIN_GAIN = 1e-6

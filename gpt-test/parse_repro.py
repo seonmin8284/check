@@ -38,10 +38,11 @@ from collections import Counter, defaultdict
 
 import refit_b as F
 
+# 지난 arm(A/B/D 구판) 산출물은 backup/ 에 있다. 그때 결론은 세 arm 의 파스
+# 안정성이 층위별로 1~3%p 차이로 사실상 동률이었다는 것이다 — arm 선택으로
+# 재현성이 갈리지 않는다.
 ARMS = {
-    "A": ["_out_r2.csv", "_out_r3.csv", "_out_r4.csv"],
-    "B": ["_out_b_r2.csv", "_out_b_r3.csv", "_out_b_r4.csv"],
-    "D": ["_out_d.csv", "_out_d_r2.csv", "_out_d_r3.csv"],
+    "E": ["_out_e.csv", "_out_e_r2.csv", "_out_e_r3.csv"],
 }
 
 
@@ -145,8 +146,7 @@ def main():
     arms = {a: load(s, golden) for a, s in ARMS.items()}
     common = sorted(set.intersection(*(set(v) for v in arms.values())))
     print("실행 수: " + ", ".join(f"{a}×{len(ARMS[a])}" for a in ARMS))
-    print(f"세 arm 모두 3회 파스가 있는 공통 행 {len(common)}")
-    print(f"D 단독 보유 행 {len(arms['D'])}\n")
+    print(f"3회 파스가 다 있는 행 {len(common)}\n")
 
     def table(keys, arm_list, label):
         print(f"── {label} ({len(keys)}행) · 구조 유사도 (1.00 = 매번 같은 구조)")
@@ -170,21 +170,20 @@ def main():
             row += f"{v:>9.2f}"
         print(row + "\n")
 
-    table(common, list(ARMS), "공통 99행 · arm 비교")
-    table(sorted(arms["D"]), ["D"], "D 전체 273행")
+    table(common, list(ARMS), "현행 arm(E)")
 
     # ── source 별로 구조가 어디서 흔들리나 (D) ───────────
-    print("── source 별 구조 유사도 (D, 273행) ────────────")
+    print("── source 별 구조 유사도 (E) ───────────────────")
     by = defaultdict(list)
-    for k in arms["D"]:
+    for k in arms["E"]:
         by[k[0]].append(k)
     print(f"  {'source':<11}{'행':>4}{'goal골격':>9}{'엔티티타입':>10}{'분류+hz':>9}")
     for s in sorted(by, key=lambda x: -len(by[x])):
         ks = by[s]
         print(f"  {s:<11}{len(ks):>4}"
-              f"{pairwise(arms['D'], ks, C_df, 3):>9.2f}"
-              f"{pairwise(arms['D'], ks, C_ent_t, 3):>10.2f}"
-              f"{pairwise(arms['D'], ks, C_cls, 3):>9.2f}")
+              f"{pairwise(arms['E'], ks, C_df, 3):>9.2f}"
+              f"{pairwise(arms['E'], ks, C_ent_t, 3):>10.2f}"
+              f"{pairwise(arms['E'], ks, C_cls, 3):>9.2f}")
     return 0
 
 

@@ -33,7 +33,7 @@ from collections import Counter, defaultdict
 import refit_b as F
 import route as R
 
-REPS = {1: "_out_d.csv", 2: "_out_d_r2.csv", 3: "_out_d_r3.csv"}
+REPS = {1: "_out_e.csv", 2: "_out_e_r2.csv", 3: "_out_e_r3.csv"}
 
 # 귀속 라벨 (계층 순서대로)
 GOAL_N = "goal 개수 (STEP 0 근거 인벤토리)"

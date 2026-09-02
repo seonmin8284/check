@@ -240,13 +240,8 @@ def main():
                 x.strip() for x in r["intent_ids"].split(";") if x.strip()
             }
 
-    D = _load("_out_d.csv", golden)
-    B = _load("_out_b.csv", golden)
-    Bx = _load("_out_b_r2.csv", golden)
-    for k, v in Bx.items():
-        B.setdefault(k, v)
-
-    print(f"D 파스 {len(D)}행 / B 파스 {len(B)}행\n")
+    D = _load("_out_e.csv", golden)
+    print(f"파스 {len(D)}행\n")
 
     def score(pred_fn, parses, name):
         P = Rc = n = ex = 0
@@ -268,10 +263,9 @@ def main():
         return p, r
 
     print("── 골든 intent_ids 대조 ───────────────────────")
-    score(lambda r: {g.get("intent") for g in r.get("goals", []) if g.get("intent")},
-          B, "B: LLM 이 낸 intent")
-    score(predict, D, "D: goal 에서 유도")
-    score(predict, B, "B 파스에 유도기 적용 (통제)")
+    # 과거 비교: B 가 LLM 으로 낸 intent 는 P 0.811 / R 0.477 / F1 0.601.
+    # 유도기가 토큰 0 으로 그보다 낫다는 것이 채택 근거였다 (backup/ 참조).
+    score(predict, D, "goal 에서 유도")
 
     print("\n── 유도 근거층 분포 (D) ───────────────────────")
     layer = Counter()

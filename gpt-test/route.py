@@ -1,6 +1,6 @@
 """goal parse -> function 매핑 (capability graph) 과 커버리지/정답 리포트.
 
-run_csv.py 가 낸 *_out.csv 의 json 컬럼을 읽어, 각 goal 을 함수 호출 집합으로
+run_csv_d.py 가 낸 *_out_e.csv 의 json 컬럼을 읽어, 각 goal 을 함수 호출 집합으로
 결정적으로 매핑한다. LLM 은 여기 관여하지 않는다.
 
 이전 판은 (domain, facet) -> 함수 **하나** 였다. golden_labels.csv 를 맞춰보면
@@ -17,7 +17,7 @@ run_csv.py 가 낸 *_out.csv 의 json 컬럼을 읽어, 각 goal 을 함수 호�
 
 실행:
     .venv/Scripts/python.exe route.py                       # 골든의 source 전부
-    .venv/Scripts/python.exe route.py invest_out.csv        # 지정한 것만
+    .venv/Scripts/python.exe route.py invest_out_e.csv      # 지정한 것만
     .venv/Scripts/python.exe route.py --no-golden           # 채점 없이 커버리지만
 """
 
@@ -26,6 +26,10 @@ import json
 import os
 import sys
 from collections import Counter, defaultdict
+
+# 현행 arm 의 파스 산출물 접미사. arm D 프롬프트(run_csv_d.py) 가 낸다.
+# 지난 arm(A/B/C·D 구판) 산출물과 그때 쓴 스크립트는 backup/ 에 있다.
+OUT_SUFFIX = "_out_e.csv"
 
 # ─────────────────────────────────────────────────────────────
 # 매핑 결과 종류
@@ -808,13 +812,13 @@ def source_of(path: str) -> str:
 
 
 def discover(golden_path: str) -> list[str]:
-    """골든의 source 목록에서 산출물이 실제로 있는 *_out.csv 만 모은다."""
+    """골든의 source 목록에서 산출물이 실제로 있는 것만 모은다."""
     try:
         with open(golden_path, encoding="utf-8-sig", newline="") as f:
             sources = list(dict.fromkeys(r["source"] for r in csv.DictReader(f)))
     except FileNotFoundError:
         return []
-    return [s + "_out.csv" for s in sources if os.path.exists(s + "_out.csv")]
+    return [s + OUT_SUFFIX for s in sources if os.path.exists(s + OUT_SUFFIX)]
 
 
 def main(argv: list[str]) -> int:
