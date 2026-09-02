@@ -166,6 +166,31 @@ DOMAIN_FALLBACK = {
     "finance_legal": "get_basic_financial_knowledge",
 }
 
+# type 별 기본 함수. 1층이 아무것도 못 낸 자리에서만 쓴다 — DOMAIN_FALLBACK 과
+# 같은 자리이고, 조건이 도메인이 아니라 목표의 종류라는 것만 다르다.
+#
+# 판단(assessment)·분석(analysis) 목표는 "무엇을 조회하라"가 아니라 "왜 그런지
+# 설명하라"는 요구다. facet 이 비었거나 (domain, facet) 에 대응 함수가 없을 때
+# 그 goal 이 호출을 하나도 안 만드는 것보다는 배경 뉴스라도 부르는 쪽이 낫다.
+# 재현율 가중(F2) 기준의 선택이다.
+#
+# 명시적으로 호출을 억제한 자리(PeriodGate 의 SUBSUMED)에는 적용하지 않는다.
+# 그건 1층이 못 고른 게 아니라 "부르지 않는다"고 고른 것이다.
+#
+# source 단위 leave-one-out (9개 코퍼스, 2026-09-02):
+#
+#   assessment 만   전체 0.7639   개선 2 / 악화 0
+#   analysis 만     전체 0.7628   개선 0 / 악화 1     ← 재현 안 됨
+#   둘 다           전체 0.7637   개선 1 / 악화 1
+#
+# analysis 는 근거가 11 goal 뿐이고 어느 코퍼스에서도 개선을 못 낸다. 이 리포의
+# 채택 기준(fold 재현)으로는 탈락이다 — 지우면 전체 +0.0002. 지시로 넣은
+# 것이라 남겨 두지만, 근거는 없다는 뜻이다. 빼려면 아래 한 줄을 지우면 된다.
+TYPE_FALLBACK = {
+    "assessment": "get_news",
+    "analysis": "get_news",   # 재현 근거 없음 (위 표)
+}
+
 # 파스만으로는 못 고르는 자리에서 무엇이 더 필요한지
 DISCRIMINATOR = {
     ("finance_legal", "ipo"): "청약 제도 설명인지 청약 방법 안내인지",
@@ -232,14 +257,13 @@ JUDGMENT_BUNDLE = {
 # 업종 평균·타 종목과 견주는 판단은 전망 묶음이 아니라 상대가치가 근거다.
 COMPARATIVE_BUNDLE = ("get_stock_multiple_period", "get_index_multiple_period")
 
-# 지표를 골라달라는 목표(type=recommendation)는 바닥/과열 판단용 지표 세트를
-# 통째로 요구한다. 어느 하나로 좁힐 수 없는 게 정상이다.
-INDICATOR_BUNDLE = (
-    "get_stock_price",
-    "get_stock_multiple_period",
-    "get_company_evaluation",
-    "get_stock_news",
-)
+# INDICATOR_BUNDLE 은 폐기했다 (2026-09-02). 아래 recommendation→guide 참조.
+#
+# "지표를 골라달라는 목표는 판단용 지표 세트를 통째로 요구한다"는 전제로
+# (get_stock_price, get_stock_multiple_period, get_company_evaluation,
+# get_stock_news) 를 붙이던 자리였다. 간선 단위로 재보니 네 간선 모두
+# 46회 발화에 정밀도 0.065~0.130 이다 — F2 손익분기(아래) 한참 아래다.
+# 전제가 틀렸다. 골든이 "추천" 질의에 요구하는 것은 지표 데이터가 아니었다.
 
 
 class Rule:
@@ -383,11 +407,30 @@ EXPANSIONS: list[Rule] = [
         add=["get_index_price"],
         why="시장 데이터 해석에는 지수 수준이 기준선",
     ),
+    # 추천·전략 목표가 요구하는 것은 데이터가 아니라 가이드다.
+    #
+    # "내일 삼성전자 살까 말까", "환율 1,400원 돌파 시 포트폴리오 대응 전략",
+    # "배당성장주 추천 종목" — 파스는 */none/recommendation,
+    # market/screening/recommendation, issuer/price/recommendation 으로 흩어지지만
+    # 골든이 공통으로 요구하는 것은 get_guide 다. 라우터는 이 함수를 19행 중
+    # 6행에서만 부르고 있었고, 그게 get_guide 누락 15행의 대부분이다.
+    #
+    # 여기가 INDICATOR_BUNDLE 이 있던 자리다. 문맥(type=recommendation)은
+    # 맞았고 가리키는 함수가 틀렸다. 간선을 갈아끼운 결과(273행 × 3실행):
+    #
+    #   현행(bundle)          F2 0.7478  P 0.682 R 0.736
+    #   bundle 제거           F2 0.7489  P 0.723 R 0.729
+    #   bundle 유지 + guide   F2 0.7573  P 0.683 R 0.750
+    #   bundle 제거 + guide   F2 0.7613  P 0.724 R 0.744   ← 채택
+    #
+    # 재현율과 정밀도가 함께 오른다. 규칙을 넣거나 빼는 탐색(optimize_route 의
+    # 전방선택, refit_b 의 후방제거)으로는 이 수가 안 나온다 — 둘 다 규칙 단위라
+    # 같은 조건에서 함수만 바꾸는 조합을 후보로 두지 않는다.
     Rule(
-        "recommendation bundle",
+        "recommendation→guide",
         lambda g: g.type == "recommendation",
-        add=INDICATOR_BUNDLE,
-        why="지표 선정 목표 — 시세·멀티플·평가점수·뉴스 세트가 통째로 필요",
+        add=["get_guide"],
+        why="추천·전략 목표 — 지표 데이터가 아니라 투자 가이드",
     ),
     # ── 자사 절차의 동반 코퍼스 ──────────────────────────────
     # 제출서류를 묻는 순간 그것은 앱 사용법이 아니라 법정 요건이다.
@@ -554,11 +597,19 @@ LEXICON_RULES: list[Rule] = [
 # 재현율은 그대로고 정밀도만 깎여(F2 0.8370 -> 0.8259) 기각했다.
 CV_RULES = [
     # 자사 문맥의 판단 목표는 1층에 자리가 없어 비어 있었다. 근거는 매뉴얼이다.
+    #
+    # CV 가 뽑은 조건은 facet=none 이었다. 그걸 도메인 전체로 넓힌다 — 자사
+    # 절차 문맥이면 facet 이 무엇이든 업무 매뉴얼이 근거에 들어간다는 정책이다.
+    # 넓어지는 자리는 1층이 매뉴얼이 아닌 함수를 주던 곳들이다:
+    # internal/ipo(청약배정), internal/knowledge(개념), internal/disclosure(규정),
+    # internal/fx(환율). 이 자리들에서도 "우리 앱에서는 어떻게 되나"가 함께
+    # 물어진다고 보는 것이다. CV 가 아니라 손으로 정한 조건이므로 근거는
+    # 재현이 아니라 아래 F2 측정이다.
     Rule(
-        "internal judgment→manual",
-        lambda g: g.domain == "internal" and g.facet == "none",
+        "internal→manual",
+        lambda g: g.domain == "internal",
         add=["get_work_manual"],
-        why="자사 문맥 판단 목표 — 근거는 업무 매뉴얼 (CV 5/5)",
+        why="자사 절차 문맥 — 근거에 업무 매뉴얼을 항상 포함",
     ),
     # 업종·테마를 지목하면 그 업황을 만든 시장 뉴스가 따라온다. 섹터 구성만
     # 주고 왜 그런지를 안 주면 근거가 반쪽이다.
@@ -595,21 +646,29 @@ CV_RULES = [
 ]
 
 
-# 한때 뺐다가 되살린 규칙 (2026-09-02).
+# 한때 뺐다가 되살린 규칙 (2026-09-02) — 그중 하나를 다시 뺀다.
 #
-# sealed 58행 검증에서 이 둘을 빼면 F1 이 올랐다. 그런데 그 이득은 전부
-# 정밀도에서 왔고(P 0.597→0.678, R 0.571 불변) 재현율은 오히려 낮아졌다.
+# 경위. sealed 58행 검증에서 아래 둘을 빼면 F1 이 올랐다. 그런데 그 이득은 전부
+# 정밀도에서 왔고(P 0.597→0.678, R 0.571 불변) 재현율은 오히려 낮아졌다. 이
+# 라우터의 목적은 "사용자 목적에 도달할 근거를 모으는 것"이므로 지표를
+# F1 에서 F2 로 바꿨고, 그 기준에서 **둘을 묶어** 되살렸다 (R 0.703 → 0.710).
 #
-# 이 라우터의 목적은 "사용자 목적에 도달할 근거를 모으는 것"이다. 필요한
-# 데이터를 못 부르는 손실이 쓸데없는 걸 하나 더 부르는 손실보다 크다. 그래서
-# 최적화 지표를 F1(누락=오호출) 에서 F2(재현율 2배 가중) 로 바꿨고, 그 기준
-# 에서는 두 규칙을 되살리는 쪽이 낫다 — 재현율 0.703 → 0.710.
+# 묶은 것이 오류였다. 간선 단위로 다시 재니 공은 한쪽에만 있다.
 #
-#   comparative assessment       "업종 평균 대비" 류에 멀티플 두 개
-#   themed issuer→news channel   테마 붙은 발행사 goal 에 뉴스 두 종
+#   comparative assessment       빼면 F2 +0.0021 (P .725→.750, R .744→.742)
+#   themed issuer→news channel   빼면 F2 -0.0028 (P .725→.747, R .744→.731)
 #
-# F1 로 되돌아갈 일이 있으면 이 둘을 다시 빼면 된다.
-RETIRED: set[str] = set()
+# 재현율을 지고 있는 것은 후자다. 전자는 36회 발화에 간선 정밀도가
+# get_stock_multiple_period 0.000 / get_index_multiple_period 0.083 이다 —
+# 36행 어디에서도 정답이 아니었다. F2 손익분기 q* = F/(1+β²) ≈ 0.152 의
+# 한참 아래이므로 F1 이든 F2 이든 들어갈 자리가 없다. 되살림의 근거였던
+# 재현율 이득은 후자의 것을 전자에 잘못 귀속한 것이다.
+#
+# 규칙 정의는 남겨 둔다 — "업종 평균 대비" 문맥 자체는 실재하고(발화 36회),
+# 틀린 것은 그 문맥이 멀티플 두 개를 요구한다는 가정이다. 문맥은 맞고 함수가
+# 틀린 자리는 recommendation→guide 와 같은 모양이므로, 옳은 함수를 찾으면
+# 되살릴 자리가 된다.
+RETIRED: set[str] = {"comparative assessment"}
 
 ALL_RULES: list[Rule] = [
     r for r in EXPANSIONS + CV_RULES + LEXICON_RULES if r.name not in RETIRED
@@ -746,6 +805,17 @@ def route(g: Goal, rules: list | None = None):
     # 그걸로 답하고, 아무것도 안 붙으면 그때 UNMAPPED 로 남는다.
     if status == AMBIGUOUS:
         return status, picked, note, candidates
+
+    # ── type 기본값 ──
+    # 1층이 아무것도 못 낸 자리에만 붙는다. SUBSUMED 는 제외한다 — 그건 못 고른
+    # 게 아니라 부르지 않기로 고른 자리다(PRICE_GATE).
+    if not picked and status != SUBSUMED:
+        tf = TYPE_FALLBACK.get(g.type)
+        if tf:
+            picked[tf] = (BASE, f"type={g.type} 기본 함수 — 1층에 자리 없음")
+            if status == UNMAPPED:
+                status = FALLBACK
+            note = note or f"type={g.type} 기본 함수로"
 
     # ── 2층 + 3층 ──
     for rule in ALL_RULES if rules is None else rules:
@@ -921,7 +991,87 @@ def main(argv: list[str]) -> int:
 
     if golden:
         score(queries, golden)
+        edge_report(queries, golden)
     return 0
+
+
+def edge_report(queries, golden, min_fire=10, beta=2.0):
+    """간선(규칙 → 함수 하나)별 정밀도와 F2 손익분기.
+
+    규칙이 아니라 **간선**이 단위다. 한 규칙이 여러 함수를 붙일 때 그 품질이
+    갈리기 때문이다 — 예전에 themed issuer→news channel 은 get_news 로는
+    0.976, get_stock_news 로는 0.400 이었다. 규칙 단위로만 보면 이게 안 보이고,
+    "규칙을 넣나 빼나"의 이진 선택밖에 남지 않는다.
+
+    손익분기. Fβ 에서 호출을 하나 더 붙였을 때의 기대 변화를 풀면, 그 함수가
+    정답일 확률 q 에 대해
+
+        E[ΔF] ∝ q(1+β²)N − M   →   붙이는 게 이득 ⟺ q > F/(1+β²)
+
+    이다(M = (1+β²)tp, N = 분모). β=2, F2≈0.76 이면 q* ≈ 0.15 — "정답일 확률이
+    15%만 넘으면 부른다". 이 값은 튜닝 대상이 아니라 지표가 정하는 것이고,
+    지표를 F1 로 되돌리면 q* 는 0.37 로 올라간다. 미달 간선에 ! 를 붙인다.
+
+    정밀도는 행 단위(그 간선이 발화한 행에서 그 함수가 골든에 있나)라 다른
+    간선이 같은 함수를 함께 붙인 경우를 분리하지 않는다. 한계 기여의 상한이다.
+    """
+    fire = defaultdict(lambda: [0, 0])
+    support = defaultdict(lambda: [0, 0])
+    tp = fp = fn_ = 0
+    for src, idx, per_goal in queries:
+        gkey = (src, int(idx))
+        if gkey not in golden:
+            continue
+        want = golden[gkey][1]
+        got, sup = set(), Counter()
+        for g, status, picked, note, cands in per_goal:
+            got |= set(picked)
+            # 1층도 지지자로 센다. 규칙만 세면 BASE 로만 불린 함수가 집계에서
+            # 통째로 빠져 "지지 1개" 버킷이 실제보다 좋아 보인다.
+            for f in route(g, [])[1]:
+                sup[f] += 1
+            for rule in ALL_RULES:
+                if not rule.fire(g):
+                    continue
+                add = judgment_bundle(g) if rule.name == "assessment bundle" else rule.add
+                for f in add:
+                    e = fire[(rule.name, f)]
+                    e[0] += 1
+                    e[1] += f in want
+                    sup[f] += 1
+        tp += len(want & got); fp += len(got - want); fn_ += len(want - got)
+        for f, n in sup.items():
+            s = support[min(n, 4)]
+            s[0] += 1
+            s[1] += f in want
+
+    p = tp / (tp + fp) if tp + fp else 0.0
+    r = tp / (tp + fn_) if tp + fn_ else 0.0
+    b2 = beta * beta
+    f2 = (1 + b2) * p * r / (b2 * p + r) if b2 * p + r else 0.0
+    qstar = f2 / (1 + b2)
+
+    print(f"\n── 간선별 정밀도 (F{beta:.0f} 손익분기 q* = {qstar:.3f}) ──")
+    rows = sorted(
+        ((f"{rn} → {f}", h / n, n) for (rn, f), (n, h) in fire.items() if n >= min_fire),
+        key=lambda x: x[1],
+    )
+    if not rows:
+        print(f"  (발화 {min_fire}회 이상인 간선 없음)")
+    for name, q, n in rows:
+        mark = " !" if q < qstar else "  "
+        print(f" {mark} {name:<52} {n:>4}회  q={q:.3f}")
+    bad = [x for x in rows if x[1] < qstar]
+    print(f"  손익분기 미달 {len(bad)}개"
+          + (" — 끊는 쪽이 F2 가 높다" if bad else " (없음)"))
+
+    print("\n── 지지 간선 수 → 그 호출이 맞을 확률 ──")
+    for n in sorted(support):
+        tot, hit = support[n]
+        label = f"{n}개" if n < 4 else "4개+"
+        print(f"  {label:>5} {tot:>5}회  {hit / tot:>6.3f}")
+    print("  단조 증가하면 지지 수가 정보를 갖는다는 뜻이다. 지금 라우터는")
+    print("  picked.setdefault 로 첫 지지자만 남기고 이 정보를 버린다.")
 
 
 def score(queries, golden):
