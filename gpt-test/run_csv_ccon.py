@@ -6,7 +6,7 @@ A안(run_csv.py) 대비 변경점만:
 스키마의 나머지·모델·파라미터·출력 컬럼은 A안과 동일하게 두어 비교 가능성을 유지한다.
 
 실행:
-    .venv/Scripts/python.exe run_csv_b.py --input work.csv   --output work_out_d.csv
+    .venv/Scripts/python.exe run_csv_b.py --input work.csv   --output work_out_ccon.csv
     .venv/Scripts/python.exe run_csv_b.py --input invest.csv --output invest_out_b.csv
 """
 
@@ -64,6 +64,129 @@ Produce your output in this order and do not deviate:
 
 Decomposition governs everything downstream. Never choose a label first and
 then look for material to justify it.
+
+---
+
+## STEP 0 — EVIDENCE INVENTORY (think before you split)
+
+Before writing any goal, answer this to yourself:
+
+  "If I had to actually answer this utterance, what separate pieces of
+   evidence would I need to have in front of me?"
+
+Enumerate them. Each piece of evidence is a distinct observable fact about a
+distinct subject — a figure, a record, a document, a procedure, a status.
+
+Rules for the inventory:
+
+- Two facts are the *same* piece of evidence if one lookup of one subject
+  yields both. 시가 and 종가 of one stock is one piece. 매출 and 영업이익
+  of one company for one period is one piece.
+- Two facts are *different* pieces if they concern different subjects, or
+  different kinds of information about the same subject (실적 vs 수급 vs
+  공시 vs 주가).
+- Realized figures and not-yet-realized figures about the same subject are
+  different pieces (2024 확정 매출 vs 2026 예상 매출).
+- A premise the user states as given still needs a piece of evidence if the
+  answer depends on its magnitude, direction, or current status. A premise
+  that merely frames the question needs none.
+- The user's own judgment request — 전망, 영향도, 여부, 가능성, 효과, 배경 —
+  is never a piece of evidence. It consumes them.
+
+Then: **one piece of evidence → one goal**, plus one goal for the judgment
+if the user asked for one. This inventory, not the sentence's connectives,
+decides the split.
+
+### What this changes
+
+Do not split just because you see 및, 와, 그리고, 후, 에 따른.
+Do not refuse to split just because there is no connective. A single run of
+nouns can still require two pieces of evidence.
+
+  "삼성전자 HBM 납품 실적 영향도 전망"
+    evidence: (a) 삼성전자 HBM 납품 실적 → goal
+              (b) 판단: 그것이 실적에 미치는 영향 → goal, depends on (a)
+
+  "비대면계좌 개설 후 한도제한계좌 해제 방법"
+    evidence: (a) 한도제한계좌 해제 절차 → goal
+    개설은 해제 절차가 적용되는 상황을 설명하는 전제일 뿐 별도 조회가 아니다.
+    → 1 goal.
+
+### Causal and impact questions
+
+When a user states a premise and asks about its consequence — "X에 따른 Y",
+"X가 Y에 미치는 영향", "X에 따른 Y 수혜 여부" — keep the consequence as its
+own goal of type `assessment`. Do not dissolve it into fact lookups only.
+Make it depend on the evidence goals it consumes.
+
+### Do NOT split when
+
+- The parts describe a single procedure. "A 및 B 방법" describing one
+  workflow is one goal.
+- One part is a qualifier or filter on the other. "외국인 수급이 강하게
+  유입된 우량주" is one goal with a filter.
+- The parts are synonyms or restatements.
+
+### Limits
+
+Produce at most 5 goals. Prefer fewer. If an utterance would exceed 5, merge
+the most closely related evidence pieces rather than truncating.
+
+---
+
+## STEP 1 — TARGET
+
+For each goal:
+
+- target — short Korean noun phrase naming the object of the goal.
+
+---
+
+## STEP 2 — ENTITIES
+
+Return only entities explicitly present in the utterance. Copy values verbatim
+from the user's wording — no normalization, no ticker lookup, no translation.
+Do not resolve whether a name is a company, a sector, or a theme beyond the
+types below; if uncertain between two, pick the broader one.
+
+Each entity carries a goal id.
+
+Allowed types — use no others:
+
+company            개별 기업·종목명
+sector             업종·산업·섹터
+theme              투자 테마·이슈·컨셉
+market             시장·거래소 (코스피, 코스닥, 나스닥, 대체거래소 등)
+index              지수 (SOX, S&P500, CPI 등 발표 지표 포함)
+metric             재무·시장 지표명 (영업이익, 거래대금, PER, 마진율 등)
+corporate_event    기업 이벤트 (유상증자, IR, 공시, 배당, 상장 등)
+market_event       시장 이벤트 (신고가 경신, 급등, 지정학 리스크 등)
+investor_group     투자자 주체 (외국인, 기관, 개인)
+product            자사 금융상품 (ISA, CMA, 연금저축, IRP, 신탁, 랩)
+account            계좌 종류·요소 (모계좌, 위탁계좌, 계좌비밀번호)
+procedure          업무 행위 (변경, 신청, 연장, 전환, 등록, 재등록)
+regulation         법규·제도·세제 (양도소득세, 고객확인의무, 금융소비자보호법)
+document           서식·문서 (투자정보확인서, 약관, 신청서)
+app_feature        앱 기능·화면 (다크모드, 생체인증, 알림, 메뉴)
+
+A noun that modifies the head noun is still an entity if it names something
+on this list. Extracting it does not mean it becomes its own goal.
+
+---
+
+## STEP 3 — CONSTRAINTS
+
+Return only constraints explicitly present. Copy values verbatim; do not
+convert dates to numeric form.
+
+Each constraint carries a goal id.
+
+Allowed types — use no others:
+
+period, scope, count, ranking, direction, condition, channel
+
+If a phrase is the subject of the question, it is an entity. If it narrows
+which instances of the subject qualify, it is a constraint.
 
 ---
 
@@ -190,135 +313,6 @@ forward   Not yet realized — forecasts, estimates, expectations, outlooks,
 
 A goal is `forward` whenever the requested figure has not yet occurred, even
 if that figure already exists as a published estimate.
-
----
-
-## STEP 0 — EVIDENCE INVENTORY (think before you split)
-
-Before writing any goal, answer this to yourself:
-
-  "If I had to actually answer this utterance, what separate pieces of
-   evidence would I need to have in front of me?"
-
-Enumerate them. Each piece of evidence is a distinct observable fact about a
-distinct subject — a figure, a record, a document, a procedure, a status.
-
-Rules for the inventory:
-
-- Two facts are the *same* piece of evidence if one lookup of one subject
-  yields both. 시가 and 종가 of one stock is one piece. 매출 and 영업이익
-  of one company for one period is one piece.
-- Two facts are *different* pieces if they concern different subjects, or
-  different kinds of information about the same subject (실적 vs 수급 vs
-  공시 vs 주가).
-- Realized figures and not-yet-realized figures about the same subject are
-  different pieces (2024 확정 매출 vs 2026 예상 매출).
-- A premise the user states as given still needs a piece of evidence if the
-  answer depends on its magnitude, direction, or current status. A premise
-  that merely frames the question needs none.
-- The user's own judgment request — 전망, 영향도, 여부, 가능성, 효과, 배경 —
-  is never a piece of evidence. It consumes them.
-
-Then: **one piece of evidence → one goal**, plus one goal for the judgment
-if the user asked for one. This inventory, not the sentence's connectives,
-decides the split.
-
-### What this changes
-
-Do not split just because you see 및, 와, 그리고, 후, 에 따른.
-Do not refuse to split just because there is no connective. A single run of
-nouns can still require two pieces of evidence.
-
-  "삼성전자 HBM 납품 실적 영향도 전망"
-    evidence: (a) 삼성전자 HBM 납품 실적 → goal
-              (b) 판단: 그것이 실적에 미치는 영향 → goal, depends on (a)
-
-  "비대면계좌 개설 후 한도제한계좌 해제 방법"
-    evidence: (a) 한도제한계좌 해제 절차 → goal
-    개설은 해제 절차가 적용되는 상황을 설명하는 전제일 뿐 별도 조회가 아니다.
-    → 1 goal.
-
-### Causal and impact questions
-
-When a user states a premise and asks about its consequence — "X에 따른 Y",
-"X가 Y에 미치는 영향", "X에 따른 Y 수혜 여부" — keep the consequence as its
-own goal of type `assessment`. Do not dissolve it into fact lookups only.
-Make it depend on the evidence goals it consumes.
-
-### Do NOT split when
-
-- The parts describe a single procedure. "A 및 B 방법" describing one
-  workflow is one goal.
-- One part is a qualifier or filter on the other. "외국인 수급이 강하게
-  유입된 우량주" is one goal with a filter.
-- The parts are synonyms or restatements.
-
-### Limits
-
-Produce at most 5 goals. Prefer fewer. If an utterance would exceed 5, merge
-the most closely related evidence pieces rather than truncating.
-
----
-
-## STEP 1 — TARGET
-
-For each goal:
-
-- target — short Korean noun phrase naming the object of the goal.
-
----
-
-## STEP 2 — ENTITIES
-
-Return only entities explicitly present in the utterance. Copy values verbatim
-from the user's wording — no normalization, no ticker lookup, no translation.
-Do not resolve whether a name is a company, a sector, or a theme beyond the
-types below; if uncertain between two, pick the broader one.
-
-Each entity carries a goal id.
-
-Allowed types — use no others:
-
-company            개별 기업·종목명
-sector             업종·산업·섹터
-theme              투자 테마·이슈·컨셉
-market             시장·거래소 (코스피, 코스닥, 나스닥, 대체거래소 등)
-index              지수 (SOX, S&P500, CPI 등 발표 지표 포함)
-metric             재무·시장 지표명 (영업이익, 거래대금, PER, 마진율 등)
-corporate_event    기업 이벤트 (유상증자, IR, 공시, 배당, 상장 등)
-market_event       시장 이벤트 (신고가 경신, 급등, 지정학 리스크 등)
-investor_group     투자자 주체 (외국인, 기관, 개인)
-product            자사 금융상품 (ISA, CMA, 연금저축, IRP, 신탁, 랩)
-account            계좌 종류·요소 (모계좌, 위탁계좌, 계좌비밀번호)
-procedure          업무 행위 (변경, 신청, 연장, 전환, 등록, 재등록)
-regulation         법규·제도·세제 (양도소득세, 고객확인의무, 금융소비자보호법)
-document           서식·문서 (투자정보확인서, 약관, 신청서)
-app_feature        앱 기능·화면 (다크모드, 생체인증, 알림, 메뉴)
-
-A noun that modifies the head noun is still an entity if it names something
-on this list. Extracting it does not mean it becomes its own goal.
-
----
-
-## STEP 3 — CONSTRAINTS
-
-Return only constraints explicitly present. Copy values verbatim; do not
-convert dates to numeric form.
-
-Each constraint carries a goal id.
-
-Allowed types — use no others:
-
-period       시간 표현. 시작과 끝이 따로 언급되면 항목을 두 개 낸다.
-scope        검색 범위를 한정하는 시장·섹터·테마. 대상 자체가 아니라 범위일 때만.
-count        요청된 개수. 숫자만.
-ranking      상위 | 하위
-direction    급증 | 급락 | 상승 | 하락 | 강세 | 약세
-condition    결과를 걸러내는 자격 요건 (우량주, 저평가, 배당주, 만기 도래 등)
-channel      수행 경로 (온라인, 비대면, 영업점, 모바일)
-
-If a phrase is the subject of the question, it is an entity. If it narrows
-which instances of the subject qualify, it is a constraint.
 
 ---
 
@@ -733,7 +727,7 @@ def main() -> int:
 
     p = argparse.ArgumentParser()
     p.add_argument("--input", default="work.csv")
-    p.add_argument("--output", default="work_out_d.csv")
+    p.add_argument("--output", default="work_out_ccon.csv")
     p.add_argument("--column", default="query", help="프롬프트에 넣을 입력 컬럼명")
     p.add_argument("--limit", type=int, help="앞에서 N행만")
     p.add_argument("--workers", type=int, default=4, help="동시 호출 수")

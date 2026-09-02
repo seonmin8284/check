@@ -6,7 +6,7 @@ A안(run_csv.py) 대비 변경점만:
 스키마의 나머지·모델·파라미터·출력 컬럼은 A안과 동일하게 두어 비교 가능성을 유지한다.
 
 실행:
-    .venv/Scripts/python.exe run_csv_b.py --input work.csv   --output work_out_d.csv
+    .venv/Scripts/python.exe run_csv_b.py --input work.csv   --output work_out_pcls1.csv
     .venv/Scripts/python.exe run_csv_b.py --input invest.csv --output invest_out_b.csv
 """
 
@@ -733,7 +733,7 @@ def main() -> int:
 
     p = argparse.ArgumentParser()
     p.add_argument("--input", default="work.csv")
-    p.add_argument("--output", default="work_out_d.csv")
+    p.add_argument("--output", default="work_out_pcls1.csv")
     p.add_argument("--column", default="query", help="프롬프트에 넣을 입력 컬럼명")
     p.add_argument("--limit", type=int, help="앞에서 N행만")
     p.add_argument("--workers", type=int, default=4, help="동시 호출 수")

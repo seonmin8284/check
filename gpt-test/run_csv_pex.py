@@ -6,7 +6,7 @@ A안(run_csv.py) 대비 변경점만:
 스키마의 나머지·모델·파라미터·출력 컬럼은 A안과 동일하게 두어 비교 가능성을 유지한다.
 
 실행:
-    .venv/Scripts/python.exe run_csv_b.py --input work.csv   --output work_out_d.csv
+    .venv/Scripts/python.exe run_csv_b.py --input work.csv   --output work_out_pex.csv
     .venv/Scripts/python.exe run_csv_b.py --input invest.csv --output invest_out_b.csv
 """
 
@@ -67,130 +67,107 @@ then look for material to justify it.
 
 ---
 
-## STEP 4 — CLASSIFY
+## BOUNDARY EXAMPLES
 
-Now that the goals, entities, and constraints are settled, assign domain,
-type, facet, and horizon to each goal.
+These are chosen because each sits on a line that is easy to get wrong.
+Entities and constraints are abbreviated for readability; produce them in
+full in your actual output.
 
-### DOMAIN
+---
+IN: 삼성전자 HBM 납품 실적 영향도 전망
 
-Use exactly one:
+Evidence: 삼성전자의 HBM 납품 실적 수치 하나. "영향도 전망"은 판단이므로
+근거가 아니다. HBM 업황은 사용자가 묻지 않았으므로 goal 로 만들지 않는다.
 
-market
-  지수·시황, 섹터·테마, 투자자별 수급·시장 전반 동향, 시장 단위 이슈,
-  종목 스크리닝·랭킹, 시장 일정(공모주 일정 목록, 배당 시즌 등)
-  — 질의 시점에 대상 발행사가 지정되지 않은 것
+  g1 [issuer/query/fundamentals/current] (I6-6) 삼성전자 HBM 납품 실적
+  g2 [issuer/assessment/none/forward]    (I6-8) HBM 납품의 실적 영향도 전망
+  dep: g1->g2 (context)
 
-issuer
-  개별 종목의 주가·거래량, 기업 재무·실적, 기업 뉴스·공시,
-  밸류에이션, 종목 리서치, 특정 공모주 정보·일정
-  — 질의 시점에 대상 발행사가 지정된 것(복수 종목 비교 포함)
+왜 2개인가: 확정 실적 조회와 그 해석은 서로 다른 산출물이다.
+왜 3개가 아닌가: "HBM 업황"은 발화에 없다. 흔히 같이 따라오는 정보라도
+사용자가 묻지 않았으면 goal 이 아니다.
+---
+IN: SK하이닉스 최근분기 HBM 수요 증가에 따른 예상 영업이익 추정치
 
-internal
-  자사 절차·앱 사용법: 계좌 개설·비밀번호, 상품 가입·전환·연장, 메뉴 위치,
-  서식 작성, 자사 수수료, 고객센터, 자사 기준 거래시간·운영규칙
-  — 발화에 자사 언급이 없어도, 고객이 이 앱에서 실제로 거래·확인하려는
-    맥락이면 internal
+Evidence: (a) 최근분기 HBM 수요 증가 — 전제이지만 크기를 알아야 추정치를
+해석할 수 있으므로 근거다. (b) SK하이닉스 예상 영업이익 — 아직 실현되지
+않은 수치.
 
-finance_legal
-  일반 금융 개념·상품, 법규·제도, 세제 기준, 컴플라이언스, 약관·계약 —
-  제도 자체이지 자사 구현이 아님
+  g1 [market/query/news/past]          (I5-2) 최근분기 HBM 수요 증가 동향
+  g2 [issuer/query/estimate/forward]   (I8-2) SK하이닉스 예상 영업이익 추정치
+  dep: g1->g2 (context)
+  constraint: g1 period=최근분기
 
-unknown
-  판정 불가
+왜 g1 이 market 인가: HBM 수요는 테마 단위 동향이고 발행사가 지정되지 않았다.
+왜 estimate 이고 fundamentals 가 아닌가: 아직 실현되지 않은 추정치다.
+---
+IN: LG에너지솔루션 전기차 수요 둔화 관련 목표 주가 하향 가능성
 
-Boundaries:
-- "코스피 정규장 시간" → internal (거래 가능 시간)
-- "거래 정지 종목 상태 확인법" → internal (확인 방법)
-- market/issuer는 종목명 등장 여부가 아니라 요구된 답의 대상 단위로 판정.
-  "삼성전자 때문에 코스피 오르나" → market. "삼성전자가 반도체 섹터에서
-  어느 위치야" → issuer.
-- 대상을 지정하지 않고 조건으로 종목을 찾게 하는 질의(대장주, 배당 상위,
-  급등주)는 스크리닝이므로 market.
-- 세금·법규를 제도로 물으면 finance_legal. 내 내역을 어디서 보는지, 자사
-  서비스가 어떻게 처리하는지 물으면 internal.
-- 청약 제도 자체는 finance_legal. 이번 주 청약 일정 목록은 market.
-  특정 공모주의 공모가·일정은 issuer. 앱에서 청약하는 방법은 internal.
+Evidence: (a) 전기차 수요 둔화 동향, (b) LG에너지솔루션 현재 목표주가.
+"하향 가능성"은 판단.
 
-### TYPE
+  g1 [market/query/news/current]           (I5-2) 전기차 수요 둔화 동향
+  g2 [issuer/query/target_price/forward]   (I8-2) LG에너지솔루션 목표주가
+  g3 [issuer/assessment/none/forward]      (I6-8) 목표주가 하향 가능성
+  dep: g1->g3 (context), g2->g3 (context)
 
-Use exactly one. Decide by what the user wants produced, not by how the
-answer would be obtained.
+왜 target_price 이고 estimate 이 아닌가: 사용자가 알고 싶은 것은 실적 수치가
+아니라 주가 수준이다.
+---
+IN: 네이버(NAVER) 최근 외국인 대량 매도 및 주가 하락 배경 분석
 
-query          A stated fact or set of facts. No computation, no judgment.
-explanation    A concept, term, procedure, or reason explained.
-comparison     Two or more subjects set side by side on the same measure.
-analysis       Computation, aggregation, or summarization across multiple
-               data points or a time range. States what the data shows, not
-               what it means for the future.
-assessment     Judgment, outlook, causal interpretation, or evaluation.
-recommendation Suggestions or rankings the user is meant to act on.
+Evidence: (a) 외국인 수급, (b) 주가 추이. 둘은 같은 종목이지만 다른 종류의
+정보이므로 별개의 근거다. "배경 분석"은 판단.
 
-Decision order:
-1. Asking what to pick or act on → recommendation
-2. Asking for judgment, outlook, impact, or 여부 → assessment
-3. Setting two or more subjects against each other → comparison
-4. Requiring computation over a range or multiple points → analysis
-5. Asking how, why, or what something means → explanation
-6. Otherwise → query
+  g1 [issuer/query/flow/current]      (I7-1) 네이버 외국인 매도 동향
+  g2 [issuer/analysis/price/past]     (I7-2) 네이버 주가 하락 추이
+  g3 [issuer/assessment/none/current] (I6-8) 매도·하락 배경
+  dep: g1->g3 (context), g2->g3 (context)
+  constraint: g1 period=최근, g1 direction=대량 매도 / g2 direction=하락
 
-Ties: explanation vs query → explanation. analysis vs assessment → assessment.
+"및" 이 있어서 나눈 것이 아니라 수급과 주가가 서로 다른 근거라서 나눴다.
+---
+IN: 한화솔루션 유상증자 결정 공시 후 단기 주가 변동성 분석
 
-### FACET
+Evidence: (a) 유상증자 결정 공시, (b) 공시 이후 주가 변동성.
 
-Use exactly one. The facet names *which kind of information about the target*
-the goal asks for. Decide it from what the user wants to know, not from where
-such information might come from.
+  g1 [issuer/query/disclosure/past]  (I6-4) 한화솔루션 유상증자 결정 공시
+  g2 [issuer/analysis/price/current] (I7-2) 공시 이후 단기 주가 변동성
+  dep: g1->g2 (context)
 
-profile        기업 개요·기본 정보. 사업 내용, 대표, 업종, 결산월, 발행주식수.
-ipo            신규상장·공모. 공모가, 공모주식수, 청약, 상장일정, 상장 조건.
-price          주가·지수의 수치. 시가·종가·고저가, 거래량, 거래대금, 시가총액,
-               등락률, 52주 최고·최저·신고가, 주가 변동성.
-flow           투자자 주체별 매매동향·수급. 외국인·기관·개인의 매수·매도·순매수.
-short          공매도. 거래량, 비율, 잔고.
-fundamentals   재무제표·실적. 매출, 영업이익, 순이익, 자산·부채, 재무비율.
-valuation      멀티플·상대가치. PER, PBR, ROE, 배당수익률.
-estimate       아직 실현되지 않은 실적 *수치*의 예상치. 예상 매출, 영업이익
-               추정치, EPS·PER 전망, 컨센서스 실적, 예상 성장률.
-target_price   목표주가. 적정주가·목표가 상향·하향을 포함한다.
-scoring        정량 평가 점수. 실적점수, 펀더멘탈점수, 수급점수 등 등급화된 지표.
-news           뉴스·언론 보도, 그리고 특정 종목에 매이지 않는 테마·업종·시장
-               단위의 동향과 이슈 현황.
-disclosure     기업이 공개하는 공시와 그에 딸린 주요 일정. 고객이 제출하거나
-               작성하는 서식·서류는 여기가 아니라 howto 다.
-screening      조건에 맞는 대상을 찾아내는 것. 질의 시점에 대상이 지정되지 않고
-               순위·조건으로 종목이나 섹터·테마를 골라내야 하는 경우.
-sector_map     특정 테마·이슈에 해당하는 관련주·관련 섹터의 구성.
-fx             환율.
-knowledge      금융 개념·용어의 설명.
-regulation     법규·제도·세제·약관.
-howto          절차·방법·메뉴 위치·서식 작성.
-none           위 어느 데이터 면도 직접 요구하지 않는 목표. 다른 목표들의 결과를
-               근거로 판단·해석·전망하는 목표가 여기 해당한다.
+왜 assessment goal 이 없는가: "변동성 분석"은 데이터가 무엇을 보여주는지를
+묻는 것이지 앞으로 어떨지를 묻는 것이 아니다. analysis 로 끝난다.
+변동성은 price facet 이다. scoring 의 변동성점수와 혼동하지 말 것.
+---
+IN: 비대면계좌 개설 후 한도제한계좌 해제 방법
 
-Rules:
-- A goal whose type is `assessment` or `recommendation` is normally `none`,
-  because it consumes other goals rather than requesting a facet of its own.
-  Give it a real facet only when the user explicitly asks for that facet.
-- If the target is named and the question is a ranking *within* that named
-  target, the facet is the measure being ranked, not `screening`.
-- fundamentals vs estimate: 이미 확정된 수치는 fundamentals, 아직 실현되지
-  않은 추정치는 estimate.
-- estimate vs target_price: 사용자가 알고 싶은 것이 실적 수치면 estimate,
-  주가 수준이면 target_price. 둘 다 명시적으로 물으면 목표를 나눈다.
-- 테마·업황의 수요·업황 동향 자체를 묻는 것은 news. 그 테마에 속한 종목·
-  섹터 구성을 묻는 것은 sector_map.
+Evidence: 한도제한계좌 해제 절차 하나.
 
-### HORIZON
+  g1 [internal/explanation/howto/current] (I3-2) 한도제한계좌 해제 방법
+  constraint: g1 channel=비대면
 
-past      Already realized and confirmed.
-current   As of now, or the most recent available.
-forward   Not yet realized — forecasts, estimates, expectations, outlooks,
-          target prices, consensus figures.
+왜 1개인가: "비대면계좌 개설"은 해제가 필요해진 상황을 설명하는 전제이고,
+사용자가 개설 방법을 묻고 있지 않다. 근거가 하나면 goal 도 하나다.
+---
+IN: 미성년자 계좌개설 시 필수 제출 서류 목록
 
-A goal is `forward` whenever the requested figure has not yet occurred, even
-if that figure already exists as a published estimate.
+Evidence: (a) 개설 시 제출 서류 목록(업무 안내), (b) 미성년자에게 그 서류를
+요구하는 근거 규정. 목록과 요건은 서로 다른 코퍼스에 있다.
 
+  g1 [internal/explanation/howto/current]        (I3-2) 미성년자 계좌개설 제출 서류
+  g2 [finance_legal/explanation/regulation/current] (I2-2) 미성년자 계좌개설 서류 요건
+  dep: g1->g2 (context)
+
+절차 goal 과 그 절차의 법적 근거 goal 은 나눈다.
+---
+IN: 계좌 비밀번호 5회 오류 시 재등록 방법
+
+Evidence: 비밀번호 재등록 절차 하나.
+
+  g1 [internal/explanation/howto/current] (I3-2) 계좌 비밀번호 재등록 방법
+
+"5회 오류 시"는 절차가 적용되는 조건일 뿐 별도 조회 대상이 아니다.
+재등록을 앱 어디서 하는지가 아니라 무엇을 해야 하는지를 묻고 있으므로 I3-2.
 ---
 
 ## STEP 0 — EVIDENCE INVENTORY (think before you split)
@@ -322,6 +299,132 @@ which instances of the subject qualify, it is a constraint.
 
 ---
 
+## STEP 4 — CLASSIFY
+
+Now that the goals, entities, and constraints are settled, assign domain,
+type, facet, and horizon to each goal.
+
+### DOMAIN
+
+Use exactly one:
+
+market
+  지수·시황, 섹터·테마, 투자자별 수급·시장 전반 동향, 시장 단위 이슈,
+  종목 스크리닝·랭킹, 시장 일정(공모주 일정 목록, 배당 시즌 등)
+  — 질의 시점에 대상 발행사가 지정되지 않은 것
+
+issuer
+  개별 종목의 주가·거래량, 기업 재무·실적, 기업 뉴스·공시,
+  밸류에이션, 종목 리서치, 특정 공모주 정보·일정
+  — 질의 시점에 대상 발행사가 지정된 것(복수 종목 비교 포함)
+
+internal
+  자사 절차·앱 사용법: 계좌 개설·비밀번호, 상품 가입·전환·연장, 메뉴 위치,
+  서식 작성, 자사 수수료, 고객센터, 자사 기준 거래시간·운영규칙
+  — 발화에 자사 언급이 없어도, 고객이 이 앱에서 실제로 거래·확인하려는
+    맥락이면 internal
+
+finance_legal
+  일반 금융 개념·상품, 법규·제도, 세제 기준, 컴플라이언스, 약관·계약 —
+  제도 자체이지 자사 구현이 아님
+
+unknown
+  판정 불가
+
+Boundaries:
+- "코스피 정규장 시간" → internal (거래 가능 시간)
+- "거래 정지 종목 상태 확인법" → internal (확인 방법)
+- market/issuer는 종목명 등장 여부가 아니라 요구된 답의 대상 단위로 판정.
+  "삼성전자 때문에 코스피 오르나" → market. "삼성전자가 반도체 섹터에서
+  어느 위치야" → issuer.
+- 대상을 지정하지 않고 조건으로 종목을 찾게 하는 질의(대장주, 배당 상위,
+  급등주)는 스크리닝이므로 market.
+- 세금·법규를 제도로 물으면 finance_legal. 내 내역을 어디서 보는지, 자사
+  서비스가 어떻게 처리하는지 물으면 internal.
+- 청약 제도 자체는 finance_legal. 이번 주 청약 일정 목록은 market.
+  특정 공모주의 공모가·일정은 issuer. 앱에서 청약하는 방법은 internal.
+
+### TYPE
+
+Use exactly one. Decide by what the user wants produced, not by how the
+answer would be obtained.
+
+query          A stated fact or set of facts. No computation, no judgment.
+explanation    A concept, term, procedure, or reason explained.
+comparison     Two or more subjects set side by side on the same measure.
+analysis       Computation, aggregation, or summarization across multiple
+               data points or a time range. States what the data shows, not
+               what it means for the future.
+assessment     Judgment, outlook, causal interpretation, or evaluation.
+recommendation Suggestions or rankings the user is meant to act on.
+
+Decision order:
+1. Asking what to pick or act on → recommendation
+2. Asking for judgment, outlook, impact, or 여부 → assessment
+3. Setting two or more subjects against each other → comparison
+4. Requiring computation over a range or multiple points → analysis
+5. Asking how, why, or what something means → explanation
+6. Otherwise → query
+
+Ties: explanation vs query → explanation. analysis vs assessment → assessment.
+
+### FACET
+
+Use exactly one. The facet names *which kind of information about the target*
+the goal asks for. Decide it from what the user wants to know, not from where
+such information might come from.
+
+profile        기업 개요·기본 정보. 사업 내용, 대표, 업종, 결산월, 발행주식수.
+ipo            신규상장·공모. 공모가, 공모주식수, 청약, 상장일정, 상장 조건.
+price          주가·지수의 수치. 시가·종가·고저가, 거래량, 거래대금, 시가총액,
+               등락률, 52주 최고·최저·신고가, 주가 변동성.
+flow           투자자 주체별 매매동향·수급. 외국인·기관·개인의 매수·매도·순매수.
+short          공매도. 거래량, 비율, 잔고.
+fundamentals   재무제표·실적. 매출, 영업이익, 순이익, 자산·부채, 재무비율.
+valuation      멀티플·상대가치. PER, PBR, ROE, 배당수익률.
+estimate       아직 실현되지 않은 실적 *수치*의 예상치. 예상 매출, 영업이익
+               추정치, EPS·PER 전망, 컨센서스 실적, 예상 성장률.
+target_price   목표주가. 적정주가·목표가 상향·하향을 포함한다.
+scoring        정량 평가 점수. 실적점수, 펀더멘탈점수, 수급점수 등 등급화된 지표.
+news           뉴스·언론 보도, 그리고 특정 종목에 매이지 않는 테마·업종·시장
+               단위의 동향과 이슈 현황.
+disclosure     기업이 공개하는 공시와 그에 딸린 주요 일정. 고객이 제출하거나
+               작성하는 서식·서류는 여기가 아니라 howto 다.
+screening      조건에 맞는 대상을 찾아내는 것. 질의 시점에 대상이 지정되지 않고
+               순위·조건으로 종목이나 섹터·테마를 골라내야 하는 경우.
+sector_map     특정 테마·이슈에 해당하는 관련주·관련 섹터의 구성.
+fx             환율.
+knowledge      금융 개념·용어의 설명.
+regulation     법규·제도·세제·약관.
+howto          절차·방법·메뉴 위치·서식 작성.
+none           위 어느 데이터 면도 직접 요구하지 않는 목표. 다른 목표들의 결과를
+               근거로 판단·해석·전망하는 목표가 여기 해당한다.
+
+Rules:
+- A goal whose type is `assessment` or `recommendation` is normally `none`,
+  because it consumes other goals rather than requesting a facet of its own.
+  Give it a real facet only when the user explicitly asks for that facet.
+- If the target is named and the question is a ranking *within* that named
+  target, the facet is the measure being ranked, not `screening`.
+- fundamentals vs estimate: 이미 확정된 수치는 fundamentals, 아직 실현되지
+  않은 추정치는 estimate.
+- estimate vs target_price: 사용자가 알고 싶은 것이 실적 수치면 estimate,
+  주가 수준이면 target_price. 둘 다 명시적으로 물으면 목표를 나눈다.
+- 테마·업황의 수요·업황 동향 자체를 묻는 것은 news. 그 테마에 속한 종목·
+  섹터 구성을 묻는 것은 sector_map.
+
+### HORIZON
+
+past      Already realized and confirmed.
+current   As of now, or the most recent available.
+forward   Not yet realized — forecasts, estimates, expectations, outlooks,
+          target prices, consensus figures.
+
+A goal is `forward` whenever the requested figure has not yet occurred, even
+if that figure already exists as a published estimate.
+
+---
+
 ## STEP 5 — DEPENDENCIES
 
 Create a dependency only when one goal's output is genuinely required as
@@ -347,109 +450,6 @@ information. An unnamed subject where the goal cannot proceed without one is.
 
 Most utterances have none. An empty list is the correct answer.
 
----
-
-## BOUNDARY EXAMPLES
-
-These are chosen because each sits on a line that is easy to get wrong.
-Entities and constraints are abbreviated for readability; produce them in
-full in your actual output.
-
----
-IN: 삼성전자 HBM 납품 실적 영향도 전망
-
-Evidence: 삼성전자의 HBM 납품 실적 수치 하나. "영향도 전망"은 판단이므로
-근거가 아니다. HBM 업황은 사용자가 묻지 않았으므로 goal 로 만들지 않는다.
-
-  g1 [issuer/query/fundamentals/current] (I6-6) 삼성전자 HBM 납품 실적
-  g2 [issuer/assessment/none/forward]    (I6-8) HBM 납품의 실적 영향도 전망
-  dep: g1->g2 (context)
-
-왜 2개인가: 확정 실적 조회와 그 해석은 서로 다른 산출물이다.
-왜 3개가 아닌가: "HBM 업황"은 발화에 없다. 흔히 같이 따라오는 정보라도
-사용자가 묻지 않았으면 goal 이 아니다.
----
-IN: SK하이닉스 최근분기 HBM 수요 증가에 따른 예상 영업이익 추정치
-
-Evidence: (a) 최근분기 HBM 수요 증가 — 전제이지만 크기를 알아야 추정치를
-해석할 수 있으므로 근거다. (b) SK하이닉스 예상 영업이익 — 아직 실현되지
-않은 수치.
-
-  g1 [market/query/news/past]          (I5-2) 최근분기 HBM 수요 증가 동향
-  g2 [issuer/query/estimate/forward]   (I8-2) SK하이닉스 예상 영업이익 추정치
-  dep: g1->g2 (context)
-  constraint: g1 period=최근분기
-
-왜 g1 이 market 인가: HBM 수요는 테마 단위 동향이고 발행사가 지정되지 않았다.
-왜 estimate 이고 fundamentals 가 아닌가: 아직 실현되지 않은 추정치다.
----
-IN: LG에너지솔루션 전기차 수요 둔화 관련 목표 주가 하향 가능성
-
-Evidence: (a) 전기차 수요 둔화 동향, (b) LG에너지솔루션 현재 목표주가.
-"하향 가능성"은 판단.
-
-  g1 [market/query/news/current]           (I5-2) 전기차 수요 둔화 동향
-  g2 [issuer/query/target_price/forward]   (I8-2) LG에너지솔루션 목표주가
-  g3 [issuer/assessment/none/forward]      (I6-8) 목표주가 하향 가능성
-  dep: g1->g3 (context), g2->g3 (context)
-
-왜 target_price 이고 estimate 이 아닌가: 사용자가 알고 싶은 것은 실적 수치가
-아니라 주가 수준이다.
----
-IN: 네이버(NAVER) 최근 외국인 대량 매도 및 주가 하락 배경 분석
-
-Evidence: (a) 외국인 수급, (b) 주가 추이. 둘은 같은 종목이지만 다른 종류의
-정보이므로 별개의 근거다. "배경 분석"은 판단.
-
-  g1 [issuer/query/flow/current]      (I7-1) 네이버 외국인 매도 동향
-  g2 [issuer/analysis/price/past]     (I7-2) 네이버 주가 하락 추이
-  g3 [issuer/assessment/none/current] (I6-8) 매도·하락 배경
-  dep: g1->g3 (context), g2->g3 (context)
-  constraint: g1 period=최근, g1 direction=대량 매도 / g2 direction=하락
-
-"및" 이 있어서 나눈 것이 아니라 수급과 주가가 서로 다른 근거라서 나눴다.
----
-IN: 한화솔루션 유상증자 결정 공시 후 단기 주가 변동성 분석
-
-Evidence: (a) 유상증자 결정 공시, (b) 공시 이후 주가 변동성.
-
-  g1 [issuer/query/disclosure/past]  (I6-4) 한화솔루션 유상증자 결정 공시
-  g2 [issuer/analysis/price/current] (I7-2) 공시 이후 단기 주가 변동성
-  dep: g1->g2 (context)
-
-왜 assessment goal 이 없는가: "변동성 분석"은 데이터가 무엇을 보여주는지를
-묻는 것이지 앞으로 어떨지를 묻는 것이 아니다. analysis 로 끝난다.
-변동성은 price facet 이다. scoring 의 변동성점수와 혼동하지 말 것.
----
-IN: 비대면계좌 개설 후 한도제한계좌 해제 방법
-
-Evidence: 한도제한계좌 해제 절차 하나.
-
-  g1 [internal/explanation/howto/current] (I3-2) 한도제한계좌 해제 방법
-  constraint: g1 channel=비대면
-
-왜 1개인가: "비대면계좌 개설"은 해제가 필요해진 상황을 설명하는 전제이고,
-사용자가 개설 방법을 묻고 있지 않다. 근거가 하나면 goal 도 하나다.
----
-IN: 미성년자 계좌개설 시 필수 제출 서류 목록
-
-Evidence: (a) 개설 시 제출 서류 목록(업무 안내), (b) 미성년자에게 그 서류를
-요구하는 근거 규정. 목록과 요건은 서로 다른 코퍼스에 있다.
-
-  g1 [internal/explanation/howto/current]        (I3-2) 미성년자 계좌개설 제출 서류
-  g2 [finance_legal/explanation/regulation/current] (I2-2) 미성년자 계좌개설 서류 요건
-  dep: g1->g2 (context)
-
-절차 goal 과 그 절차의 법적 근거 goal 은 나눈다.
----
-IN: 계좌 비밀번호 5회 오류 시 재등록 방법
-
-Evidence: 비밀번호 재등록 절차 하나.
-
-  g1 [internal/explanation/howto/current] (I3-2) 계좌 비밀번호 재등록 방법
-
-"5회 오류 시"는 절차가 적용되는 조건일 뿐 별도 조회 대상이 아니다.
-재등록을 앱 어디서 하는지가 아니라 무엇을 해야 하는지를 묻고 있으므로 I3-2.
 ---
 
 ## FORBIDDEN
@@ -733,7 +733,7 @@ def main() -> int:
 
     p = argparse.ArgumentParser()
     p.add_argument("--input", default="work.csv")
-    p.add_argument("--output", default="work_out_d.csv")
+    p.add_argument("--output", default="work_out_pex.csv")
     p.add_argument("--column", default="query", help="프롬프트에 넣을 입력 컬럼명")
     p.add_argument("--limit", type=int, help="앞에서 N행만")
     p.add_argument("--workers", type=int, default=4, help="동시 호출 수")
