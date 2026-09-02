@@ -133,15 +133,51 @@ screening 이 아니라 **순위를 매기는 지표의 facet** 이다.
                      비었고 RESOLVED 였으면 → SUBSUMED
 ```
 
+**그림 1 — `route()` 전체 흐름**
+
+```mermaid
+flowchart TD
+    G(["goal 1개"]) --> L1["① 1층 BASE<br/>TABLE 에서 domain, facet 조회<br/>§4"]
+
+    L1 --> A1{"AMBIGUOUS 인가"}
+    A1 -- "예 · finance_legal/ipo" --> RET(["return<br/>함수 0개<br/>2·3층을 아예 안 돎"])
+    A1 -- "아니오 · UNMAPPED 여도 계속" --> T{"② picked 가 비었고<br/>SUBSUMED 도 아닌가"}
+
+    T -- "예" --> TF["TYPE_FALLBACK<br/>assessment · analysis → get_news<br/>§4.4"]
+    T -- "아니오" --> R
+    TF --> R
+
+    R["③ ALL_RULES 28개를 순서대로<br/>EXPANSIONS 14 → CV 5 → LEXICON 9<br/>§5 · §6 · §7"]
+    R --> R2{"규칙 조건이 참인가"}
+    R2 -- "아니오" --> NEXT["다음 규칙으로"]
+    R2 -- "예" --> RREP{"replace=True 인가"}
+    RREP -- "예" --> WIPE["picked 를 통째로 비움<br/>1층 결과까지 삭제"]
+    RREP -- "아니오" --> ADD
+    WIPE --> ADD["picked.setdefault 로 add 추가<br/>첫 지지자만 층·사유를 남김"]
+    ADD --> NEXT
+    NEXT -. "28개 소진까지 반복" .-> R2
+    NEXT --> S{"④ picked 가 비었나"}
+
+    S -- "안 비었음" --> O1(["RESOLVED<br/>FALLBACK 이었으면 FALLBACK 유지"])
+    S -- "비었고 RESOLVED 였음" --> O2(["SUBSUMED<br/>상류 goal 결과로 합성"])
+    S -- "비었고 UNMAPPED 였음" --> O3(["UNMAPPED<br/>진짜 구멍"])
+
+    classDef stop fill:#fdecec,stroke:#c0392b,color:#7b241c
+    classDef wipe fill:#fdf3e0,stroke:#c47f17,color:#7d5109
+    class RET,O3 stop
+    class WIPE wipe
+```
+
 ### 새 규칙을 쓸 때 반드시 확인할 순서 부작용 4개
 
 1. **`replace=True` 는 그 시점까지의 모든 결과를 지운다.** 지금 두 개 있다.
-   - `non-equity index→industry channel` — EXPANSIONS 4번째. 뒤의 모든 규칙은
+   - `non-equity index→industry channel` — 전체 28규칙 중 **4번째**
+     (EXPANSIONS 4번째). 지우는 것은 1층 결과뿐이고 뒤의 24개는 전부
      살아남는다.
-   - `sector-unit screening` — LEXICON_RULES 4번째, **거의 마지막**. 이게
-     발화하면 1층·2층·CV 규칙 결과가 전부 날아간다. 뒤에 남는 것은
+   - `sector-unit screening` — 전체 28규칙 중 **23번째**(LEXICON_RULES 4번째).
+     이게 발화하면 1층·2층·CV 규칙 결과가 **전부** 날아간다. 뒤에 남는 것은
      `event screening→listing`, `ipo subscription`, `fx entity→exchange`,
-     `dividend→financial data`, `announcement cue` 뿐이다.
+     `dividend→financial data`, `announcement cue` 5개뿐이다.
    → 새 규칙이 screening 문맥에서 살아 있어야 한다면 **위치가 곧 의미**다.
 2. **`picked.setdefault` 는 첫 지지자만 남긴다.** 두 번째 지지자는 층·사유
    귀속에서만 사라지고 함수 집합은 같다. 즉 **지지 간선 수 정보는 버려진다.**
@@ -154,6 +190,45 @@ screening 이 아니라 **순위를 매기는 지표의 facet** 이다.
 4. **층(`layer`)은 리포트 회계일 뿐 실행에 영향이 없다.** 그래서
    `sector-unit target→sector` 는 EXPANSIONS 리스트에 있으면서 `layer=LEXICON`
    이다 — 발화 순서는 2층, 계상은 3층.
+
+**그림 2 — 규칙 28개의 발화 순서와 `replace` 장벽**
+
+새 규칙을 어디에 넣느냐가 곧 그 규칙의 의미다. 주황색 두 자리가 장벽이고,
+장벽을 지나면 그 앞의 결과는 남지 않는다.
+
+```mermaid
+flowchart TD
+    B["1층 BASE 결과"] --> E1
+
+    subgraph EX["2층 EXPANSIONS · 1~14"]
+        direction TB
+        E1["1 theme→sector<br/>2 themed issuer→news channel<br/>3 sector-unit target→sector"]
+        E1 --> E4["4 non-equity index→industry channel<br/>replace — 1층 결과 삭제"]
+        E4 --> E5["5 corporate_event on price<br/>6 event assessment<br/>7 assessment bundle<br/>8 index-relative assessment<br/>9 market data→index price<br/>10 recommendation→guide<br/>11~14 자사·제도 동반 코퍼스"]
+    end
+
+    E5 --> C1
+    subgraph CV["CV 규칙 · 15~19"]
+        direction TB
+        C1["15 internal→manual<br/>16 sector_map→market news<br/>17 themed screening→market news<br/>18 regulation→knowledge<br/>19 sector_map→top stocks"]
+    end
+
+    C1 --> L1
+    subgraph LX["3층 LEXICON · 20~28"]
+        direction TB
+        L1["20 regulated subject→policy<br/>21 next-step→guide<br/>22 eligibility→policy"]
+        L1 --> L23["23 sector-unit screening<br/>replace — 1층·2층·CV 전부 삭제"]
+        L23 --> L24["24 event screening→listing<br/>25 ipo subscription<br/>26 fx entity→exchange<br/>27 dividend→financial data<br/>28 announcement cue"]
+    end
+
+    L24 --> OUT(["함수 집합 확정"])
+
+    classDef wipe fill:#fdf3e0,stroke:#c47f17,color:#7d5109
+    class E4,L23 wipe
+```
+
+`comparative assessment` 는 `RETIRED` 라 이 순회에 들어오지 않는다(§7 아래·§9).
+정의는 남아 있으므로 되살리면 EXPANSIONS 7번째 자리로 복귀한다.
 
 ---
 
@@ -232,6 +307,42 @@ screening 이 아니라 **순위를 매기는 지표의 facet** 이다.
 발화 0회라 손해가 보이지 않을 뿐이다.
 
 ### 4.4 특수 셀 3종과 두 겹의 폴백
+
+**그림 3 — 1층의 셀 종류별 분기**
+
+`TABLE` 의 셀에 무엇이 들어 있느냐로 갈린다. 셀이 함수 이름이 아닌 자리
+넷(`None` · `PeriodGate` · `PeriodSplit` · 후보 튜플)이 이 라우터의 판단이
+들어간 곳이고, 표에 키가 아예 없을 때의 폴백이 두 겹 더 있다.
+
+```mermaid
+flowchart TD
+    K(["goal 의 domain, facet"]) --> IN{"TABLE 에 키가 있나"}
+
+    IN -- "있음" --> CELL{"셀에 무엇이 들어 있나"}
+    CELL -- "함수 이름 문자열" --> P1["그 함수를 붙임<br/>층 = base"]
+    CELL -- "None · market 6자리" --> U1["UNMAPPED<br/>카탈로그에 함수가 없음<br/>규칙 문제가 아니라 함수셋의 구멍"]
+    CELL -- "PeriodGate · issuer/price" --> GT{"period 제약이 있거나<br/>엔티티가 있나"}
+    CELL -- "PeriodSplit · issuer/target_price" --> SP{"period 제약이 있나"}
+    CELL -- "후보 튜플 · finance_legal/ipo" --> AM["AMBIGUOUS<br/>조기 return · 함수 0개"]
+
+    GT -- "예" --> P2["get_stock_price"]
+    GT -- "아니오 · 대상 없는 빈 지시" --> SB["SUBSUMED<br/>부르지 않기로 고른 자리<br/>TYPE_FALLBACK 도 건너뜀"]
+    SP -- "있음" --> P3["get_financial_data<br/>시계열 컨센서스"]
+    SP -- "없음" --> P4["get_company_evaluation<br/>최근 스냅샷 + 8개 점수"]
+
+    IN -- "없음 · facet = none" --> NF{"type 이 assessment 나<br/>recommendation 인가"}
+    NF -- "예 · 정상" --> OKC["그대로 통과<br/>2층 판단 묶음이 채운다"]
+    NF -- "아니오" --> U2["UNMAPPED<br/>분류 실패"]
+
+    IN -- "없음 · 그 외" --> DF{"DOMAIN_FALLBACK 에<br/>domain 이 있나"}
+    DF -- "internal · finance_legal" --> FB["FALLBACK<br/>도메인 기본 함수<br/>파스 오류로 계상"]
+    DF -- "market · issuer" --> U3["UNMAPPED"]
+
+    classDef stop fill:#fdecec,stroke:#c0392b,color:#7b241c
+    classDef hold fill:#eef4fb,stroke:#2e6da4,color:#1b4060
+    class AM,U1,U2,U3 stop
+    class SB hold
+```
 
 **`PERIOD_SPLIT` (issuer/target_price)** — 기간 제약이 판별자다.
 `period` 있으면 `get_financial_data`(base_year/base_q 색인 시계열 컨센서스),
