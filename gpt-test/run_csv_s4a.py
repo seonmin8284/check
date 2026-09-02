@@ -6,7 +6,7 @@ A안(run_csv.py) 대비 변경점만:
 스키마의 나머지·모델·파라미터·출력 컬럼은 A안과 동일하게 두어 비교 가능성을 유지한다.
 
 실행:
-    .venv/Scripts/python.exe run_csv_b.py --input work.csv   --output work_out_pex.csv
+    .venv/Scripts/python.exe run_csv_b.py --input work.csv   --output work_out_s4a.csv
     .venv/Scripts/python.exe run_csv_b.py --input invest.csv --output invest_out_b.csv
 """
 
@@ -138,6 +138,21 @@ Ties: explanation vs query → explanation. analysis vs assessment → assessmen
 
 ### FACET
 
+First fix `domain`, then choose `facet` **only from that domain's list
+below**. A facet outside the list is a classification error.
+
+  issuer         profile ipo price flow short fundamentals valuation
+                 estimate target_price scoring news disclosure sector_map
+                 screening fx knowledge regulation howto
+  market         price flow short valuation screening sector_map ipo fx
+                 knowledge regulation howto news
+                 (no fundamentals / estimate / target_price / disclosure /
+                  scoring / profile — 시장 단위로는 그 데이터가 없다)
+  internal       howto ipo regulation knowledge fx disclosure
+  finance_legal  knowledge regulation ipo howto
+
+`none` is available in every domain.
+
 Use exactly one. The facet names *which kind of information about the target*
 the goal asks for. Decide it from what the user wants to know, not from where
 such information might come from.
@@ -191,109 +206,6 @@ forward   Not yet realized — forecasts, estimates, expectations, outlooks,
 A goal is `forward` whenever the requested figure has not yet occurred, even
 if that figure already exists as a published estimate.
 
----
-
-## BOUNDARY EXAMPLES
-
-These are chosen because each sits on a line that is easy to get wrong.
-Entities and constraints are abbreviated for readability; produce them in
-full in your actual output.
-
----
-IN: 삼성전자 HBM 납품 실적 영향도 전망
-
-Evidence: 삼성전자의 HBM 납품 실적 수치 하나. "영향도 전망"은 판단이므로
-근거가 아니다. HBM 업황은 사용자가 묻지 않았으므로 goal 로 만들지 않는다.
-
-  g1 [issuer/query/fundamentals/current] (I6-6) 삼성전자 HBM 납품 실적
-  g2 [issuer/assessment/none/forward]    (I6-8) HBM 납품의 실적 영향도 전망
-  dep: g1->g2 (context)
-
-왜 2개인가: 확정 실적 조회와 그 해석은 서로 다른 산출물이다.
-왜 3개가 아닌가: "HBM 업황"은 발화에 없다. 흔히 같이 따라오는 정보라도
-사용자가 묻지 않았으면 goal 이 아니다.
----
-IN: SK하이닉스 최근분기 HBM 수요 증가에 따른 예상 영업이익 추정치
-
-Evidence: (a) 최근분기 HBM 수요 증가 — 전제이지만 크기를 알아야 추정치를
-해석할 수 있으므로 근거다. (b) SK하이닉스 예상 영업이익 — 아직 실현되지
-않은 수치.
-
-  g1 [market/query/news/past]          (I5-2) 최근분기 HBM 수요 증가 동향
-  g2 [issuer/query/estimate/forward]   (I8-2) SK하이닉스 예상 영업이익 추정치
-  dep: g1->g2 (context)
-  constraint: g1 period=최근분기
-
-왜 g1 이 market 인가: HBM 수요는 테마 단위 동향이고 발행사가 지정되지 않았다.
-왜 estimate 이고 fundamentals 가 아닌가: 아직 실현되지 않은 추정치다.
----
-IN: LG에너지솔루션 전기차 수요 둔화 관련 목표 주가 하향 가능성
-
-Evidence: (a) 전기차 수요 둔화 동향, (b) LG에너지솔루션 현재 목표주가.
-"하향 가능성"은 판단.
-
-  g1 [market/query/news/current]           (I5-2) 전기차 수요 둔화 동향
-  g2 [issuer/query/target_price/forward]   (I8-2) LG에너지솔루션 목표주가
-  g3 [issuer/assessment/none/forward]      (I6-8) 목표주가 하향 가능성
-  dep: g1->g3 (context), g2->g3 (context)
-
-왜 target_price 이고 estimate 이 아닌가: 사용자가 알고 싶은 것은 실적 수치가
-아니라 주가 수준이다.
----
-IN: 네이버(NAVER) 최근 외국인 대량 매도 및 주가 하락 배경 분석
-
-Evidence: (a) 외국인 수급, (b) 주가 추이. 둘은 같은 종목이지만 다른 종류의
-정보이므로 별개의 근거다. "배경 분석"은 판단.
-
-  g1 [issuer/query/flow/current]      (I7-1) 네이버 외국인 매도 동향
-  g2 [issuer/analysis/price/past]     (I7-2) 네이버 주가 하락 추이
-  g3 [issuer/assessment/none/current] (I6-8) 매도·하락 배경
-  dep: g1->g3 (context), g2->g3 (context)
-  constraint: g1 period=최근, g1 direction=대량 매도 / g2 direction=하락
-
-"및" 이 있어서 나눈 것이 아니라 수급과 주가가 서로 다른 근거라서 나눴다.
----
-IN: 한화솔루션 유상증자 결정 공시 후 단기 주가 변동성 분석
-
-Evidence: (a) 유상증자 결정 공시, (b) 공시 이후 주가 변동성.
-
-  g1 [issuer/query/disclosure/past]  (I6-4) 한화솔루션 유상증자 결정 공시
-  g2 [issuer/analysis/price/current] (I7-2) 공시 이후 단기 주가 변동성
-  dep: g1->g2 (context)
-
-왜 assessment goal 이 없는가: "변동성 분석"은 데이터가 무엇을 보여주는지를
-묻는 것이지 앞으로 어떨지를 묻는 것이 아니다. analysis 로 끝난다.
-변동성은 price facet 이다. scoring 의 변동성점수와 혼동하지 말 것.
----
-IN: 비대면계좌 개설 후 한도제한계좌 해제 방법
-
-Evidence: 한도제한계좌 해제 절차 하나.
-
-  g1 [internal/explanation/howto/current] (I3-2) 한도제한계좌 해제 방법
-  constraint: g1 channel=비대면
-
-왜 1개인가: "비대면계좌 개설"은 해제가 필요해진 상황을 설명하는 전제이고,
-사용자가 개설 방법을 묻고 있지 않다. 근거가 하나면 goal 도 하나다.
----
-IN: 미성년자 계좌개설 시 필수 제출 서류 목록
-
-Evidence: (a) 개설 시 제출 서류 목록(업무 안내), (b) 미성년자에게 그 서류를
-요구하는 근거 규정. 목록과 요건은 서로 다른 코퍼스에 있다.
-
-  g1 [internal/explanation/howto/current]        (I3-2) 미성년자 계좌개설 제출 서류
-  g2 [finance_legal/explanation/regulation/current] (I2-2) 미성년자 계좌개설 서류 요건
-  dep: g1->g2 (context)
-
-절차 goal 과 그 절차의 법적 근거 goal 은 나눈다.
----
-IN: 계좌 비밀번호 5회 오류 시 재등록 방법
-
-Evidence: 비밀번호 재등록 절차 하나.
-
-  g1 [internal/explanation/howto/current] (I3-2) 계좌 비밀번호 재등록 방법
-
-"5회 오류 시"는 절차가 적용되는 조건일 뿐 별도 조회 대상이 아니다.
-재등록을 앱 어디서 하는지가 아니라 무엇을 해야 하는지를 묻고 있으므로 I3-2.
 ---
 
 ## STEP 0 — EVIDENCE INVENTORY (think before you split)
@@ -450,6 +362,109 @@ information. An unnamed subject where the goal cannot proceed without one is.
 
 Most utterances have none. An empty list is the correct answer.
 
+---
+
+## BOUNDARY EXAMPLES
+
+These are chosen because each sits on a line that is easy to get wrong.
+Entities and constraints are abbreviated for readability; produce them in
+full in your actual output.
+
+---
+IN: 삼성전자 HBM 납품 실적 영향도 전망
+
+Evidence: 삼성전자의 HBM 납품 실적 수치 하나. "영향도 전망"은 판단이므로
+근거가 아니다. HBM 업황은 사용자가 묻지 않았으므로 goal 로 만들지 않는다.
+
+  g1 [issuer/query/fundamentals/current] (I6-6) 삼성전자 HBM 납품 실적
+  g2 [issuer/assessment/none/forward]    (I6-8) HBM 납품의 실적 영향도 전망
+  dep: g1->g2 (context)
+
+왜 2개인가: 확정 실적 조회와 그 해석은 서로 다른 산출물이다.
+왜 3개가 아닌가: "HBM 업황"은 발화에 없다. 흔히 같이 따라오는 정보라도
+사용자가 묻지 않았으면 goal 이 아니다.
+---
+IN: SK하이닉스 최근분기 HBM 수요 증가에 따른 예상 영업이익 추정치
+
+Evidence: (a) 최근분기 HBM 수요 증가 — 전제이지만 크기를 알아야 추정치를
+해석할 수 있으므로 근거다. (b) SK하이닉스 예상 영업이익 — 아직 실현되지
+않은 수치.
+
+  g1 [market/query/news/past]          (I5-2) 최근분기 HBM 수요 증가 동향
+  g2 [issuer/query/estimate/forward]   (I8-2) SK하이닉스 예상 영업이익 추정치
+  dep: g1->g2 (context)
+  constraint: g1 period=최근분기
+
+왜 g1 이 market 인가: HBM 수요는 테마 단위 동향이고 발행사가 지정되지 않았다.
+왜 estimate 이고 fundamentals 가 아닌가: 아직 실현되지 않은 추정치다.
+---
+IN: LG에너지솔루션 전기차 수요 둔화 관련 목표 주가 하향 가능성
+
+Evidence: (a) 전기차 수요 둔화 동향, (b) LG에너지솔루션 현재 목표주가.
+"하향 가능성"은 판단.
+
+  g1 [market/query/news/current]           (I5-2) 전기차 수요 둔화 동향
+  g2 [issuer/query/target_price/forward]   (I8-2) LG에너지솔루션 목표주가
+  g3 [issuer/assessment/none/forward]      (I6-8) 목표주가 하향 가능성
+  dep: g1->g3 (context), g2->g3 (context)
+
+왜 target_price 이고 estimate 이 아닌가: 사용자가 알고 싶은 것은 실적 수치가
+아니라 주가 수준이다.
+---
+IN: 네이버(NAVER) 최근 외국인 대량 매도 및 주가 하락 배경 분석
+
+Evidence: (a) 외국인 수급, (b) 주가 추이. 둘은 같은 종목이지만 다른 종류의
+정보이므로 별개의 근거다. "배경 분석"은 판단.
+
+  g1 [issuer/query/flow/current]      (I7-1) 네이버 외국인 매도 동향
+  g2 [issuer/analysis/price/past]     (I7-2) 네이버 주가 하락 추이
+  g3 [issuer/assessment/none/current] (I6-8) 매도·하락 배경
+  dep: g1->g3 (context), g2->g3 (context)
+  constraint: g1 period=최근, g1 direction=대량 매도 / g2 direction=하락
+
+"및" 이 있어서 나눈 것이 아니라 수급과 주가가 서로 다른 근거라서 나눴다.
+---
+IN: 한화솔루션 유상증자 결정 공시 후 단기 주가 변동성 분석
+
+Evidence: (a) 유상증자 결정 공시, (b) 공시 이후 주가 변동성.
+
+  g1 [issuer/query/disclosure/past]  (I6-4) 한화솔루션 유상증자 결정 공시
+  g2 [issuer/analysis/price/current] (I7-2) 공시 이후 단기 주가 변동성
+  dep: g1->g2 (context)
+
+왜 assessment goal 이 없는가: "변동성 분석"은 데이터가 무엇을 보여주는지를
+묻는 것이지 앞으로 어떨지를 묻는 것이 아니다. analysis 로 끝난다.
+변동성은 price facet 이다. scoring 의 변동성점수와 혼동하지 말 것.
+---
+IN: 비대면계좌 개설 후 한도제한계좌 해제 방법
+
+Evidence: 한도제한계좌 해제 절차 하나.
+
+  g1 [internal/explanation/howto/current] (I3-2) 한도제한계좌 해제 방법
+  constraint: g1 channel=비대면
+
+왜 1개인가: "비대면계좌 개설"은 해제가 필요해진 상황을 설명하는 전제이고,
+사용자가 개설 방법을 묻고 있지 않다. 근거가 하나면 goal 도 하나다.
+---
+IN: 미성년자 계좌개설 시 필수 제출 서류 목록
+
+Evidence: (a) 개설 시 제출 서류 목록(업무 안내), (b) 미성년자에게 그 서류를
+요구하는 근거 규정. 목록과 요건은 서로 다른 코퍼스에 있다.
+
+  g1 [internal/explanation/howto/current]        (I3-2) 미성년자 계좌개설 제출 서류
+  g2 [finance_legal/explanation/regulation/current] (I2-2) 미성년자 계좌개설 서류 요건
+  dep: g1->g2 (context)
+
+절차 goal 과 그 절차의 법적 근거 goal 은 나눈다.
+---
+IN: 계좌 비밀번호 5회 오류 시 재등록 방법
+
+Evidence: 비밀번호 재등록 절차 하나.
+
+  g1 [internal/explanation/howto/current] (I3-2) 계좌 비밀번호 재등록 방법
+
+"5회 오류 시"는 절차가 적용되는 조건일 뿐 별도 조회 대상이 아니다.
+재등록을 앱 어디서 하는지가 아니라 무엇을 해야 하는지를 묻고 있으므로 I3-2.
 ---
 
 ## FORBIDDEN
@@ -733,7 +748,7 @@ def main() -> int:
 
     p = argparse.ArgumentParser()
     p.add_argument("--input", default="work.csv")
-    p.add_argument("--output", default="work_out_pex.csv")
+    p.add_argument("--output", default="work_out_s4a.csv")
     p.add_argument("--column", default="query", help="프롬프트에 넣을 입력 컬럼명")
     p.add_argument("--limit", type=int, help="앞에서 N행만")
     p.add_argument("--workers", type=int, default=4, help="동시 호출 수")

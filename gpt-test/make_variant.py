@@ -126,6 +126,33 @@ def v_cut_examples(secs):
     return secs
 
 
+
+
+import variants_step4 as S4
+
+
+def v_facet_2stage(secs):
+    return S4.facet_2stage(secs, find)
+
+
+def v_no_none(secs):
+    return S4.no_none(secs, find)
+
+
+def v_renumber(secs):
+    return S4.renumber(secs, find)
+
+
+def v_none_renum(secs):
+    """② + ③ — 둘이 합산되는지 겹치는지 본다.
+
+    ② 는 facet 축을 정리하고 ③ 은 읽는 순서를 정리한다. 서로 다른 층위라
+    합산될 것 같지만, 둘 다 "STEP 4 를 덜 헷갈리게" 한다는 점에서는 같은
+    자리를 고치는 것일 수도 있다. 재봐야 안다.
+    """
+    return S4.renumber(S4.no_none(secs, find), find)
+
+
 VARIANTS = {
     "pcls1": ("위치: CLASSIFY 를 맨 앞으로", v_classify_first),
     "pcls2": ("위치: CLASSIFY 를 예시 직전으로", v_classify_last),
@@ -133,6 +160,12 @@ VARIANTS = {
     "ccon":  ("절삭: STEP 3 제약 압축", v_cut_constraints),
     "cent":  ("절삭: STEP 2 엔티티 압축", v_cut_entities),
     "cex":   ("절삭: 경계 예시 8→4", v_cut_examples),
+    # STEP 4 개선 3종 — 전부 pcls1(CLASSIFY 앞) 위에 얹는다.
+    # 현행 run_csv_d.py 가 이미 pcls1 이므로 추가 이동은 없다.
+    "s4a":   ("STEP4①: facet 을 도메인별로", v_facet_2stage),
+    "s4b":   ("STEP4②: facet=none 걷어내기", v_no_none),
+    "s4c":   ("STEP4③: STEP 번호 재부여", v_renumber),
+    "s4bc":  ("STEP4②+③ 조합", v_none_renum),
 }
 
 

@@ -169,9 +169,11 @@ none           위 어느 데이터 면도 직접 요구하지 않는 목표. �
                근거로 판단·해석·전망하는 목표가 여기 해당한다.
 
 Rules:
-- A goal whose type is `assessment` or `recommendation` is normally `none`,
-  because it consumes other goals rather than requesting a facet of its own.
-  Give it a real facet only when the user explicitly asks for that facet.
+- `none` is a last resort. Even a judgment goal is *about* something —
+  give it the facet of the evidence the judgment rests on. "향후 실적
+  전망" is `estimate`; "목표주가 하향 가능성" is `target_price`;
+  "주가 전망" is `price`. Use `none` only when no facet fits at all.
+  Judgment vs lookup is already carried by `type`, not by the facet.
 - If the target is named and the question is a ranking *within* that named
   target, the facet is the measure being ranked, not `screening`.
 - fundamentals vs estimate: 이미 확정된 수치는 fundamentals, 아직 실현되지

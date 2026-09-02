@@ -5,8 +5,14 @@ dev 45행에서 고른 구성이고 holdout 22행에서 방향이 확인됐다.
     B 단일 (1콜)          dev 0.8767   holdout 0.8440
     A+B+C 다수결 (3콜)    dev 0.9101   holdout 0.8625
 
-같은 3콜 예산이면 한 프롬프트를 세 번 돌리는 것보다(B×3 다수결 dev 0.8688,
-만장일치 0.8966) 서로 다른 프롬프트를 한 번씩 돌리는 게 낫다. 같은 프롬프트의
+임계값은 **합집합(1표)** 이 기본이다. 이 라우터의 목적은 근거 확보이고,
+필요한 데이터를 못 부르는 손실이 하나 더 부르는 손실보다 크다. 재현율
+가중(F2) 으로 재면 순위가 뒤집힌다 — D×3 기준 합집합 0.7435 > 단일
+0.7139 > 다수결 0.7005 > 만장일치 0.6647. 다수결은 소수 의견을 버리는
+장치라 단일 실행보다도 나쁘다.
+
+같은 3콜 예산이면 한 프롬프트를 세 번 돌리는 것보다 서로 다른 프롬프트를
+한 번씩 돌리는 게 낫다. 같은 프롬프트의
 오류는 서로 상관돼 있어(오류 자카드 0.632) 반복해도 같은 자리에서 같이
 틀리지만, 다른 프롬프트는 덜 상관돼 있어(0.501) 투표가 실제 상쇄를 만든다.
 
@@ -59,8 +65,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("parses", nargs="+", help="*_out.csv 들 (2개 이상)")
     ap.add_argument("--output", default="ensemble_functions.csv")
-    ap.add_argument("--threshold", type=int,
-                    help="이 표 이상 받은 함수만. 기본 = 과반")
+    ap.add_argument("--threshold", type=int, default=1,
+                    help="이 표 이상 받은 함수만. 기본 1 = 합집합")
     args = ap.parse_args()
 
     if len(args.parses) < 2:
@@ -68,7 +74,7 @@ def main() -> int:
         return 1
 
     votes = [load(p) for p in args.parses]
-    th = args.threshold or (len(votes) + 1) // 2
+    th = args.threshold
     qs = queries(args.parses[0])
     idxs = sorted(set().union(*(set(v) for v in votes)))
 

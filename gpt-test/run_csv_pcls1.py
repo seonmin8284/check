@@ -67,6 +67,73 @@ then look for material to justify it.
 
 ---
 
+## STEP 0 — EVIDENCE INVENTORY (think before you split)
+
+Before writing any goal, answer this to yourself:
+
+  "If I had to actually answer this utterance, what separate pieces of
+   evidence would I need to have in front of me?"
+
+Enumerate them. Each piece of evidence is a distinct observable fact about a
+distinct subject — a figure, a record, a document, a procedure, a status.
+
+Rules for the inventory:
+
+- Two facts are the *same* piece of evidence if one lookup of one subject
+  yields both. 시가 and 종가 of one stock is one piece. 매출 and 영업이익
+  of one company for one period is one piece.
+- Two facts are *different* pieces if they concern different subjects, or
+  different kinds of information about the same subject (실적 vs 수급 vs
+  공시 vs 주가).
+- Realized figures and not-yet-realized figures about the same subject are
+  different pieces (2024 확정 매출 vs 2026 예상 매출).
+- A premise the user states as given still needs a piece of evidence if the
+  answer depends on its magnitude, direction, or current status. A premise
+  that merely frames the question needs none.
+- The user's own judgment request — 전망, 영향도, 여부, 가능성, 효과, 배경 —
+  is never a piece of evidence. It consumes them.
+
+Then: **one piece of evidence → one goal**, plus one goal for the judgment
+if the user asked for one. This inventory, not the sentence's connectives,
+decides the split.
+
+### What this changes
+
+Do not split just because you see 및, 와, 그리고, 후, 에 따른.
+Do not refuse to split just because there is no connective. A single run of
+nouns can still require two pieces of evidence.
+
+  "삼성전자 HBM 납품 실적 영향도 전망"
+    evidence: (a) 삼성전자 HBM 납품 실적 → goal
+              (b) 판단: 그것이 실적에 미치는 영향 → goal, depends on (a)
+
+  "비대면계좌 개설 후 한도제한계좌 해제 방법"
+    evidence: (a) 한도제한계좌 해제 절차 → goal
+    개설은 해제 절차가 적용되는 상황을 설명하는 전제일 뿐 별도 조회가 아니다.
+    → 1 goal.
+
+### Causal and impact questions
+
+When a user states a premise and asks about its consequence — "X에 따른 Y",
+"X가 Y에 미치는 영향", "X에 따른 Y 수혜 여부" — keep the consequence as its
+own goal of type `assessment`. Do not dissolve it into fact lookups only.
+Make it depend on the evidence goals it consumes.
+
+### Do NOT split when
+
+- The parts describe a single procedure. "A 및 B 방법" describing one
+  workflow is one goal.
+- One part is a qualifier or filter on the other. "외국인 수급이 강하게
+  유입된 우량주" is one goal with a filter.
+- The parts are synonyms or restatements.
+
+### Limits
+
+Produce at most 5 goals. Prefer fewer. If an utterance would exceed 5, merge
+the most closely related evidence pieces rather than truncating.
+
+---
+
 ## STEP 4 — CLASSIFY
 
 Now that the goals, entities, and constraints are settled, assign domain,
@@ -190,73 +257,6 @@ forward   Not yet realized — forecasts, estimates, expectations, outlooks,
 
 A goal is `forward` whenever the requested figure has not yet occurred, even
 if that figure already exists as a published estimate.
-
----
-
-## STEP 0 — EVIDENCE INVENTORY (think before you split)
-
-Before writing any goal, answer this to yourself:
-
-  "If I had to actually answer this utterance, what separate pieces of
-   evidence would I need to have in front of me?"
-
-Enumerate them. Each piece of evidence is a distinct observable fact about a
-distinct subject — a figure, a record, a document, a procedure, a status.
-
-Rules for the inventory:
-
-- Two facts are the *same* piece of evidence if one lookup of one subject
-  yields both. 시가 and 종가 of one stock is one piece. 매출 and 영업이익
-  of one company for one period is one piece.
-- Two facts are *different* pieces if they concern different subjects, or
-  different kinds of information about the same subject (실적 vs 수급 vs
-  공시 vs 주가).
-- Realized figures and not-yet-realized figures about the same subject are
-  different pieces (2024 확정 매출 vs 2026 예상 매출).
-- A premise the user states as given still needs a piece of evidence if the
-  answer depends on its magnitude, direction, or current status. A premise
-  that merely frames the question needs none.
-- The user's own judgment request — 전망, 영향도, 여부, 가능성, 효과, 배경 —
-  is never a piece of evidence. It consumes them.
-
-Then: **one piece of evidence → one goal**, plus one goal for the judgment
-if the user asked for one. This inventory, not the sentence's connectives,
-decides the split.
-
-### What this changes
-
-Do not split just because you see 및, 와, 그리고, 후, 에 따른.
-Do not refuse to split just because there is no connective. A single run of
-nouns can still require two pieces of evidence.
-
-  "삼성전자 HBM 납품 실적 영향도 전망"
-    evidence: (a) 삼성전자 HBM 납품 실적 → goal
-              (b) 판단: 그것이 실적에 미치는 영향 → goal, depends on (a)
-
-  "비대면계좌 개설 후 한도제한계좌 해제 방법"
-    evidence: (a) 한도제한계좌 해제 절차 → goal
-    개설은 해제 절차가 적용되는 상황을 설명하는 전제일 뿐 별도 조회가 아니다.
-    → 1 goal.
-
-### Causal and impact questions
-
-When a user states a premise and asks about its consequence — "X에 따른 Y",
-"X가 Y에 미치는 영향", "X에 따른 Y 수혜 여부" — keep the consequence as its
-own goal of type `assessment`. Do not dissolve it into fact lookups only.
-Make it depend on the evidence goals it consumes.
-
-### Do NOT split when
-
-- The parts describe a single procedure. "A 및 B 방법" describing one
-  workflow is one goal.
-- One part is a qualifier or filter on the other. "외국인 수급이 강하게
-  유입된 우량주" is one goal with a filter.
-- The parts are synonyms or restatements.
-
-### Limits
-
-Produce at most 5 goals. Prefer fewer. If an utterance would exceed 5, merge
-the most closely related evidence pieces rather than truncating.
 
 ---
 

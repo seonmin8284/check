@@ -194,9 +194,12 @@ CONCEPTUAL_FACETS = ("knowledge", "regulation", "howto")
 #   finance_legal — 제도의 결과를 묻는 것이므로 데이터가 아니라 가이드.
 JUDGMENT_BUNDLE = {
     # forward 에 get_stock_news 를 넣은 것은 sealed 58행 검증을 통과한 변경이다
-    # (2026-09-02). 이전에는 themed issuer→news channel 규칙이 종목 뉴스를
-    # 대신 붙였는데, 그 규칙은 테마 엔티티가 있을 때만 발화해서 "전망" 질의의
-    # 절반을 놓쳤다. 뉴스를 판단 묶음 쪽으로 옮기고 그 규칙은 폐기했다.
+    # (2026-09-02). themed issuer→news channel 규칙은 테마 엔티티가 있을 때만
+    # 발화해서 "전망" 질의의 절반을 놓쳤다. 뉴스를 판단 묶음 쪽으로 옮기면
+    # 조건이 테마 유무가 아니라 판단 여부가 된다.
+    #
+    # 그 규칙을 함께 폐기했었으나 되살렸다 — 폐기는 F1 기준의 판단이었고,
+    # 재현율 가중(F2)에서는 두 경로가 겹쳐도 놓치는 것보다 낫다. RETIRED 참조.
     ("issuer", "forward"): (
         "get_company_evaluation",
         "get_financial_data",
@@ -527,21 +530,85 @@ LEXICON_RULES: list[Rule] = [
 
 
 # 2·3층 전체. 순서가 의미를 갖는다 — replace=True 규칙이 앞선 결과를 지운다.
-# sealed 58행 검증에서 제거가 확인된 규칙 (2026-09-02).
-# 코드는 남겨 둔다 — 왜 뺐는지가 다음 라운드에 필요하고, 골든이 더 늘면
-# 되살릴 여지도 있다.
+# ─────────────────────────────────────────────────────────────
+# 교차검증으로 뽑은 규칙 (optimize_route.py, 2026-09-02)
 #
-#   comparative assessment
-#       "업종 평균 대비" 류에 멀티플 두 개를 붙였다. 발화 12회 중 대부분이
-#       오호출이었다. 단독 제거만으로 sealed +0.018.
-#   themed issuer→news channel
-#       테마 엔티티가 붙은 발행사 goal 에 get_news + get_stock_news 를 얹었다.
-#       발화 54회. 종목 뉴스는 판단 묶음(issuer/forward)으로 옮겼고, 시장
-#       뉴스는 theme→sector 와 겹쳐 정밀도만 깎고 있었다.
-RETIRED = {"comparative assessment", "themed issuer→news channel"}
+# 손으로 쓰지 않았다. (domain, facet)[+엔티티] -> 함수 형태의 후보를 자동
+# 생성하고, 5-fold 로 train 에서만 고른 뒤 test 에서 쟀다. 목적함수는 F2 다.
+#
+# 채택 기준은 **fold 재현**이다. 5개 fold 는 서로 다른 train 집합이므로,
+# 여러 fold 에서 독립적으로 뽑힌 규칙은 특정 표본의 우연이 아니다. 2/5 이하로
+# 뽑힌 규칙은 버렸다 — 얇은 근거가 일반화 안 된다는 걸 이미 두 번 봤다
+# (판단 묶음 4행 근거의 sealed 기여 0, refit_graph 의 발화 0회 규칙 5개).
+#
+# CV 추정: F2 0.6974 -> 0.7343, 5/5 fold 개선.
+#
+# 프롬프트가 STEP4 ② (facet=none 억제) 로 바뀌면서 파스 분포가 달라졌고
+# (none 13% -> 8.5%), 그래서 규칙을 처음부터 다시 뽑았다. 옛 분포에서 5/5 로
+# 뽑혔던 market/none -> knowledge 는 1/5 로 떨어져 뺐다 — 그 문맥 자체가
+# 희소해졌으니 당연한 결과다. 그 규칙을 살리려고 조건을 type 으로 옮겨봤으나
+# 재현율은 그대로고 정밀도만 깎여(F2 0.8370 -> 0.8259) 기각했다.
+CV_RULES = [
+    # 자사 문맥의 판단 목표는 1층에 자리가 없어 비어 있었다. 근거는 매뉴얼이다.
+    Rule(
+        "internal judgment→manual",
+        lambda g: g.domain == "internal" and g.facet == "none",
+        add=["get_work_manual"],
+        why="자사 문맥 판단 목표 — 근거는 업무 매뉴얼 (CV 5/5)",
+    ),
+    # 업종·테마를 지목하면 그 업황을 만든 시장 뉴스가 따라온다. 섹터 구성만
+    # 주고 왜 그런지를 안 주면 근거가 반쪽이다.
+    Rule(
+        "sector_map→market news",
+        lambda g: g.domain == "market" and g.facet == "sector_map",
+        add=["get_news"],
+        why="업종 구성 + 그 업황을 만든 시장 뉴스 (CV 5/5)",
+    ),
+    Rule(
+        "themed screening→market news",
+        lambda g: g.domain == "market" and g.facet == "screening"
+        and bool(g.ents.get("theme")),
+        add=["get_news"],
+        why="테마 스크리닝 — 종목 목록 + 테마 뉴스 (CV 5/5)",
+    ),
+    # 제도를 물으면 그 제도가 다루는 개념 설명이 같이 필요하다.
+    # "배당소득세 원천징수 세율" 은 규정집만으로 답이 안 된다.
+    Rule(
+        "regulation→knowledge",
+        lambda g: g.domain == "finance_legal" and g.facet == "regulation",
+        add=["get_basic_financial_knowledge"],
+        why="제도 조회 + 개념 설명 (CV 4/5)",
+    ),
+    # 업종만 주면 "그래서 뭘 보라는 건가"에 답이 안 된다.
+    # 이번 탐색에서 3/5 로 내려갔지만 직전 탐색에서 4/5 였고, 넣는 쪽이
+    # F2 +0.005 / 재현율 +0.007 에 정밀도 손실이 0 이라 유지한다.
+    Rule(
+        "sector_map→top stocks",
+        lambda g: g.domain == "market" and g.facet == "sector_map",
+        add=["search_top_stock"],
+        why="업종 조회 — 해당 업종 종목까지 (CV 3/5, 직전 4/5)",
+    ),
+]
+
+
+# 한때 뺐다가 되살린 규칙 (2026-09-02).
+#
+# sealed 58행 검증에서 이 둘을 빼면 F1 이 올랐다. 그런데 그 이득은 전부
+# 정밀도에서 왔고(P 0.597→0.678, R 0.571 불변) 재현율은 오히려 낮아졌다.
+#
+# 이 라우터의 목적은 "사용자 목적에 도달할 근거를 모으는 것"이다. 필요한
+# 데이터를 못 부르는 손실이 쓸데없는 걸 하나 더 부르는 손실보다 크다. 그래서
+# 최적화 지표를 F1(누락=오호출) 에서 F2(재현율 2배 가중) 로 바꿨고, 그 기준
+# 에서는 두 규칙을 되살리는 쪽이 낫다 — 재현율 0.703 → 0.710.
+#
+#   comparative assessment       "업종 평균 대비" 류에 멀티플 두 개
+#   themed issuer→news channel   테마 붙은 발행사 goal 에 뉴스 두 종
+#
+# F1 로 되돌아갈 일이 있으면 이 둘을 다시 빼면 된다.
+RETIRED: set[str] = set()
 
 ALL_RULES: list[Rule] = [
-    r for r in EXPANSIONS + LEXICON_RULES if r.name not in RETIRED
+    r for r in EXPANSIONS + CV_RULES + LEXICON_RULES if r.name not in RETIRED
 ]
 
 
@@ -666,7 +733,14 @@ def route(g: Goal, rules: list | None = None):
         else:
             status, note = UNMAPPED, f"테이블에 {g.key} 항목 없음"
 
-    if status in (UNMAPPED, AMBIGUOUS):
+    # AMBIGUOUS 는 여기서 끊는다 — 후보가 여럿이라 못 고르는 자리에 팬아웃을
+    # 얹으면 못 고른 채로 다 부르게 된다.
+    #
+    # UNMAPPED 는 끊지 않는다. 1층에 자리가 없다는 것이지 부를 게 없다는 뜻이
+    # 아니고, 여기서 반환하면 그 goal 은 **호출을 하나도 안 만든다**. 이 라우터의
+    # 목적은 근거 확보이므로 못 부르는 손실이 더 크다. 2·3층이 뭔가 붙이면
+    # 그걸로 답하고, 아무것도 안 붙으면 그때 UNMAPPED 로 남는다.
+    if status == AMBIGUOUS:
         return status, picked, note, candidates
 
     # ── 2층 + 3층 ──
